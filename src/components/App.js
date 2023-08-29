@@ -1,13 +1,14 @@
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello world
-        </p>
-      </header>
-    </div>
-  );
+import React from "react";
+import Header from "./main-app/header";
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+      </div>
+    );
+  }
 }
 
 export default App;
