@@ -8,7 +8,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="w-full flex flex-row gap-2">
+      <header className="w-full flex flex-row gap-2 justify-center">
         <NavigationButton text="Inicio" href="/" />
         <NavigationButton text="Sobre Motec" href="about" />
         <NavigationButton text="Servicios" href="services" />

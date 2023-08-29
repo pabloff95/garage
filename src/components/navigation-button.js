@@ -7,7 +7,11 @@ class NavigationButton extends React.Component {
   }
 
   render() {
-    return <Link to={this.props.href}>{this.props.text}</Link>;
+    return (
+      <div className="p-2 bg-slate-700 hover:bg-slate-500 rounded text-white">
+        <Link to={this.props.href}>{this.props.text}</Link>
+      </div>
+    );
   }
 }
 
