@@ -1,17 +1,13 @@
 import React from "react";
-import Button from "./basic-elements/button";
+import { Link } from "react-router-dom";
 
 class NavigationButton extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  navigateToUrl = () => {
-    console.log("Navigate!");
-  };
-
   render() {
-    return <Button text={this.props.text} onClick={this.navigateToUrl} />;
+    return <Link to={this.props.href}>{this.props.text}</Link>;
   }
 }
 

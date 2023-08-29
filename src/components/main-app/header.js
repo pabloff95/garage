@@ -9,10 +9,10 @@ class Header extends React.Component {
   render() {
     return (
       <header className="w-full flex flex-row gap-2">
-        <NavigationButton text="Inicio" />
-        <NavigationButton text="Sobre Motec" />
-        <NavigationButton text="Servicios" />
-        <NavigationButton text="Contacto" />
+        <NavigationButton text="Inicio" href="/" />
+        <NavigationButton text="Sobre Motec" href="about" />
+        <NavigationButton text="Servicios" href="services" />
+        <NavigationButton text="Contacto" href="contact" />
       </header>
     );
   }
