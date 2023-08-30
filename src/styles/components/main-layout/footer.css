@@ -1,0 +1,15 @@
+.layout-footer {
+  font-size: 0.8rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0.5rem 0;
+
+  background-color: var(--layout-bg-color);
+  color: var(--layout-text-color);
+}
+footer .footer-title {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
