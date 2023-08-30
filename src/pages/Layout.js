@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "../components/main-app/header";
-import { Outlet, Link } from "react-router-dom";
+import Header from "../components/main-layout/header";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/main-layout/footer";
 
 class Layout extends React.Component {
   render() {
@@ -8,6 +9,7 @@ class Layout extends React.Component {
       <div>
         <Header />
         <Outlet />
+        <Footer />
       </div>
     );
   }
