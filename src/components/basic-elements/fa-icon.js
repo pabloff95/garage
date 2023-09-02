@@ -17,7 +17,11 @@ class FaIcon extends React.Component {
 
   render() {
     return (
-      <FontAwesomeIcon icon={this.props.icon} className={this.props.class} />
+      <FontAwesomeIcon
+        icon={this.props.icon}
+        className={this.props.className}
+        style={{ color: this.props.color }}
+      />
     );
   }
 }

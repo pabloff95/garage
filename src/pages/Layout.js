@@ -4,9 +4,13 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/main-layout/footer";
 
 class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div>
+      <div className="h-full w-full">
         <Header />
         <Outlet />
         <Footer />

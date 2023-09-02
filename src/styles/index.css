@@ -11,6 +11,12 @@
   --layout-text-color: white;
 }
 
+body,
+html {
+  height: 100%;
+  overflow: auto;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
