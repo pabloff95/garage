@@ -1,10 +1,13 @@
 import React from "react";
+import PageTitle from "../components/page-title";
 
 class About extends React.Component {
   render() {
     return (
       <div>
-        <h1>About!</h1>
+        <section>
+          <PageTitle text="Sobre nosotros"></PageTitle>
+        </section>
       </div>
     );
   }
