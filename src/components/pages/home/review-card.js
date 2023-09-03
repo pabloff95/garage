@@ -26,7 +26,7 @@ class ReviewCard extends React.Component {
 
     return (
       <div
-        className="flex flex-col gap-3 w-1/5 h-56 p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400"
+        className="flex flex-col gap-3 w-10/12 h-56 p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400"
         onClick={this.openReview}
       >
         <div className="flex flex-row justify-between">
