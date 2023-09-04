@@ -6,12 +6,44 @@ class ReviewCard extends React.Component {
     super(props);
 
     this.openReview = this.openReview.bind(this);
+    this.getShortMessage = this.getShortMessage.bind(this);
+    this.state = {
+      isExpanded: false,
+    };
   }
 
   rate = parseInt(this.props.rate);
 
   openReview = () => {
     window.open(this.props.url, "_blank");
+  };
+
+  getShortMessage = () => {
+    const maxCharacters = 200;
+
+    if (this.props.message.length <= maxCharacters || this.state.isExpanded) {
+      return <span>{this.props.message}</span>;
+    }
+
+    const messageWords = this.props.message
+      .substring(0, maxCharacters)
+      .split(" ");
+    messageWords.pop(); // Remove last word to prevent having not complete words
+    const shortMessage = messageWords.join(" ");
+
+    return (
+      <span>
+        {shortMessage} ...{" "}
+        <span className="text-sky-500 hover:underline" onClick={this.readMore}>
+          leer más
+        </span>
+      </span>
+    );
+  };
+
+  readMore = (event) => {
+    event.stopPropagation(); // Prevent click on parent (trigger openReview)
+    this.state.isExpanded = true;
   };
 
   render() {
@@ -39,7 +71,10 @@ class ReviewCard extends React.Component {
             alt="Logo de Google"
           />
         </div>
-        <div className="text-gray-800">{this.props.message}</div>
+        <div className="text-gray-800 grow">{this.getShortMessage()}</div>
+        <footer className="text-xs text-gray-500 text-right italic opacity-80">
+          {this.props.author}
+        </footer>
       </div>
     );
   }

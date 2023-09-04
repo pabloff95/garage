@@ -7,41 +7,46 @@ class HorizontalScrollContainer extends React.Component {
     super(props);
 
     this.getItems = this.getItems.bind(this);
+
+    this.state = {
+      carrouselItems: [],
+    };
   }
 
   max = parseInt(this.props.itemsPerSlide);
 
   getItems = () => {
     // Prepare carrousel (array of arrays)
-    const allCarrouselItems = [];
     let newCarrousel = [];
 
     [...this.props.children].forEach((item) => {
       newCarrousel.push(item);
 
       if (newCarrousel.length === this.max) {
-        allCarrouselItems.push(newCarrousel);
+        this.state.carrouselItems.push(newCarrousel);
         newCarrousel = [];
       }
     });
 
     // Add last items
     if (newCarrousel.length > 0) {
-      allCarrouselItems.push(newCarrousel);
+      this.state.carrouselItems.push(newCarrousel);
     }
 
     return (
       <Carousel
-        animation="slide"
+        animation="fade"
         autoPlay={false}
+        interval="5000"
         indicatorContainerProps={{ style: { display: "none" } }} // Hide navigation legend
         className="pt-2 pb-10"
       >
-        {allCarrouselItems.map((slide) => (
+        {this.state.carrouselItems.map((slide, slideIndex) => (
           <Grid
             container
             spacing={this.props.spacing ?? 0}
             className="w-full flex flex-row justify-center"
+            key={slideIndex}
           >
             {slide.map((item, index) => (
               <Grid
