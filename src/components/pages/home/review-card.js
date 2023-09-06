@@ -7,6 +7,7 @@ class ReviewCard extends React.Component {
 
     this.openReview = this.openReview.bind(this);
     this.getShortMessage = this.getShortMessage.bind(this);
+
     this.state = {
       isExpanded: false,
     };
@@ -21,29 +22,43 @@ class ReviewCard extends React.Component {
   getShortMessage = () => {
     const maxCharacters = 200;
 
-    if (this.props.message.length <= maxCharacters || this.state.isExpanded) {
+    if (this.props.message.length <= maxCharacters) {
       return <span>{this.props.message}</span>;
     }
 
+    // Get short message
     const messageWords = this.props.message
       .substring(0, maxCharacters)
       .split(" ");
     messageWords.pop(); // Remove last word to prevent having not complete words
     const shortMessage = messageWords.join(" ");
 
+    // Get final text
+    const messageToDisplay = this.state.isExpanded
+      ? `${this.props.message}`
+      : `${shortMessage}  ...`;
+
+    const buttonText = this.state.isExpanded ? "menos" : "más";
+
     return (
       <span>
-        {shortMessage} ...{" "}
-        <span className="text-sky-500 hover:underline" onClick={this.readMore}>
-          leer más
+        {messageToDisplay}&nbsp;
+        <span
+          className="text-sky-500 hover:underline"
+          onClick={this.toggleTextDisplay}
+        >
+          {buttonText}
         </span>
       </span>
     );
   };
 
-  readMore = (event) => {
-    event.stopPropagation(); // Prevent click on parent (trigger openReview)
-    this.state.isExpanded = true;
+  toggleTextDisplay = (event) => {
+    event.stopPropagation(); // Prevent click on parent (which triggers openReview)
+
+    this.setState({
+      isExpanded: !this.state.isExpanded,
+    });
   };
 
   render() {
@@ -58,7 +73,8 @@ class ReviewCard extends React.Component {
 
     return (
       <div
-        className="flex flex-col gap-3 w-10/12 h-56 p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400"
+        className={`flex flex-col gap-3 w-10/12 p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400
+        ${this.state.isExpanded ? "h-fit" : "h-56"} `}
         onClick={this.openReview}
       >
         <div className="flex flex-row justify-between">
