@@ -61,6 +61,19 @@ class ReviewCard extends React.Component {
     });
   };
 
+  getDate = () => {
+    const currentYear = new Date().getFullYear();
+    const cardDate = parseInt(this.props.date);
+
+    if (cardDate === currentYear) {
+      return this.props.date;
+    }
+
+    return `Hace ${currentYear - cardDate} año${
+      currentYear - cardDate === 1 ? "" : "s"
+    }`;
+  };
+
   render() {
     const stars = [...Array(this.rate)].map((_, index) => (
       <FaIcon
@@ -88,8 +101,9 @@ class ReviewCard extends React.Component {
           />
         </div>
         <div className="text-gray-800 grow">{this.getShortMessage()}</div>
-        <footer className="text-xs text-gray-500 text-right italic opacity-80">
-          {this.props.author}
+        <footer className="text-xs text-gray-500 w-full italic opacity-80 flex flex-row justify-between">
+          <span>{this.props.author}</span>
+          <span>{this.getDate()}</span>
         </footer>
       </div>
     );

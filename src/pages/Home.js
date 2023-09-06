@@ -37,14 +37,14 @@ class Home extends React.Component {
               message="Muy buenos profesionales, especialmente en opel (marca de mi coche). Muy buen servicio y buenos precios. Es mi taller de confianza"
               url="https://goo.gl/maps/EKMcSFQwzThHKwmm9"
               author="D. Correcaminos"
-              date="10/2022"
+              date="2022"
             />
             <ReviewCard
               rate="5"
               message="Servicio excelente, trabajadores excepcionales y muy buen trato y servicio. Volveré sin duda."
               url="https://goo.gl/maps/NJ9MBxBrmBYPU6kd7"
               author="E. Suarez"
-              date="11/2022"
+              date="2022"
             />
             <ReviewCard
               rate="5"
@@ -58,7 +58,7 @@ class Home extends React.Component {
               message="Taller serio, profesional y con buenos precios, un problema en el Jeep en el abs, acertó con el diagnóstico a la primera, acordamos un día y una hora y para poder cuadrarlo con el trabajo y problema resuelto"
               url="https://goo.gl/maps/T5ySZaR51v1Qen1X9"
               author="D. Correcaminos"
-              date="10/2022"
+              date="2022"
             />
           </HorizontalScrollContainer>
         </section>
