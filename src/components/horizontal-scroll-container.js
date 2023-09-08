@@ -39,7 +39,7 @@ class HorizontalScrollContainer extends React.Component {
         autoPlay={false}
         interval="5000"
         indicatorContainerProps={{ style: { display: "none" } }} // Hide navigation legend
-        className="pt-2 pb-10"
+        className="!overflow-visible h-auto pt-2 pb-10"
       >
         {this.state.carrouselItems.map((slide, slideIndex) => (
           <Grid

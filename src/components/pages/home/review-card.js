@@ -8,8 +8,11 @@ class ReviewCard extends React.Component {
     this.openReview = this.openReview.bind(this);
     this.getShortMessage = this.getShortMessage.bind(this);
 
+    this.element = React.createRef();
+
     this.state = {
       isExpanded: false,
+      height: 0, // Set to 0 when h-fit is not being displayed
     };
   }
 
@@ -56,9 +59,18 @@ class ReviewCard extends React.Component {
   toggleTextDisplay = (event) => {
     event.stopPropagation(); // Prevent click on parent (which triggers openReview)
 
-    this.setState({
-      isExpanded: !this.state.isExpanded,
-    });
+    // Update states
+    this.setState(
+      {
+        isExpanded: !this.state.isExpanded,
+      },
+      () => {
+        // Set new heigth AFTER isExpanded has been updated (to get the new element's height)
+        this.setState({
+          height: this.state.isExpanded ? this.element.current.clientHeight : 0,
+        });
+      }
+    );
   };
 
   getDate = () => {
@@ -87,8 +99,9 @@ class ReviewCard extends React.Component {
     return (
       <div
         className={`flex flex-col gap-3 w-10/12 p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400
-        ${this.state.isExpanded ? "h-fit" : "h-56"} `}
+        ${this.state.isExpanded ? "h-fit" : "h-60"} `}
         onClick={this.openReview}
+        ref={this.element}
       >
         <div className="flex flex-row justify-between">
           <div className="flex flex-row gap-2 w-full justify-start">

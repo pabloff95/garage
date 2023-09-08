@@ -31,7 +31,17 @@ class Home extends React.Component {
           </div>
         </section>
         <section className="my-5 flex justify-center">
-          <HorizontalScrollContainer itemsPerSlide="3" className="w-10/12 my-3">
+          <HorizontalScrollContainer
+            itemsPerSlide="3"
+            className="w-10/12 my-3 h-auto"
+          >
+            <ReviewCard
+              rate="5"
+              message="Servicio excelente. Tuve un pinchazo mientras estuve de visita en cabarceno. Les llame y como no tenían mi neumático me ayudaron a buscar un taller que las tuviera. Como no había stock en ninguno de la zona me recomendó uno cerca de la zona  por donde me hospedaba (LLanes). Se involucró mucho y fue una gran ayuda aunque no fuese a cambiar las ruedas en su taller"
+              url="https://goo.gl/maps/ijdfjFbM1YhkKnkp8"
+              author="J. Rosendo"
+              date="2018"
+            />
             <ReviewCard
               rate="5"
               message="Muy buenos profesionales, especialmente en opel (marca de mi coche). Muy buen servicio y buenos precios. Es mi taller de confianza"
@@ -58,6 +68,13 @@ class Home extends React.Component {
               message="Taller serio, profesional y con buenos precios, un problema en el Jeep en el abs, acertó con el diagnóstico a la primera, acordamos un día y una hora y para poder cuadrarlo con el trabajo y problema resuelto"
               url="https://goo.gl/maps/T5ySZaR51v1Qen1X9"
               author="D. Correcaminos"
+              date="2022"
+            />
+            <ReviewCard
+              rate="5"
+              message="Siempre tienen el mejor interés de sus clientes en mente. Su enfoque está en la mejor relación precio-calidad. El trato es excelente y se preocupan por encajar en la agenda más ocupada. Personalmente, me han ahorrado mucho dinero y preocupaciones"
+              url="https://goo.gl/maps/MUDVrZ1XqgJGENi87"
+              author="J. Zeilfelder"
               date="2022"
             />
           </HorizontalScrollContainer>
