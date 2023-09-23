@@ -7,6 +7,43 @@ import HorizontalScrollContainer from "../components/horizontal-scroll-container
 class Home extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      reviewCardHeigth: 0,
+    };
+  }
+
+  // Update heigth state when the "read more" option is clicked on the reivew card components
+  updateReviewCardHeight = (height) => {
+    this.setState({ reviewCardHeigth: height });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.reviewCardHeigth === this.state.reviewCardHeigth) {
+      return;
+    }
+
+    // Update heigth with the new card heigth because the Carousel will not update the height with dynamically
+    const container = document.querySelector(".horizontal-scroll-container");
+    if (!container) {
+      return;
+    }
+
+    const currentHeight = Number.isNaN(parseInt(container.style.height))
+      ? 0
+      : parseInt(container.style.height);
+
+    let carouselHeigth = "auto";
+
+    if (
+      this.state.reviewCardHeigth !== 0 &&
+      currentHeight < this.state.reviewCardHeigth // If multiple cards are open, keep heigth of the largest
+    ) {
+      carouselHeigth = `${this.state.reviewCardHeigth}px`;
+    }
+
+    container.style.height = carouselHeigth;
+    return;
   }
 
   render() {
@@ -33,7 +70,7 @@ class Home extends React.Component {
         <section className="my-5 flex justify-center">
           <HorizontalScrollContainer
             itemsPerSlide="3"
-            className="w-10/12 my-3 h-auto"
+            className={`w-10/12 my-3 horizontal-scroll-container`}
           >
             <ReviewCard
               rate="5"
@@ -41,6 +78,7 @@ class Home extends React.Component {
               url="https://goo.gl/maps/ijdfjFbM1YhkKnkp8"
               author="J. Rosendo"
               date="2018"
+              onToggle={this.updateReviewCardHeight}
             />
             <ReviewCard
               rate="5"
@@ -48,6 +86,7 @@ class Home extends React.Component {
               url="https://goo.gl/maps/EKMcSFQwzThHKwmm9"
               author="D. Correcaminos"
               date="2022"
+              onToggle={this.updateReviewCardHeight}
             />
             <ReviewCard
               rate="5"
@@ -55,6 +94,7 @@ class Home extends React.Component {
               url="https://goo.gl/maps/NJ9MBxBrmBYPU6kd7"
               author="E. Suarez"
               date="2022"
+              onToggle={this.updateReviewCardHeight}
             />
             <ReviewCard
               rate="5"
@@ -62,6 +102,7 @@ class Home extends React.Component {
               url="https://goo.gl/maps/o7Nk2Jbx7n2TaL9bA"
               author="A. Hierro"
               date="2021"
+              onToggle={this.updateReviewCardHeight}
             />
             <ReviewCard
               rate="5"
@@ -69,6 +110,7 @@ class Home extends React.Component {
               url="https://goo.gl/maps/T5ySZaR51v1Qen1X9"
               author="D. Correcaminos"
               date="2022"
+              onToggle={this.updateReviewCardHeight}
             />
             <ReviewCard
               rate="5"
@@ -76,6 +118,7 @@ class Home extends React.Component {
               url="https://goo.gl/maps/MUDVrZ1XqgJGENi87"
               author="J. Zeilfelder"
               date="2022"
+              onToggle={this.updateReviewCardHeight}
             />
           </HorizontalScrollContainer>
         </section>

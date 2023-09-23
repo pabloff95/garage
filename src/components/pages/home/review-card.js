@@ -12,7 +12,6 @@ class ReviewCard extends React.Component {
 
     this.state = {
       isExpanded: false,
-      height: 0, // Set to 0 when h-fit is not being displayed
     };
   }
 
@@ -66,9 +65,11 @@ class ReviewCard extends React.Component {
       },
       () => {
         // Set new heigth AFTER isExpanded has been updated (to get the new element's height)
-        this.setState({
-          height: this.state.isExpanded ? this.element.current.clientHeight : 0,
-        });
+        const cardHeigth = this.state.isExpanded
+          ? this.element.current.clientHeight
+          : 0; // Set 0 as default card heigth (height auto will be used instead)
+
+        this.props.onToggle(cardHeigth);
       }
     );
   };
@@ -98,8 +99,7 @@ class ReviewCard extends React.Component {
 
     return (
       <div
-        className={`flex flex-col gap-3 w-10/12 p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400
-        ${this.state.isExpanded ? "h-fit" : "h-60"} `}
+        className="flex flex-col gap-3 w-10/12 min-w-[20rem] p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400 h-fit"
         onClick={this.openReview}
         ref={this.element}
       >
@@ -113,7 +113,13 @@ class ReviewCard extends React.Component {
             alt="Logo de Google"
           />
         </div>
-        <div className="text-gray-800 grow">{this.getShortMessage()}</div>
+        <div
+          className={`text-gray-800 grow ${
+            this.state.isExpanded ? "h-fit" : "h-36"
+          }`}
+        >
+          {this.getShortMessage()}
+        </div>
         <footer className="text-xs text-gray-500 w-full italic opacity-80 flex flex-row justify-between">
           <span>{this.props.author}</span>
           <span>{this.getDate()}</span>
