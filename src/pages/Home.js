@@ -111,20 +111,25 @@ class Home extends React.Component {
       <div>
         <section>
           <PageTitle text="Motec SL: motor y tecnología"></PageTitle>
-          <div className="w-full p-3">
-            <img
-              className="w-4/6 ml-5"
-              src="/images/pages/home/title-picture.png"
-              alt="Instalaciones de talleres Motec"
-            />
-          </div>
-        </section>
-        <section className="my-5">
-          <div className="flex flex-row justify-center gap-10">
-            <ServiceIcon icon="car" iconText="Mecánica" />
-            <ServiceIcon icon="screwdriver-wrench" iconText="Mantenimiento" />
-            <ServiceIcon icon="arrow-trend-up" iconText="Puesta a punto" />
-            <ServiceIcon icon="plus" iconText="Y mas!" />
+          <div className="flex flex-row gap-3 grow  ml-5 px-3">
+            <div>
+              <img
+                className="w-[95%]"
+                src="/images/pages/home/title-picture.png"
+                alt="Instalaciones de talleres Motec"
+              />
+            </div>
+            <div className="flex flex-col justify-center gap-2 w-1/4">
+              <ServiceIcon icon="car" iconText="Mecánica" />
+              <ServiceIcon icon="oil-can" iconText="Cambio de aceite" />
+              <ServiceIcon
+                icon="circle-dot"
+                iconText="Servicio de neumáticos"
+              />
+              <ServiceIcon icon="screwdriver-wrench" iconText="Mantenimiento" />
+              <ServiceIcon icon="arrow-trend-up" iconText="Puesta a punto" />
+              <ServiceIcon icon="plus" iconText="Y mas!" />
+            </div>
           </div>
         </section>
         <section className="my-5 flex justify-center">
