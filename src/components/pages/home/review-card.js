@@ -87,6 +87,31 @@ class ReviewCard extends React.Component {
     }`;
   };
 
+  capitalizeWord = (word) => {
+    const charArray = word.split("");
+
+    const firstLetter = charArray.shift().toUpperCase();
+
+    return [firstLetter, ...charArray].join("");
+  };
+
+  getAuthor = () => {
+    if (!this.props.author) {
+      return "";
+    }
+
+    const authorNames = this.props.author.split(" ");
+
+    if (authorNames.length === 1) {
+      return this.capitalizeWord(authorNames[0]); // 1 word names, return name capitalized
+    }
+
+    return `${authorNames[0][0].toUpperCase()}. ${this.capitalizeWord(
+      // >1 word names, return ex.: J. Doe
+      authorNames[1]
+    )}`;
+  };
+
   render() {
     const stars = [...Array(this.rate)].map((_, index) => (
       <FaIcon
@@ -121,7 +146,7 @@ class ReviewCard extends React.Component {
           {this.getShortMessage()}
         </div>
         <footer className="text-xs text-gray-500 w-full italic opacity-80 flex flex-row justify-between">
-          <span>{this.props.author}</span>
+          <span>{this.getAuthor()}</span>
           <span>{this.getDate()}</span>
         </footer>
       </div>
