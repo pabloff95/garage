@@ -11,19 +11,16 @@ class Home extends React.Component {
 
     this.state = {
       reviewCardHeigth: 0,
+      itemsPerSlide: this.getItemsPerSlide(),
     };
   }
 
-  // Update heigth state when the "read more" option is clicked on the reivew card components
+  // --- Update heigth state when the "read more" option is clicked on the reivew card components
   updateReviewCardHeight = (height) => {
     this.setState({ reviewCardHeigth: height });
   };
 
-  componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.reviewCardHeigth === this.state.reviewCardHeigth) {
-      return;
-    }
-
+  updateCarouselContainerHeigth = () => {
     // Update heigth with the new card heigth because the Carousel will not update the height with dynamically
     const container = document.querySelector(".horizontal-scroll-container");
     if (!container) {
@@ -48,6 +45,30 @@ class Home extends React.Component {
     return;
   };
 
+  // --- Update number of items per slide according to the window width
+  updateItemsPerSlide = () => {
+    this.setState({ itemsPerSlide: this.getItemsPerSlide() });
+  };
+
+  getItemsPerSlide = () => {
+    const windowWidth = parseInt(window.innerWidth);
+
+    if (windowWidth < 500) {
+      return 1;
+    }
+
+    if (windowWidth < 850) {
+      return 2;
+    }
+
+    if (windowWidth < 1350) {
+      return 3;
+    }
+
+    return 4;
+  };
+
+  // --- Get DOM elements
   getReviewCards = () => {
     return reviews.default.map((review, index) => {
       return (
@@ -62,6 +83,27 @@ class Home extends React.Component {
         />
       );
     });
+  };
+
+  // --- Component life cycle
+  componentDidMount = () => {
+    window.addEventListener("resize", this.updateItemsPerSlide);
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateItemsPerSlide);
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    // Evaluate items per slide according to window width
+    if (prevState.itemsPerSlide !== this.state.itemsPerSlide) {
+      this.forceUpdate(); // Force rerender component to set changes
+    }
+
+    // Evaluate reviewCards heigth
+    if (prevState.reviewCardHeigth !== this.state.reviewCardHeigth) {
+      this.updateCarouselContainerHeigth();
+    }
   };
 
   render() {
@@ -87,8 +129,9 @@ class Home extends React.Component {
         </section>
         <section className="my-5 flex justify-center">
           <HorizontalScrollContainer
-            itemsPerSlide="3"
-            className={`w-full py-5 my-3 horizontal-scroll-container`}
+            key={this.state.itemsPerSlide}
+            itemsPerSlide={this.state.itemsPerSlide}
+            className="w-full py-5 my-3 horizontal-scroll-container"
           >
             {this.getReviewCards()}
           </HorizontalScrollContainer>
