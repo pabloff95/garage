@@ -4,11 +4,20 @@
 
 @import url("./components/main-layout/footer.css");
 @import url("./components/main-layout/header.css");
+@import url("./components/basic-elements/logo.css");
 
 :root {
+  /* Main Color palette*/
+  --neutral-color-primary: #262625;
+  --neutral-color-contrast: #f2f2f2;
+  --primary-element: #f2a922;
+  --secondary-element: #d98825;
+  --tertiary-element: #a67458;
+  --highlighted-element: #fde047;
+
   /*Layout variables*/
-  --layout-bg-color: black;
-  --layout-text-color: white;
+  --layout-bg-color: var(--neutral-color-primary);
+  --layout-text-color: var(--neutral-color-contrast);
 }
 
 body,
@@ -24,9 +33,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--neutral-color-primary);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* ---- Variable colors ---- */
+.bg-highlighted-element {
+  background-color: var(--highlighted-element);
+}
+
+.hover\:text-neutral-primary:hover {
+  color: var(--neutral-color-primary);
+}
+
+.hover\:bg-primary-element:hover {
+  background-color: var(--primary-element);
 }
