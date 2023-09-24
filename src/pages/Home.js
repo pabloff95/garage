@@ -61,7 +61,7 @@ class Home extends React.Component {
       return 2;
     }
 
-    if (windowWidth < 1350) {
+    if (windowWidth < 1600) {
       return 3;
     }
 
@@ -132,6 +132,7 @@ class Home extends React.Component {
             key={this.state.itemsPerSlide}
             itemsPerSlide={this.state.itemsPerSlide}
             className="w-full py-5 my-3 horizontal-scroll-container"
+            onSlideChange={() => this.updateReviewCardHeight(0)}
           >
             {this.getReviewCards()}
           </HorizontalScrollContainer>

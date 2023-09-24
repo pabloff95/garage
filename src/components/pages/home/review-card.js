@@ -28,6 +28,18 @@ class ReviewCard extends React.Component {
       return <span>{this.props.message}</span>;
     }
 
+    // If the fragment to be ommited, are just a few words/characters, display the whole text
+    const fragmentToBeOmitted = this.props.message.substring(
+      maxCharacters,
+      this.props.message.length
+    );
+    if (
+      fragmentToBeOmitted.split(" ").length <= 3 ||
+      fragmentToBeOmitted.length <= 15
+    ) {
+      return <span>{this.props.message}</span>;
+    }
+
     // Get short message
     const messageWords = this.props.message
       .substring(0, maxCharacters)
@@ -40,8 +52,6 @@ class ReviewCard extends React.Component {
       ? `${this.props.message}`
       : `${shortMessage}  ...`;
 
-    const buttonText = this.state.isExpanded ? "menos" : "más";
-
     return (
       <span>
         {messageToDisplay}&nbsp;
@@ -49,7 +59,7 @@ class ReviewCard extends React.Component {
           className="text-sky-500 hover:underline"
           onClick={this.toggleTextDisplay}
         >
-          {buttonText}
+          {this.state.isExpanded ? "menos" : "más"}
         </span>
       </span>
     );

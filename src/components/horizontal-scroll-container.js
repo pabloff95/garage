@@ -40,6 +40,7 @@ class HorizontalScrollContainer extends React.Component {
         interval="5000"
         indicatorContainerProps={{ style: { display: "none" } }} // Hide navigation legend
         className="!overflow-visible h-auto pt-2 pb-10"
+        onChange={this.props.onSlideChange}
       >
         {this.state.carrouselItems.map((slide, slideIndex) => (
           <Grid
