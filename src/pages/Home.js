@@ -1,5 +1,6 @@
 import React from "react";
 import PageTitle from "../components/page-title";
+import PageSubitle from "../components/page-subtitle";
 import ServiceIcon from "../components/pages/home/service-icon";
 import ReviewCard from "../components/pages/home/review-card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
@@ -108,10 +109,10 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <section>
+      <div className="ml-5 w-[95%]">
+        <section className="p-3 flex flex-col gap-3">
           <PageTitle text="Motec SL: motor y tecnología"></PageTitle>
-          <div className="flex flex-row gap-3 grow  ml-5 px-3">
+          <div className="flex flex-row gap-3 grow">
             <div>
               <img
                 className="w-[95%]"
@@ -132,11 +133,32 @@ class Home extends React.Component {
             </div>
           </div>
         </section>
-        <section className="my-5 flex justify-center">
+        <section className="p-3">
+          <PageSubitle text="Taller de reparación de automóviles en Astillero (Santander)" />
+          <p>
+            En nuestro taller de coches, ofrecemos servicios de mantenimiento y
+            reparación de alta calidad. Nuestro equipo de mecánicos se
+            enorgullece de mantener tus vehículos en óptimas condiciones y
+            brindar soluciones confiables para tus necesidades automotrices.
+          </p>
+          <br />
+          <p>
+            ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de Morero,
+            parcela 2-11 nave nº2, Guarnizo el Astillero:
+          </p>
+        </section>
+        <section className="flex flex-col p-3 justify-center">
+          <PageSubitle text="La opinion de nuestros clientes" />
+          <p>
+            Tu satisfacción es nuestra prioridad, y nos enorgullecemos de
+            ofrecer servicios de alta calidad a precios competitivos. Descubre
+            por qué somos la elección preferida de nuestros clientes cuando se
+            trata de cuidar sus vehículos:
+          </p>
           <HorizontalScrollContainer
             key={this.state.itemsPerSlide}
             itemsPerSlide={this.state.itemsPerSlide}
-            className="w-full py-5 my-3 horizontal-scroll-container"
+            className="w-full py-5 my-5 horizontal-scroll-container"
             onSlideChange={() => this.updateReviewCardHeight(0)}
           >
             {this.getReviewCards()}
