@@ -5,6 +5,7 @@
 @import url("./components/main-layout/footer.css");
 @import url("./components/main-layout/header.css");
 @import url("./components/basic-elements/logo.css");
+@import url("./components/navigation-button.css");
 
 :root {
   /* Main Color palette*/

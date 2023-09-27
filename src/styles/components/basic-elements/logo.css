@@ -1,4 +1,14 @@
-.logo {
+.logo-container {
+  min-width: 10rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+.logo-text {
   padding: 0.5rem;
 
   font-family: Arial, sans-serif;
@@ -7,5 +17,20 @@
   color: var(--neutral-color-contrast);
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 1.25px 1.25px 0px #838368;
+  transition: all ease 0.5s;
+}
+
+.logo-icon {
+  transform: rotateX(0deg);
+  transition: transform 1.5s ease;
+}
+
+.logo-container:hover .logo-icon {
+  transform: rotateY(180deg);
+}
+
+.logo-container:hover .logo-text {
+  text-shadow: 1.25px 1.25px 0px var(--tertiary-element);
+  letter-spacing: 3px;
 }

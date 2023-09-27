@@ -8,7 +8,7 @@ class NavigationButton extends React.Component {
 
   render() {
     return (
-      <div className="p-2 hover:bg-primary-element hover:text-neutral-primary rounded">
+      <div className="navigation-button">
         <Link to={this.props.href}>{this.props.text.toUpperCase()}</Link>
       </div>
     );
