@@ -11,6 +11,7 @@
   /* Main Color palette*/
   --neutral-color-primary: #262625;
   --neutral-color-contrast: #f2f2f2;
+  --page-bg-color: #fbf8f8;
   --primary-element: #f2a922;
   --secondary-element: #d98825;
   --tertiary-element: #a67458;
@@ -25,6 +26,7 @@ body,
 html {
   height: 100%;
   overflow: auto;
+  background-color: var(--page-bg-color);
 }
 
 body {
@@ -47,8 +49,37 @@ code {
   background-color: var(--highlighted-element);
 }
 
+.text-neutral-color-contrast {
+  color: var(--neutral-color-contrast);
+}
+
+.text-primary-element {
+  color: var(--primary-element);
+}
+
+.border-neutral-color-contrast {
+  border: 3px var(--neutral-color-contrast) solid;
+}
+
+.hover\:border-primary-element:hover {
+  border-color: var(--primary-element);
+}
+
+.text-shadow-neutral-color-primary {
+  text-shadow: 1px 1px 1px var(--neutral-color-primary),
+    -1px -1px 1px var(--neutral-color-primary);
+}
+
+.text-shadow-neutral-color-primary-title {
+  text-shadow: -3px 1px 0px var(--neutral-color-primary);
+}
+
 .hover\:text-neutral-primary:hover {
   color: var(--neutral-color-primary);
+}
+
+.hover\:text-primary-element:hover {
+  color: var(--primary-element);
 }
 
 .hover\:bg-primary-element:hover {

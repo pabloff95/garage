@@ -8,11 +8,11 @@ class ServiceIcon extends React.Component {
 
   render() {
     return (
-      <div className="flex flex-row gap-3 items-center text-zinc-800">
-        <div className="h-10 w-10 bg-highlighted-element rounded-full flex justify-center items-center">
-          <FaIcon icon={this.props.icon} className="h-[65%] w-[65%]" />
-        </div>
-        <span className="text-lg font-sans ">{this.props.iconText}</span>
+      <div className="flex flex-col gap-3 items-center text-zinc-800">
+        <FaIcon icon={this.props.icon} className="h-11" />
+        <span className="text-lg font-sans font-semibold">
+          {this.props.iconText}
+        </span>
       </div>
     );
   }

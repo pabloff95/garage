@@ -1,10 +1,10 @@
 import React from "react";
-import PageTitle from "../components/page-title";
 import PageSubitle from "../components/page-subtitle";
 import ServiceIcon from "../components/pages/home/service-icon";
 import ReviewCard from "../components/pages/home/review-card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
 import * as reviews from "../data/reviews.json";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   constructor(props) {
@@ -109,18 +109,36 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="ml-5 w-[95%]">
-        <section className="p-3 flex flex-col gap-3">
-          <PageTitle text="Motec SL: motor y tecnología"></PageTitle>
-          <div className="flex flex-row gap-3 grow">
-            <div>
-              <img
-                className="w-[95%]"
-                src="/images/pages/home/title-picture.png"
-                alt="Instalaciones de talleres Motec"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-2 w-1/4">
+      <div>
+        <section className="relative w-full">
+          <div className="h-full w-fit z-10 absolute left-[15%] top-[25%] flex flex-col gap-2">
+            <h1 className="text-neutral-color-contrast text-4xl tracking-wide text-shadow-neutral-color-primary">
+              Taller mecánico
+            </h1>
+            <h2 className="text-primary-element text-8xl font-bold tracking-wide text-shadow-neutral-color-primary-title">
+              MOTEC
+            </h2>
+            <h3 className="text-neutral-color-contrast text-3xl text-shadow-neutral-color-primary">
+              Servicios de mantenimiento y reparación para tu vehículo
+            </h3>
+            <div className="h-1 w-full bg-[#f2f2f2] mt-2 mb-14 rounded"></div>
+            <Link
+              className="text-neutral-color-contrast border-neutral-color-contrast hover:border-primary-element hover:text-primary-element transition-all duration-200 w-fit p-3 rounded font-bold tracking-wider"
+              to="contact"
+            >
+              CONTACTANOS
+            </Link>
+          </div>
+          <img
+            className="w-full grayscale opacity-90"
+            src="/images/pages/home/home-header.jpg"
+            alt="Instalaciones de talleres Motec"
+          />
+          <div className="w-full px-[15%] py-5 bg-[#e2e2e2a4] flex flex-col gap-10">
+            <h4 className="w-full font-bold text-3xl text-center">
+              Nuestros servicios
+            </h4>
+            <div className="w-full h-full flex flex-row justify-between">
               <ServiceIcon icon="car" iconText="Mecánica" />
               <ServiceIcon icon="oil-can" iconText="Cambio de aceite" />
               <ServiceIcon
@@ -132,6 +150,7 @@ class Home extends React.Component {
               <ServiceIcon icon="plus" iconText="Y mas!" />
             </div>
           </div>
+          <div className="w-full h-16 bg-gradient-to-b from-[#e2e2e2a4] to-[#fbf8f8]"></div>
         </section>
         <section className="p-3">
           <PageSubitle text="Taller de reparación de automóviles en Astillero (Santander)" />
