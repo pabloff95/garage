@@ -12,8 +12,10 @@ class Logo extends React.Component {
       <div>
         <Link to="/" className="logo-container">
           {" "}
-          <FaIcon icon="screwdriver-wrench" className="logo-icon" />
-          <span className="logo-text">MOTEC</span>
+          <span className="flex flex-row align-center items-center">
+            <span className="logo-text-first">TALLERES</span>
+            <span className="logo-text">MOTEC</span>
+          </span>
         </Link>
       </div>
     );

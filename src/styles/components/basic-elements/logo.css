@@ -8,29 +8,31 @@
   align-items: center;
   justify-content: left;
 }
-.logo-text {
-  padding: 0.5rem;
 
-  font-family: Arial, sans-serif;
-  font-size: inherit;
-  font-weight: bold;
-  color: var(--neutral-color-contrast);
+.logo-container span {
+  font-size: 1rem;
+  font-family: "Rubik Mono One", Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 1.25px 1.25px 0px #838368;
+  letter-spacing: 1px;
+}
+
+.logo-text-first {
+  padding: 0.5rem 0;
+  color: var(--neutral-color-contrast);
+  transition: all ease 0.75s;
+}
+
+.logo-text {
+  padding: 0.5rem 0;
+  color: var(--primary-element);
   transition: all ease 0.5s;
 }
 
-.logo-icon {
-  transform: rotateX(0deg);
-  transition: transform 1.5s ease;
-}
-
-.logo-container:hover .logo-icon {
-  transform: rotateY(180deg);
+.logo-container:hover .logo-text-first {
+  transform: rotateX(360deg);
+  color: var(--primary-element);
 }
 
 .logo-container:hover .logo-text {
-  text-shadow: 1.25px 1.25px 0px var(--tertiary-element);
-  letter-spacing: 3px;
+  color: var(--neutral-color-contrast);
 }

@@ -110,32 +110,36 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <section className="relative w-full">
-          <div className="h-full w-fit z-10 absolute left-[15%] top-[25%] flex flex-col gap-2">
-            <h1 className="text-neutral-color-contrast text-4xl tracking-wide text-shadow-neutral-color-primary">
-              Taller mecánico
-            </h1>
-            <h2 className="text-primary-element text-8xl font-bold tracking-wide text-shadow-neutral-color-primary-title">
-              MOTEC
-            </h2>
-            <h3 className="text-neutral-color-contrast text-3xl text-shadow-neutral-color-primary">
-              Servicios de mantenimiento y reparación para tu vehículo
-            </h3>
-            <div className="h-1 w-full bg-[#f2f2f2] mt-2 mb-14 rounded"></div>
-            <Link
-              className="text-neutral-color-contrast border-neutral-color-contrast hover:border-primary-element hover:text-primary-element transition-all duration-200 w-fit p-3 rounded font-bold tracking-wider"
-              to="contact"
-            >
-              CONTACTANOS
-            </Link>
+        <section className="w-full">
+          <div className="w-full h-fit relative">
+            <div className="h-fit w-fit z-10 absolute left-[15%] top-[20%] flex flex-col gap-2">
+              <h1 className="text-neutral-color-contrast text-4xl tracking-wide text-shadow-neutral-color-primary">
+                Taller mecánico
+              </h1>
+              <h2 className="font-rubik-mono-one text-primary-element text-8xl tracking-wide text-shadow-neutral-color-primary-title">
+                MOTEC
+              </h2>
+              <h3 className="text-neutral-color-contrast text-3xl text-shadow-neutral-color-primary">
+                Servicios de mantenimiento y reparación para tu vehículo
+              </h3>
+              <div className="h-1 w-full bg-[#f2f2f2] mt-2 mb-14 rounded"></div>
+              <Link
+                className="text-neutral-color-contrast border-neutral-color-contrast hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-tertiary-element transition-all duration-200 w-fit p-3 rounded font-bold tracking-wider"
+                to="contact"
+              >
+                CONTACTANOS
+              </Link>
+            </div>
+            <img
+              className="w-full grayscale opacity-90"
+              src="/images/pages/home/home-header.jpg"
+              alt="Instalaciones de talleres Motec"
+            />
           </div>
-          <img
-            className="w-full grayscale opacity-90"
-            src="/images/pages/home/home-header.jpg"
-            alt="Instalaciones de talleres Motec"
-          />
-          <div className="w-full px-[15%] py-5 bg-[#e2e2e2a4] flex flex-col gap-10">
-            <h4 className="w-full font-bold text-3xl text-center">
+        </section>
+        <section className="mb-10">
+          <div className="p-3 w-full px-[15%] py-5 bg-[#e2e2e2a4] flex flex-col gap-10">
+            <h4 className="w-full font-bold text-3xl text-center my-3">
               Nuestros servicios
             </h4>
             <div className="w-full h-full flex flex-row justify-between">
@@ -150,29 +154,38 @@ class Home extends React.Component {
               <ServiceIcon icon="plus" iconText="Y mas!" />
             </div>
           </div>
-          <div className="w-full h-16 bg-gradient-to-b from-[#e2e2e2a4] to-[#fbf8f8]"></div>
-        </section>
-        <section className="p-3">
-          <PageSubitle text="Taller de reparación de automóviles en Astillero (Santander)" />
-          <p>
-            En nuestro taller de coches, ofrecemos servicios de mantenimiento y
-            reparación de alta calidad. Nuestro equipo de mecánicos se
-            enorgullece de mantener tus vehículos en óptimas condiciones y
-            brindar soluciones confiables para tus necesidades automotrices.
+          <div className="p-3 w-full h-4 bg-gradient-to-b from-[#e2e2e2a4] to-[#fbf8f8]"></div>
+          <p className="w-80% mx-[10%] text-lg px-3">
+            En nuestro taller ofrecemos una amplia gama de servicios, desde
+            cambios de aceite y frenos hasta reparaciones de motor y
+            transmisión, para asegurarnos de que tu vehículo funcione de manera
+            segura y eficiente en todo momento.
+            <br />
+            <br />
+            Utilizamos tecnología de vanguardia y piezas de alta calidad para
+            garantizar resultados duraderos. Nuestros mecánicos se enorgullecen
+            de mantener tus vehículos en óptimas condiciones y brindar
+            soluciones confiables para todas tus necesidades.
           </p>
-          <br />
-          <p>
+        </section>
+        <section className="my-5 p-3">
+          <h4 className="w-full font-bold text-3xl text-center my-3">
+            Encuentranos en Astillero (Santander)
+          </h4>
+          <p className="w-80% mx-[10%] text-lg p-3">
             ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de Morero,
             parcela 2-11 nave nº2, Guarnizo el Astillero:
           </p>
         </section>
         <section className="flex flex-col p-3 justify-center">
-          <PageSubitle text="La opinion de nuestros clientes" />
-          <p>
-            Tu satisfacción es nuestra prioridad, y nos enorgullecemos de
-            ofrecer servicios de alta calidad a precios competitivos. Descubre
-            por qué somos la elección preferida de nuestros clientes cuando se
-            trata de cuidar sus vehículos:
+          <h4 className="w-full font-bold text-3xl text-center  my-3">
+            La opinion de nuestros clientes
+          </h4>
+          <p className="w-80% mx-[10%] text-lg p-3">
+            Tu satisfacción es nuestra prioridad. En talleres Motec nos
+            enorgullecemos de ofrecer servicios de alta calidad a precios
+            competitivos. Descubre por qué somos la elección preferida de
+            nuestros clientes cuando se trata de cuidar sus vehículos:
           </p>
           <HorizontalScrollContainer
             key={this.state.itemsPerSlide}
