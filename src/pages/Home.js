@@ -1,10 +1,10 @@
 import React from "react";
-import PageSubitle from "../components/page-subtitle";
 import ServiceIcon from "../components/pages/home/service-icon";
 import ReviewCard from "../components/pages/home/review-card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
 import * as reviews from "../data/reviews.json";
 import { Link } from "react-router-dom";
+import GarageMap from "../components/garage-map";
 
 class Home extends React.Component {
   constructor(props) {
@@ -176,6 +176,13 @@ class Home extends React.Component {
             ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de Morero,
             parcela 2-11 nave nº2, Guarnizo el Astillero:
           </p>
+          <div className="w-full text-center">
+            <GarageMap
+              mapClasses="w-1/2 h-96 m-auto"
+              zoom="13"
+              showLink={true}
+            />
+          </div>
         </section>
         <section className="flex flex-col p-3 justify-center">
           <h4 className="w-full font-bold text-3xl text-center  my-3">
