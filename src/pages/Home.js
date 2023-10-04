@@ -139,9 +139,9 @@ class Home extends React.Component {
         </section>
         <section className="mb-10">
           <div className="p-3 w-full px-[15%] py-5 bg-[#e2e2e2a4] flex flex-col gap-10">
-            <h4 className="w-full font-bold text-3xl text-center my-3">
+            <h1 className="w-full font-bold text-3xl text-center my-3">
               Nuestros servicios
-            </h4>
+            </h1>
             <div className="w-full h-full flex flex-row justify-between">
               <ServiceIcon icon="car" iconText="Mecánica" />
               <ServiceIcon icon="oil-can" iconText="Cambio de aceite" />
@@ -169,9 +169,9 @@ class Home extends React.Component {
           </p>
         </section>
         <section className="my-5 p-3">
-          <h4 className="w-full font-bold text-3xl text-center my-3">
+          <h1 className="w-full font-bold text-3xl text-center my-3">
             Encuentranos en Astillero (Santander)
-          </h4>
+          </h1>
           <p className="w-80% mx-[10%] text-lg p-3">
             ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de Morero,
             parcela 2-11 nave nº2, Guarnizo el Astillero:
@@ -185,9 +185,9 @@ class Home extends React.Component {
           </div>
         </section>
         <section className="flex flex-col p-3 justify-center">
-          <h4 className="w-full font-bold text-3xl text-center  my-3">
+          <h1 className="w-full font-bold text-3xl text-center  my-3">
             La opinion de nuestros clientes
-          </h4>
+          </h1>
           <p className="w-80% mx-[10%] text-lg p-3">
             Tu satisfacción es nuestra prioridad. En talleres Motec nos
             enorgullecemos de ofrecer servicios de alta calidad a precios

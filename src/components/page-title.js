@@ -6,7 +6,11 @@ class PageTitle extends React.Component {
   }
 
   render() {
-    return <h1 className="text-2xl font-bold">{this.props.text}</h1>;
+    return (
+      <h1 className={`${this.props.className} text-3xl font-bold uppercase`}>
+        {this.props.text}
+      </h1>
+    );
   }
 }
 
