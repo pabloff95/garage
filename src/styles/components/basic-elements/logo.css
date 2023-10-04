@@ -1,0 +1,38 @@
+.logo-container {
+  min-width: 10rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.logo-container span {
+  font-size: 1rem;
+  font-family: "Rubik Mono One", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo-text-first {
+  padding: 0.5rem 0;
+  color: var(--neutral-color-contrast);
+  transition: all ease 0.75s;
+}
+
+.logo-text {
+  padding: 0.5rem 0;
+  color: var(--primary-element);
+  transition: all ease 0.5s;
+}
+
+.logo-container:hover .logo-text-first {
+  transform: rotateX(360deg);
+  color: var(--primary-element);
+}
+
+.logo-container:hover .logo-text {
+  color: var(--neutral-color-contrast);
+}

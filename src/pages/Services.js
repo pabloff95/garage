@@ -1,10 +1,17 @@
 import React from "react";
+import PageTitle from "../components/page-title";
 
 class Services extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
-        <h1>Services!</h1>
+        <section>
+          <PageTitle text="Servicios"></PageTitle>
+        </section>
       </div>
     );
   }
