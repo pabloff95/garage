@@ -2,11 +2,15 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 // Import all icons from https://fontawesome.com
 const iconList = Object.keys(Icons)
   .filter((key) => key !== "fas" && key !== "prefix")
   .map((icon) => Icons[icon]);
+
+// Brand icons belong to a different module. Add only those used in the app
+iconList.push(faFacebook);
 
 library.add(...iconList);
 

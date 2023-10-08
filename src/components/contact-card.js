@@ -12,7 +12,17 @@ class ContactCard extends React.Component {
         <div className="bg-gray-300 h-44 rounded-full p-8">
           <FaIcon icon={this.props.icon} className="h-full" />
         </div>
-        <p className="font-bold text-xl">{this.props.contactDetails}</p>
+        {this.props.url ? (
+          <a
+            href={this.props.url}
+            target="_blank"
+            className="text-link-color font-bold text-xl"
+          >
+            {this.props.contactDetails}
+          </a>
+        ) : (
+          <p className="font-bold text-xl">{this.props.contactDetails}</p>
+        )}
       </div>
     );
   }

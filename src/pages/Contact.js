@@ -19,6 +19,11 @@ class Contact extends React.Component {
           <div className="w-80% mx-[10%] flex flex-row justify-evenly">
             <ContactCard icon="phone" contactDetails="942 566 299" />
             <ContactCard icon="envelope" contactDetails="info@motec.es" />
+            <ContactCard
+              icon="fa-brands fa-facebook"
+              url="https://www.facebook.com/MORERONAVE2"
+              contactDetails="Motec"
+            />
           </div>
         </section>
         <section className="my-5 p-3">
