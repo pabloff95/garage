@@ -6,23 +6,54 @@ class ContactCard extends React.Component {
     super(props);
   }
 
+  copyContact = () => {
+    navigator.clipboard.writeText(this.props.contactDetails).catch((err) => {
+      console.error("Unable to copy text: ", err);
+    });
+  };
+
   render() {
-    return (
-      <div className="flex flex-col gap-5 items-center">
-        <div className="bg-gray-300 h-44 rounded-full p-8">
+    // Define container tailwind classes
+    const containerClassList =
+      "flex flex-col gap-2 items-center border shadow-neutral-color-gray p-4 rounded-lg min-w-[15vw] hover:cursor-pointer hover:shadow-primary-element hover:border-primary-element";
+
+    // Define card content elements
+    const contactCardContent = (
+      <>
+        <div className="p-4 h-24">
           <FaIcon icon={this.props.icon} className="h-full" />
         </div>
-        {this.props.url ? (
-          <a
-            href={this.props.url}
-            target="_blank"
-            className="text-link-color font-bold text-xl"
-          >
-            {this.props.contactDetails}
-          </a>
-        ) : (
-          <p className="font-bold text-xl">{this.props.contactDetails}</p>
+        <p className="text-md font-semibold text-link-color tracking-wider">
+          {this.props.message.toUpperCase()}
+        </p>
+        {this.props.contactDetails && (
+          <p className="text-2xl">{this.props.contactDetails}</p>
         )}
+      </>
+    );
+
+    if (this.props.url) {
+      return (
+        <a href={this.props.url} target="_blank" className={containerClassList}>
+          {contactCardContent}
+        </a>
+      );
+    }
+
+    if (this.props.isEmail) {
+      return (
+        <a
+          href={`mailto:${this.props.contactDetails}`}
+          className={containerClassList}
+        >
+          {contactCardContent}
+        </a>
+      );
+    }
+
+    return (
+      <div className={containerClassList} onClick={() => this.copyContact()}>
+        {contactCardContent}
       </div>
     );
   }
