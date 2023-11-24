@@ -1,5 +1,5 @@
 import React from "react";
-import FaIcon from "./basic-elements/fa-icon";
+import FaIcon from "../../basic-elements/fa-icon";
 
 class ContactCard extends React.Component {
   constructor(props) {

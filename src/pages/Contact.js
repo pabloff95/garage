@@ -1,6 +1,7 @@
 import React from "react";
 import GarageMap from "../components/garage-map";
-import ContactCard from "../components/contact-card";
+import ContactCard from "../components/pages/contact/contact-card";
+import ContactForm from "../components/pages/contact/contact-form";
 
 class Contact extends React.Component {
   constructor(props) {
@@ -36,6 +37,16 @@ class Contact extends React.Component {
               url="https://www.facebook.com/MORERONAVE2"
             />
           </div>
+        </section>
+        <section className="my-5 p-3">
+          <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
+            Formulario de contacto
+          </h1>
+          <p className="w-80% mx-[10%] text-lg my-3">
+            A través del siguiente formulario, también puedes ponerte en
+            contacto con nosotros:
+          </p>
+          <ContactForm />
         </section>
         <section className="my-5 p-3">
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
