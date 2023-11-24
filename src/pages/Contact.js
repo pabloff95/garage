@@ -12,25 +12,27 @@ class Contact extends React.Component {
       <div>
         <section className="my-5 p-3 w-full">
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
-            Contáctanos
+            Ponte en contacto con nosotros
           </h1>
         </section>
         <section className="my-5 p-3 w-full">
           <div className="w-80% mx-[10%] flex flex-row justify-evenly">
             <ContactCard
               icon="phone"
-              message="Llámanos"
+              message="Llamanos"
               contactDetails="942 566 299"
+              displayCopyButton={true}
             />
             <ContactCard
               icon="envelope"
-              message="Escríbenos"
+              message="Escribenos"
               contactDetails="info@motec.es"
               isEmail={true}
+              displayCopyButton={true}
             />
             <ContactCard
               icon="fa-brands fa-facebook"
-              message="Háblanos"
+              message="Hablanos"
               url="https://www.facebook.com/MORERONAVE2"
             />
           </div>
