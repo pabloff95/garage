@@ -42,7 +42,7 @@ class Contact extends React.Component {
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
             Formulario de contacto
           </h1>
-          <p className="w-80% mx-[10%] text-lg my-3">
+          <p className="w-80% mx-[10%] text-lg mb-3">
             A través del siguiente formulario, también puedes ponerte en
             contacto con nosotros:
           </p>

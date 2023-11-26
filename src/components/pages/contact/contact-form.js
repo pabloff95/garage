@@ -3,46 +3,129 @@ import React from "react";
 export default class ContactForm extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      focusedElement: "",
+    };
   }
+
+  onFocusElement = (element) => {
+    this.setState({
+      focusedElement: element,
+    });
+  };
+
+  onBlur = () => {
+    this.setState({
+      focusedElement: "",
+    });
+  };
+
+  getPlaceHolder = (element, placeholder) => {
+    return element === this.state.focusedElement ? "" : placeholder;
+  };
+
+  getLabelDisplayClass = (element) => {
+    return element === this.state.focusedElement ? "" : "hidden";
+  };
+
+  getTextAreaHeight = () => {
+    return this.state.focusedElement === "message" ? "h-56" : "h-10";
+  };
 
   render() {
     return (
-      <div className="w-80% mx-[10%] border-neutral-color-primary flex flex-col justify-center rounded p-2">
-        <form className="flex flex-col gap-2">
-          <section className="flex flex-row gap-2">
-            <label for="submit-button">Correo electrónico *</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Ej.: alberto@gmail.com"
-              required
-            ></input>
+      <div className="w-80% mx-[10%] flex flex-col justify-center p-2">
+        <form className="flex flex-col gap-0.5">
+          <section className="flex flex-row gap-4 w-full">
+            <div className="w-1/2">
+              <div className="h-6">
+                <label
+                  htmlFor="submit-button"
+                  className={`font-semibold text-xs ${this.getLabelDisplayClass(
+                    "email"
+                  )}`}
+                >
+                  Correo electrónico *
+                </label>
+              </div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder={this.getPlaceHolder(
+                  "email",
+                  "Correo electrónico *"
+                )}
+                className="w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
+                onFocus={() => this.onFocusElement("email")}
+                onBlur={() => this.onBlur()}
+                required
+              ></input>
+            </div>
+            <div className="w-1/2">
+              <div className="h-6">
+                <label
+                  htmlFor="submit-button"
+                  className={`font-semibold text-xs ${this.getLabelDisplayClass(
+                    "name"
+                  )}`}
+                >
+                  Nombre *
+                </label>
+              </div>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder={this.getPlaceHolder("name", "Nombre *")}
+                className="w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
+                onFocus={() => this.onFocusElement("name")}
+                onBlur={() => this.onBlur()}
+                required
+              ></input>
+            </div>
           </section>
-          <section className="flex flex-row gap-2">
-            <label for="submit-button">Nombre</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Ej.: Alberto García"
-              required
-            ></input>
-          </section>
-          <section className="flex flex-row gap-2">
-            <label for="submit-button">Motivo</label>
+          <section className="flex flex-col gap-2">
+            <div className="h-4">
+              <label
+                htmlFor="submit-button"
+                className={`font-semibold text-xs ${this.getLabelDisplayClass(
+                  "reason"
+                )}`}
+              >
+                Asunto
+              </label>
+            </div>
             <input
               type="text"
               id="reason"
               name="reason"
-              placeholder="Ej.: Problemas con la dirección"
+              placeholder={this.getPlaceHolder("reason", "Asunto")}
+              onFocus={() => this.onFocusElement("reason")}
+              onBlur={() => this.onBlur()}
+              className="w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
             ></input>
           </section>
           <section className="flex flex-col gap-2">
-            <label for="submit-button">Mensaje</label>
-            <textarea placeholder="Escribe tu mensaje aqui..."></textarea>
+            <div className="h-4">
+              <label
+                htmlFor="submit-button"
+                className={`font-semibold text-xs ${this.getLabelDisplayClass(
+                  "message"
+                )}`}
+              >
+                Mensaje
+              </label>
+            </div>
+            <textarea
+              placeholder={this.getPlaceHolder("message", "Mensaje")}
+              className={`${this.getTextAreaHeight()} w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t`}
+              onFocus={() => this.onFocusElement("message")}
+              onBlur={() => this.onBlur()}
+            ></textarea>
           </section>
-          <section className="m-auto">
+          <section className="mx-auto mt-2">
             <input
               type="submit"
               value="Enviar"
