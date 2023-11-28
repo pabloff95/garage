@@ -41,7 +41,7 @@ export default class ContactForm extends React.Component {
             <div className="w-1/2">
               <div className="h-6">
                 <label
-                  htmlFor="submit-button"
+                  htmlFor="email"
                   className={`font-semibold text-xs ${this.getLabelDisplayClass(
                     "email"
                   )}`}
@@ -66,7 +66,7 @@ export default class ContactForm extends React.Component {
             <div className="w-1/2">
               <div className="h-6">
                 <label
-                  htmlFor="submit-button"
+                  htmlFor="name"
                   className={`font-semibold text-xs ${this.getLabelDisplayClass(
                     "name"
                   )}`}
@@ -89,7 +89,7 @@ export default class ContactForm extends React.Component {
           <section className="flex flex-col gap-2">
             <div className="h-4">
               <label
-                htmlFor="submit-button"
+                htmlFor="reason"
                 className={`font-semibold text-xs ${this.getLabelDisplayClass(
                   "reason"
                 )}`}
@@ -110,7 +110,7 @@ export default class ContactForm extends React.Component {
           <section className="flex flex-col gap-2">
             <div className="h-4">
               <label
-                htmlFor="submit-button"
+                htmlFor="message"
                 className={`font-semibold text-xs ${this.getLabelDisplayClass(
                   "message"
                 )}`}
@@ -119,6 +119,7 @@ export default class ContactForm extends React.Component {
               </label>
             </div>
             <textarea
+              id="message"
               placeholder={this.getPlaceHolder("message", "Mensaje")}
               className={`${this.getTextAreaHeight()} w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t`}
               onFocus={() => this.onFocusElement("message")}
