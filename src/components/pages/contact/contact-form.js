@@ -30,7 +30,7 @@ export default class ContactForm extends React.Component {
   };
 
   getTextAreaHeight = () => {
-    return this.state.focusedElement === "message" ? "h-56" : "h-10";
+    return this.state.focusedElement === "message" ? "h-56" : "min-h-fit";
   };
 
   render() {
@@ -123,6 +123,7 @@ export default class ContactForm extends React.Component {
               className={`${this.getTextAreaHeight()} w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t`}
               onFocus={() => this.onFocusElement("message")}
               onBlur={() => this.onBlur()}
+              rows={this.state.focusedElement === "message" ? "" : 1}
             ></textarea>
           </section>
           <section className="mx-auto mt-2">
