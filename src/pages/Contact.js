@@ -22,19 +22,23 @@ class Contact extends React.Component {
               icon="phone"
               message="Llamanos"
               contactDetails="942 566 299"
+              contactInformation="teléfono"
               displayCopyButton={true}
             />
             <ContactCard
               icon="envelope"
               message="Escribenos"
               contactDetails="info@motec.es"
+              contactInformation="correo electrónico"
               isEmail={true}
               displayCopyButton={true}
+              redirectTooltip="Abrir correo electrónico"
             />
             <ContactCard
               icon="fa-brands fa-facebook"
               message="Hablanos"
               url="https://www.facebook.com/MORERONAVE2"
+              redirectTooltip="Abrir página de Facebook"
             />
           </div>
         </section>

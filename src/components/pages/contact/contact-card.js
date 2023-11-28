@@ -1,9 +1,14 @@
 import React from "react";
 import FaIcon from "../../basic-elements/fa-icon";
+import { Tooltip } from "react-tooltip";
 
 class ContactCard extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isCopyButtonHovered: false,
+    };
   }
 
   copyContact = () => {
@@ -41,8 +46,21 @@ class ContactCard extends React.Component {
                 e.preventDefault(); // Prevent opening a tag link
                 this.copyContact();
               }}
+              onMouseEnter={() => {
+                this.setState({
+                  isCopyButtonHovered: true,
+                });
+              }}
+              onMouseLeave={() => {
+                this.setState({
+                  isCopyButtonHovered: false,
+                });
+              }}
+              data-tooltip-id={`copy-button-tooltip-${this.props.icon}`}
+              data-tooltip-content={`Copiar ${this.props.contactInformation}`}
             >
               <FaIcon icon={"copy"} />
+              <Tooltip id={`copy-button-tooltip-${this.props.icon}`} />
             </div>
           )}
         </span>
@@ -56,8 +74,13 @@ class ContactCard extends React.Component {
           target="_blank"
           rel="noreferrer"
           className={`${containerClassList} ${containerHoverClassList}`}
+          data-tooltip-id={`on-click-link-tooltip-${this.props.icon}`}
+          data-tooltip-content={this.props.redirectTooltip}
         >
           {contactCardContent}
+          {!this.state.isCopyButtonHovered && (
+            <Tooltip id={`on-click-link-tooltip-${this.props.icon}`} />
+          )}
         </a>
       );
     }
@@ -67,8 +90,13 @@ class ContactCard extends React.Component {
         <a
           href={`mailto:${this.props.contactDetails}`}
           className={`${containerClassList} ${containerHoverClassList}`}
+          data-tooltip-id={`on-click-link-tooltip-${this.props.icon}`}
+          data-tooltip-content={this.props.redirectTooltip}
         >
           {contactCardContent}
+          {!this.state.isCopyButtonHovered && (
+            <Tooltip id={`on-click-link-tooltip-${this.props.icon}`} />
+          )}
         </a>
       );
     }
