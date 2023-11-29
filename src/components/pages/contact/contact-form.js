@@ -1,4 +1,5 @@
 import React from "react";
+import { Tooltip } from "react-tooltip";
 
 export default class ContactForm extends React.Component {
   constructor(props) {
@@ -50,7 +51,7 @@ export default class ContactForm extends React.Component {
                 </label>
               </div>
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 placeholder={this.getPlaceHolder(
@@ -132,7 +133,10 @@ export default class ContactForm extends React.Component {
               type="submit"
               value="Enviar"
               className="border-neutral-color-primary hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-tertiary-element transition-all duration-200 w-fit py-3 px-12 rounded font-bold tracking-wider hover:cursor-pointer"
+              data-tooltip-id="submit-form-tooltip"
+              data-tooltip-content="Enviar correo electrónico"
             />
+            <Tooltip id="submit-form-tooltip" />
           </section>
         </form>
       </div>

@@ -5,6 +5,7 @@ import HorizontalScrollContainer from "../components/horizontal-scroll-container
 import * as reviews from "../data/reviews.json";
 import { Link } from "react-router-dom";
 import GarageMap from "../components/garage-map";
+import { Tooltip } from "react-tooltip";
 
 class Home extends React.Component {
   constructor(props) {
@@ -126,8 +127,12 @@ class Home extends React.Component {
               <Link
                 className="text-neutral-color-contrast border-neutral-color-contrast hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-tertiary-element transition-all duration-200 w-fit p-3 rounded font-bold tracking-wider"
                 to="contact"
+                data-tooltip-content="Abrir página de contacto"
+                data-tooltip-id="to-contact-link-tooltip"
+                data-tooltip-place="bottom"
               >
                 CONTACTANOS
+                <Tooltip id="to-contact-link-tooltip" />
               </Link>
             </div>
             <img
@@ -199,6 +204,7 @@ class Home extends React.Component {
             itemsPerSlide={this.state.itemsPerSlide}
             className="w-full py-5 my-5 horizontal-scroll-container"
             onSlideChange={() => this.updateReviewCardHeight(0)}
+            tooltipMessage="Abrir review en Google"
           >
             {this.getReviewCards()}
           </HorizontalScrollContainer>
