@@ -42,11 +42,6 @@ body {
   color: var(--neutral-color-primary);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 /* ---- Variable colors ---- */
 .bg-highlighted-element {
   background-color: var(--highlighted-element);

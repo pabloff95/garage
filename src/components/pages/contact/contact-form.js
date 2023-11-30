@@ -131,7 +131,7 @@ export default class ContactForm extends React.Component {
           <section className="mx-auto mt-2">
             <input
               type="submit"
-              value="Enviar"
+              value="ENVIAR"
               className="border-neutral-color-primary hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-tertiary-element transition-all duration-200 w-fit py-3 px-12 rounded font-bold tracking-wider hover:cursor-pointer"
               data-tooltip-id="submit-form-tooltip"
               data-tooltip-content="Enviar correo electrónico"

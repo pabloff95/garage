@@ -1,7 +1,7 @@
 import React from "react";
 import FaIcon from "../../basic-elements/fa-icon";
 import { Tooltip } from "react-tooltip";
-import Notification, { showSuccessNotification } from "../../notification";
+import CopyButton from "../../copy-button";
 
 class ContactCard extends React.Component {
   constructor(props) {
@@ -12,24 +12,14 @@ class ContactCard extends React.Component {
     };
   }
 
-  triggerCopiedValueNotification = (copiedValue) => {
+  getCopyNotificationMessage = () => {
+    const textToCopy = this.props.contactDetails.replaceAll(" ", "");
+
     const capitalizedName =
       this.props.contactInformation[0].toUpperCase() +
       this.props.contactInformation.slice(1);
 
-    showSuccessNotification(
-      `${capitalizedName} "${copiedValue}" copiado en el portapapeles`
-    );
-  };
-
-  copyContact = () => {
-    const textToCopy = this.props.contactDetails.replaceAll(" ", "");
-
-    navigator.clipboard.writeText(textToCopy).catch((err) => {
-      console.error("Unable to copy text: ", err);
-    });
-
-    this.triggerCopiedValueNotification(textToCopy);
+    return `${capitalizedName} "${textToCopy}" copiado en el portapapeles`;
   };
 
   render() {
@@ -53,29 +43,22 @@ class ContactCard extends React.Component {
             <span>{this.props.contactDetails}</span>
           )}
           {this.props.displayCopyButton && (
-            <div
-              className="hover:text-primary-element hover:cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault(); // Prevent opening a tag link
-                this.copyContact();
-              }}
-              onMouseEnter={() => {
+            <CopyButton
+              valueToCopy={this.props.contactDetails}
+              replaceEmptySpaces={true}
+              notificationMessage={this.getCopyNotificationMessage()}
+              tooltipMessage={`Copiar ${this.props.contactInformation}`}
+              onMouseEnter={() =>
                 this.setState({
                   isCopyButtonHovered: true,
-                });
-              }}
+                })
+              }
               onMouseLeave={() => {
                 this.setState({
                   isCopyButtonHovered: false,
                 });
               }}
-              data-tooltip-id={`copy-button-tooltip-${this.props.icon}`}
-              data-tooltip-content={`Copiar ${this.props.contactInformation}`}
-            >
-              <FaIcon icon={"copy"} />
-              <Tooltip id={`copy-button-tooltip-${this.props.icon}`} />
-              <Notification />
-            </div>
+            />
           )}
         </span>
       </>
