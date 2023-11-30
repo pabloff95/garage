@@ -1,7 +1,7 @@
 import React from "react";
 import FaIcon from "../../basic-elements/fa-icon";
 import { Tooltip } from "react-tooltip";
-import toast, { Toaster } from "react-hot-toast";
+import Notification, { showSuccessNotification } from "../../notification";
 
 class ContactCard extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class ContactCard extends React.Component {
       this.props.contactInformation[0].toUpperCase() +
       this.props.contactInformation.slice(1);
 
-    toast.success(
+    showSuccessNotification(
       `${capitalizedName} "${copiedValue}" copiado en el portapapeles`
     );
   };
@@ -74,18 +74,7 @@ class ContactCard extends React.Component {
             >
               <FaIcon icon={"copy"} />
               <Tooltip id={`copy-button-tooltip-${this.props.icon}`} />
-              <Toaster
-                position="bottom-center"
-                toastOptions={{
-                  style: {
-                    border: "1px solid var(--neutral-color-primary)",
-                    padding: "1rem",
-                    color: "var(--neutral-color-primary)",
-                    maxWidth: "fit-content",
-                  },
-                  duration: 1500,
-                }}
-              />
+              <Notification />
             </div>
           )}
         </span>

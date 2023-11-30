@@ -18,6 +18,7 @@
   --tertiary-element: #a67458;
   --highlighted-element: #fde047;
   --link-color: #139df2;
+  --confirmation-green-color: #49F054;
 
   /*Layout variables*/
   --layout-bg-color: var(--neutral-color-primary);
