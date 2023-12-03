@@ -18,7 +18,6 @@ class Notification extends React.Component {
             color: "var(--neutral-color-contrast)",
             maxWidth: this.props.useFixedWitdh ? "" : "fit-content",
           },
-          duration: this.props.duration ?? 2000,
           success: {
             iconTheme: {
               primary: "var(--confirmation-green-color)",
@@ -32,8 +31,20 @@ class Notification extends React.Component {
   }
 }
 
-export const showSuccessNotification = (message) => {
-  toast.success(message);
+export const showSuccessNotification = (message, duration = 0) => {
+  toast.success(message, {
+    duration: duration
+      ? duration
+      : parseInt(process.env.REACT_APP_NOTIFICATION_DURATION),
+  });
+};
+
+export const showLoadingNotification = (message, duration = 0) => {
+  toast.loading(message, {
+    duration: duration
+      ? duration
+      : parseInt(process.env.REACT_APP_NOTIFICATION_DURATION),
+  });
 };
 
 export default Notification;
