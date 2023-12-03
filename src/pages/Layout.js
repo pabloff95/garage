@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/main-layout/header";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/main-layout/footer";
+import Notification from "../components/notification";
 
 class Layout extends React.Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class Layout extends React.Component {
         <Header />
         <Outlet />
         <Footer />
+        <Notification />
+        {/* Notification component must only being added once, to prevent duplicates */}
       </div>
     );
   }

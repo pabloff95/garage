@@ -1,5 +1,5 @@
 import React from "react";
-import Notification, { showSuccessNotification } from "./notification";
+import { showSuccessNotification } from "./notification";
 import FaIcon from "./basic-elements/fa-icon";
 import { Tooltip } from "react-tooltip";
 
@@ -49,7 +49,6 @@ class CopyButton extends React.Component {
       >
         <FaIcon icon={"copy"} />
         <Tooltip id={`copy-button-tooltip-${uniqueId}`} />
-        <Notification />
       </div>
     );
   }
