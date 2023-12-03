@@ -21,14 +21,14 @@ class Contact extends React.Component {
             <ContactCard
               icon="phone"
               message="Llamanos"
-              contactDetails="942 566 299"
+              contactDetails={process.env.REACT_APP_COMPANY_TELEPHONE}
               contactInformation="teléfono"
               displayCopyButton={true}
             />
             <ContactCard
               icon="envelope"
               message="Escribenos"
-              contactDetails="info@motec.es"
+              contactDetails={process.env.REACT_APP_COMPANY_EMAIL}
               contactInformation="correo electrónico"
               isEmail={true}
               displayCopyButton={true}

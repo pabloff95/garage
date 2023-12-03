@@ -7,8 +7,8 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.telephone = "942566299";
-    this.email = "info@motec.es";
+    this.email = process.env.REACT_APP_COMPANY_EMAIL;
+    this.telephone = process.env.REACT_APP_COMPANY_TELEPHONE;
   }
 
   render() {
@@ -48,6 +48,7 @@ class Footer extends React.Component {
                 valueToCopy={this.telephone}
                 tooltipMessage="Copiar teléfono"
                 notificationMessage={`Teléfono "${this.telephone}" copiado en el portapapeles`}
+                replaceEmptySpaces={true}
               />
             </div>
             <div className="flex flex-row gap-1 items-center">
@@ -56,6 +57,7 @@ class Footer extends React.Component {
                 valueToCopy={this.email}
                 tooltipMessage="Copiar correo electrónico"
                 notificationMessage={`Correo electrónico "${this.email}" copiado en el portapapeles`}
+                replaceEmptySpaces={true}
               />
             </div>
           </div>
