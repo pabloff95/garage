@@ -13,6 +13,7 @@ export default class ContactForm extends React.Component {
     this.state = {
       focusedElement: "",
       isSubmitButtonDisabled: false,
+      isContactMissing: false,
     };
   }
 
@@ -66,7 +67,20 @@ export default class ContactForm extends React.Component {
 
   onSendEmail = (event) => {
     event.preventDefault();
+
+    // Check that one of the two contact fields (telephone / email) are filled
+    const telephoneField = document.querySelector("#telephone");
+    const emailField = document.querySelector("#email");
+
+    if (telephoneField.value.length === 0 && emailField.value.length === 0) {
+      this.setState({
+        isContactMissing: true,
+      });
+      return;
+    }
+
     this.setState({
+      isContactMissing: false,
       isSubmitButtonDisabled: true,
     });
 
@@ -103,7 +117,7 @@ export default class ContactForm extends React.Component {
           className="flex flex-col gap-0.5"
           onSubmit={(e) => this.onSendEmail(e)}
         >
-          <section className="flex flex-row gap-4 w-full">
+          <section className="w-full">
             <div className="w-1/2">
               <div className="h-6">
                 <label
@@ -126,6 +140,36 @@ export default class ContactForm extends React.Component {
                 required
               ></input>
             </div>
+          </section>
+          <section className="flex flex-row gap-4 w-full">
+            <div className="w-1/2">
+              <div className="h-6">
+                <label
+                  htmlFor="telephone"
+                  className={`${this.getLabelDisplayClass("telephone")} ${
+                    this.labelClasses
+                  }`}
+                >
+                  Teléfono
+                </label>
+              </div>
+              <input
+                type="tel"
+                id="telephone"
+                name="telephone"
+                placeholder={this.getPlaceHolder("telephone", "Teléfono")}
+                className={`w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
+                  this.state.isContactMissing ? "!border-red-500" : ""
+                } `}
+                onFocus={() => this.onFocusElement("telephone")}
+                onBlur={() => this.onBlur()}
+                pattern="[0-9]{9}"
+                maxLength={10}
+              ></input>
+            </div>
+            <div className="h-14 flex items-end">
+              <p className="h-fit">O</p>
+            </div>
             <div className="w-1/2">
               <div className="h-6">
                 <label
@@ -134,24 +178,29 @@ export default class ContactForm extends React.Component {
                     this.labelClasses
                   }`}
                 >
-                  Correo electrónico *
+                  Correo electrónico
                 </label>
               </div>
               <input
                 type="email"
                 id="email"
                 name="email_from"
-                placeholder={this.getPlaceHolder(
-                  "email",
-                  "Correo electrónico *"
-                )}
-                className="w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
+                placeholder={this.getPlaceHolder("email", "Correo electrónico")}
+                className={`w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
+                  this.state.isContactMissing ? "!border-red-500" : ""
+                }`}
                 onFocus={() => this.onFocusElement("email")}
                 onBlur={() => this.onBlur()}
-                required
               ></input>
             </div>
           </section>
+          {this.state.isContactMissing && (
+            <div>
+              <p className="text-red-500">
+                Introduzca al menos una forma de contacto
+              </p>
+            </div>
+          )}
           <section className="flex flex-col gap-2">
             <div className="h-4">
               <label
