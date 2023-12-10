@@ -16,6 +16,9 @@ export default class ContactForm extends React.Component {
     };
   }
 
+  labelClasses =
+    "font-semibold text-xs transition-all ease-in-out duration-300";
+
   onFocusElement = (element) => {
     this.setState({
       focusedElement: element,
@@ -33,11 +36,32 @@ export default class ContactForm extends React.Component {
   };
 
   getLabelDisplayClass = (element) => {
-    return element === this.state.focusedElement ? "" : "hidden";
+    return element === this.state.focusedElement ? "" : "text-transparent";
   };
 
   getTextAreaHeight = () => {
-    return this.state.focusedElement === "message" ? "h-56" : "min-h-fit";
+    const textAreaElement = document.querySelector("#message");
+    if (
+      textAreaElement?.value.length > 0 ||
+      this.state.focusedElement === "message"
+    ) {
+      return "h-56";
+    }
+
+    return "min-h-fit";
+  };
+
+  getTextAreaRows = () => {
+    const textAreaElement = document.querySelector("#message");
+
+    if (
+      textAreaElement?.value.length > 0 ||
+      this.state.focusedElement === "message"
+    ) {
+      return "";
+    }
+
+    return 1;
   };
 
   onSendEmail = (event) => {
@@ -84,9 +108,9 @@ export default class ContactForm extends React.Component {
               <div className="h-6">
                 <label
                   htmlFor="name"
-                  className={`font-semibold text-xs ${this.getLabelDisplayClass(
-                    "name"
-                  )}`}
+                  className={`${this.getLabelDisplayClass("name")} ${
+                    this.labelClasses
+                  }`}
                 >
                   Nombre *
                 </label>
@@ -106,9 +130,9 @@ export default class ContactForm extends React.Component {
               <div className="h-6">
                 <label
                   htmlFor="email"
-                  className={`font-semibold text-xs ${this.getLabelDisplayClass(
-                    "email"
-                  )}`}
+                  className={`${this.getLabelDisplayClass("email")} ${
+                    this.labelClasses
+                  }`}
                 >
                   Correo electrónico *
                 </label>
@@ -132,9 +156,9 @@ export default class ContactForm extends React.Component {
             <div className="h-4">
               <label
                 htmlFor="reason"
-                className={`font-semibold text-xs ${this.getLabelDisplayClass(
-                  "reason"
-                )}`}
+                className={`${this.getLabelDisplayClass("reason")} ${
+                  this.labelClasses
+                }`}
               >
                 Asunto
               </label>
@@ -153,9 +177,9 @@ export default class ContactForm extends React.Component {
             <div className="h-4">
               <label
                 htmlFor="message"
-                className={`font-semibold text-xs ${this.getLabelDisplayClass(
-                  "message"
-                )}`}
+                className={`${this.getLabelDisplayClass("message")} ${
+                  this.labelClasses
+                }`}
               >
                 Mensaje *
               </label>
@@ -167,7 +191,7 @@ export default class ContactForm extends React.Component {
               className={`${this.getTextAreaHeight()} w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t`}
               onFocus={() => this.onFocusElement("message")}
               onBlur={() => this.onBlur()}
-              rows={this.state.focusedElement === "message" ? "" : 1}
+              rows={this.getTextAreaRows()}
               required
             ></textarea>
           </section>
