@@ -1,10 +1,14 @@
 import React from "react";
 import FooterHeader from "./footer-header";
 import FaIcon from "../basic-elements/fa-icon";
+import CopyButton from "../copy-button";
 
 class Footer extends React.Component {
   constructor(props) {
     super(props);
+
+    this.email = process.env.REACT_APP_COMPANY_EMAIL;
+    this.telephone = process.env.REACT_APP_COMPANY_TELEPHONE;
   }
 
   render() {
@@ -38,8 +42,24 @@ class Footer extends React.Component {
         <section className="flex flex-col gap-1">
           <FooterHeader text="Contacto" icon="phone" />
           <div>
-            <p>942566299</p>
-            <p>info@motec.es</p>
+            <div className="flex flex-row gap-1 items-center">
+              <span>{this.telephone}</span>
+              <CopyButton
+                valueToCopy={this.telephone}
+                tooltipMessage="Copiar teléfono"
+                notificationMessage={`Teléfono "${this.telephone}" copiado en el portapapeles`}
+                replaceEmptySpaces={true}
+              />
+            </div>
+            <div className="flex flex-row gap-1 items-center">
+              <span>{this.email}</span>
+              <CopyButton
+                valueToCopy={this.email}
+                tooltipMessage="Copiar correo electrónico"
+                notificationMessage={`Correo electrónico "${this.email}" copiado en el portapapeles`}
+                replaceEmptySpaces={true}
+              />
+            </div>
           </div>
         </section>
       </footer>

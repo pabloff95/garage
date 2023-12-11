@@ -22,7 +22,7 @@ class Header extends React.Component {
         </div>
         <div className="mr-5 flex flex-row gap-2 justify-center items-center text-xs font-semibold">
           <FaIcon icon="phone"></FaIcon>
-          <span>942566299</span>
+          <span>{process.env.REACT_APP_COMPANY_TELEPHONE}</span>
         </div>
       </header>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Grid } from "@mui/material";
+import { Tooltip } from "react-tooltip";
 
 class HorizontalScrollContainer extends React.Component {
   constructor(props) {
@@ -55,8 +56,11 @@ class HorizontalScrollContainer extends React.Component {
                 xs={12 / this.max}
                 key={index}
                 className="flex justify-center"
+                data-tooltip-id={`scroll-item-card-tooltip-${slideIndex}`}
+                data-tooltip-content={this.props.tooltipMessage}
               >
                 {item}
+                <Tooltip id={`scroll-item-card-tooltip-${slideIndex}`} />
               </Grid>
             ))}
           </Grid>
