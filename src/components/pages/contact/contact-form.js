@@ -5,6 +5,7 @@ import {
   showLoadingNotification,
 } from "../../notification";
 import emailjs from "@emailjs/browser";
+import { showErrorNotification } from "../../notification";
 
 export default class ContactForm extends React.Component {
   constructor(props) {
@@ -76,6 +77,10 @@ export default class ContactForm extends React.Component {
       this.setState({
         isContactMissing: true,
       });
+      showErrorNotification(
+        "Introduzca su teléfono y/o su correo electrónico",
+        5000
+      );
       return;
     }
 
@@ -112,12 +117,18 @@ export default class ContactForm extends React.Component {
 
   render() {
     return (
-      <div className="w-80% mx-[10%] flex flex-col justify-center p-2">
+      <div
+        className={`w-80% mx-[10%] flex flex-col justify-center py-8 px-6 rounded-lg mt-6 ${
+          this.state.focusedElement !== ""
+            ? "shadow-primary-element"
+            : "shadow-neutral-color-gray"
+        }`}
+      >
         <form
           className="flex flex-col gap-0.5"
           onSubmit={(e) => this.onSendEmail(e)}
         >
-          <section className="w-full">
+          <section className="flex flex-row gap-4 w-full">
             <div className="w-1/2">
               <div className="h-6">
                 <label
@@ -140,6 +151,8 @@ export default class ContactForm extends React.Component {
                 required
               ></input>
             </div>
+            <div></div>
+            <div className="w-1/2"></div>
           </section>
           <section className="flex flex-row gap-4 w-full">
             <div className="w-1/2">

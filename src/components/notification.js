@@ -47,4 +47,12 @@ export const showLoadingNotification = (message, duration = 0) => {
   });
 };
 
+export const showErrorNotification = (message, duration = 0) => {
+  toast.error(message, {
+    duration: duration
+      ? duration
+      : parseInt(process.env.REACT_APP_NOTIFICATION_DURATION),
+  });
+};
+
 export default Notification;
