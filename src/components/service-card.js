@@ -26,8 +26,8 @@ class ServiceCard extends React.Component {
         >
           <img
             className="w-full hover:picture"
-            src="/images/pages/services/car.png"
-            alt="Logo de coche"
+            src={this.props.img?.src}
+            alt={this.props.img?.alt}
           />
         </div>
       </section>
