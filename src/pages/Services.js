@@ -9,12 +9,22 @@ class Services extends React.Component {
   render() {
     return (
       <div>
-        <section className="my-5 p-3 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl">
+        <section className="my-5 py-3 w-full">
+          <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
             Nuestros servicios
           </h1>
         </section>
-        <section className="my-4 w-full">
+        <section className="my-5 w-full">
+          <div className="w-80% mx-[10%]">
+            <p>
+              Descubre nuestros servicios especializados, nuestro equipo
+              altamente capacitado se esfuerza por brindar soluciones eficientes
+              y cuidados de calidad. Explora las opciones a continuación para
+              mantener tu automóvil en las mejores condiciones posibles.
+            </p>
+          </div>
+        </section>
+        <section className="my-10 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-6">
             <ServiceCard
               title="Mecánica"

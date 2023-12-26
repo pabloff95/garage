@@ -37,14 +37,16 @@ class ServiceCard extends React.Component {
   getInformationSection = () => {
     return (
       <section
-        className="w-5/6 flex justify-center items-center"
+        className={`w-5/6 flex ${
+          this.props.isEven ? "justify-start" : "justify-center"
+        } items-center`}
         key={`${this.uniqueId}-information`}
       >
         <div className="flex flex-col gap-2 w-11/12">
-          <h2 className="font-bold">{this.props.title}</h2>
+          <h2 className="font-bold text-2xl">{this.props.title}</h2>
           <p>{this.props.text}</p>
           <Button
-            styles="w-fit"
+            styles="w-fit mt-4"
             text="Leer más"
             onClick={() => this.openModal()}
           ></Button>
@@ -76,7 +78,7 @@ class ServiceCard extends React.Component {
 
   render() {
     return (
-      <div className="border shadow-neutral-color-gray p-4 rounded-lg flex flex-row gap-2">
+      <div className="border shadow-neutral-color-gray p-4 rounded-lg flex flex-row">
         {this.getServiceCardSections()}
         <BasicModal
           isOpen={this.state.isModalOpen}
