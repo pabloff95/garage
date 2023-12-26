@@ -20,11 +20,16 @@ class ServiceCard extends React.Component {
         className="w-1/6 flex justify-center items-center"
         key={`${this.uniqueId}-img`}
       >
-        <img
-          className="w-5/6"
-          src="/images/pages/services/car.png"
-          alt="Logo de coche"
-        />
+        <div
+          className="flex justify-center w-5/6 overflow-hidden rounded"
+          onClick={() => this.openModal()}
+        >
+          <img
+            className="w-full hover:picture"
+            src="/images/pages/services/car.png"
+            alt="Logo de coche"
+          />
+        </div>
       </section>
     );
   };
