@@ -11,12 +11,12 @@ class Contact extends React.Component {
   render() {
     return (
       <div>
-        <section className="my-5 p-3 w-full">
+        <section className="my-5 py-3 w-full">
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
             Ponte en contacto con nosotros
           </h1>
         </section>
-        <section className="my-5 p-3 w-full">
+        <section className="my-5 w-full py-3">
           <div className="w-80% mx-[10%] flex flex-row justify-evenly">
             <ContactCard
               icon="phone"
@@ -42,7 +42,7 @@ class Contact extends React.Component {
             />
           </div>
         </section>
-        <section className="my-5 p-3">
+        <section className="my-5 py-3">
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
             Formulario de contacto
           </h1>
@@ -52,7 +52,7 @@ class Contact extends React.Component {
           </p>
           <ContactForm />
         </section>
-        <section className="my-5 p-3">
+        <section className="my-5 py-3">
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
             ¡Ven a conocernos!
           </h1>
