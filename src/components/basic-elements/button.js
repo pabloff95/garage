@@ -1,9 +1,9 @@
 import React from "react";
+import FaIcon from "./fa-icon";
 
 class Button extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
@@ -14,6 +14,7 @@ class Button extends React.Component {
         onClick={this.props.onClick}
       >
         {this.props.text}
+        {this.props.icon && <FaIcon icon={this.props.icon} />}
       </button>
     );
   }
