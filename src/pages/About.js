@@ -1,4 +1,5 @@
 import React from "react";
+import ValueCard from "../components/pages/about/value-card";
 
 class About extends React.Component {
   constructor(props) {
@@ -57,28 +58,32 @@ class About extends React.Component {
         <section className="my-5 w-full py-3">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Nuestros Valores</h2>
-            <ul className="list-disc list-inside">
-              <li>
-                Compromiso con la calidad y la excelencia: Nos esforzamos por
-                ofrecer servicios de reparación de la más alta calidad,
-                utilizando tecnología avanzada y técnicas probadas.
-              </li>
-              <li>
-                Honestidad y transparencia: Creemos en la honestidad en cada
-                interacción. No hay sorpresas desagradables; solo transparencia
-                y confianza.
-              </li>
-              <li>
-                Trabajo en equipo y colaboración: Nuestro equipo está formado
-                por profesionales apasionados que trabajan juntos para
-                garantizar el mejor servicio posible.
-              </li>
-              <li>
-                Atención personalizada: Valoramos a cada cliente y nos
-                esforzamos por brindar una atención personalizada para
-                satisfacer sus necesidades individuales.
-              </li>
-            </ul>
+            <div className="mt-2 w-full flex flex-row gap-4">
+              <ValueCard
+                styles="w-1/4 h-[35vh]"
+                title="Calidad y excelencia"
+                description="Nos esforzamos por ofrecer servicios de reparación de la más alta calidad, utilizando tecnología avanzada y técnicas probadas."
+                icon="ranking-star"
+              />
+              <ValueCard
+                styles="w-1/4 h-[35vh]"
+                title="Honestidad y transparencia"
+                description="Creemos en la honestidad en cada interacción. No hay sorpresas desagradables; solo transparencia y confianza"
+                icon="handshake"
+              />
+              <ValueCard
+                styles="w-1/4 h-[35vh]"
+                title="Trabajo en equipo"
+                description="Nuestro equipo está formado por profesionales apasionados que trabajan juntos para garantizar el mejor servicio posible."
+                icon="people-group"
+              />
+              <ValueCard
+                styles="w-1/4 h-[35vh]"
+                title="Atención personalizada"
+                description="Valoramos a cada cliente y nos esforzamos por brindar una atención personalizada para satisfacer sus necesidades individuales."
+                icon="id-badge"
+              />
+            </div>
           </div>
         </section>
       </div>

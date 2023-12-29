@@ -45,6 +45,10 @@ body {
 }
 
 /* ---- Variable colors ---- */
+.bg-primary-element {
+  background-color: var(--primary-element);
+}
+
 .bg-highlighted-element {
   background-color: var(--highlighted-element);
 }
