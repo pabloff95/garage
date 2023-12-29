@@ -1,5 +1,6 @@
 import React from "react";
 import ValueCard from "../components/pages/about/value-card";
+import HorizontalScrollContainer from "../components/horizontal-scroll-container";
 
 class About extends React.Component {
   constructor(props) {
@@ -53,6 +54,31 @@ class About extends React.Component {
               mantenimiento. Nuestro taller está diseñado para brindar
               eficiencia y comodidad a nuestros clientes.
             </p>
+            <div className="w-full h-[35vh]">
+              <HorizontalScrollContainer
+                itemsPerSlide={1}
+                navButtonsAlwaysVisible={true}
+                autoPlay={true}
+                interval="3000"
+              >
+                <img
+                  src="/images/pages/about/picture_1.png"
+                  className="h-[35vh]"
+                />
+                <img
+                  src="/images/pages/about/picture_2.png"
+                  className="h-[35vh]"
+                />
+                <img
+                  src="/images/pages/about/picture_3.png"
+                  className="h-[35vh]"
+                />
+                <img
+                  src="/images/pages/about/picture_4.png"
+                  className="h-[35vh]"
+                />
+              </HorizontalScrollContainer>
+            </div>
           </div>
         </section>
         <section className="my-5 w-full py-3">

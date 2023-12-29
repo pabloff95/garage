@@ -17,10 +17,21 @@ class HorizontalScrollContainer extends React.Component {
   max = parseInt(this.props.itemsPerSlide);
 
   getItems = () => {
+    const {
+      children,
+      onSlideChange,
+      spacing,
+      tooltipMessage,
+      hidePagination,
+      navButtonsAlwaysVisible,
+      autoPlay,
+      interval,
+    } = this.props;
+
     // Prepare carrousel (array of arrays)
     let newCarrousel = [];
 
-    [...this.props.children].forEach((item) => {
+    [...children].forEach((item) => {
       newCarrousel.push(item);
 
       if (newCarrousel.length === this.max) {
@@ -37,16 +48,19 @@ class HorizontalScrollContainer extends React.Component {
     return (
       <Carousel
         animation="fade"
-        autoPlay={false}
-        interval="5000"
-        indicatorContainerProps={{ style: { display: "none" } }} // Hide navigation legend
+        autoPlay={autoPlay}
+        interval={interval}
+        navButtonsAlwaysVisible={navButtonsAlwaysVisible}
+        indicatorContainerProps={{
+          style: { display: hidePagination ? "none" : "" }, // Hide navigation pagination element
+        }}
         className="!overflow-visible h-auto pt-2 pb-10"
-        onChange={this.props.onSlideChange}
+        onChange={onSlideChange}
       >
         {this.state.carrouselItems.map((slide, slideIndex) => (
           <Grid
             container
-            spacing={this.props.spacing ?? 0}
+            spacing={spacing ?? 0}
             className="w-full flex flex-row justify-center"
             key={slideIndex}
           >
@@ -57,7 +71,7 @@ class HorizontalScrollContainer extends React.Component {
                 key={index}
                 className="flex justify-center"
                 data-tooltip-id={`scroll-item-card-tooltip-${slideIndex}`}
-                data-tooltip-content={this.props.tooltipMessage}
+                data-tooltip-content={tooltipMessage}
               >
                 {item}
                 <Tooltip id={`scroll-item-card-tooltip-${slideIndex}`} />
