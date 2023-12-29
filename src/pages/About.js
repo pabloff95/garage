@@ -12,6 +12,7 @@ class About extends React.Component {
       isPictureZoomed: false,
       zoomedPicture: "",
       autoplayCarrousel: true,
+      navigationButtons: [],
     };
   }
 
@@ -43,6 +44,33 @@ class About extends React.Component {
       zoomedPicture: "",
       autoplayCarrousel: true,
     });
+  };
+
+  // Due to some issue with the react-material-ui-carousel library, some extra nav buttons are being created after doing changes in the carousel element (ex.: zooming in a picture). Therefore, these elements are tracked and removed if required
+  getCarrouselNavigationButtons = () => {
+    // Get all elements with the attribute aria-label
+    const elementsWithAriaLabel = document.querySelectorAll("[aria-label]");
+
+    // Filter elements with aria-label containing the value "indicator" (these are the nav buttons of the carousel element)
+    return Array.from(elementsWithAriaLabel).filter((element) => {
+      const ariaLabelValue = element.getAttribute("aria-label");
+
+      return ariaLabelValue.toLowerCase().includes("indicator");
+    });
+  };
+
+  componentDidMount = () => {
+    this.setState({
+      navigationButtons: this.getCarrouselNavigationButtons(),
+    });
+  };
+
+  componentDidUpdate = () => {
+    for (const navigationButton of this.getCarrouselNavigationButtons()) {
+      if (!this.state.navigationButtons.includes(navigationButton)) {
+        navigationButton.remove();
+      }
+    }
   };
 
   render() {
