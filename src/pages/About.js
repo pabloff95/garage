@@ -1,11 +1,49 @@
 import React from "react";
 import ValueCard from "../components/pages/about/value-card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
+import FaIcon from "../components/basic-elements/fa-icon";
+import BasicModal from "../components/basic-elements/basic-modal";
 
 class About extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isPictureZoomed: false,
+      zoomedPicture: "",
+      autoplayCarrousel: true,
+    };
   }
+
+  getPicture = (picture) => {
+    return (
+      <div className="relative" key={`picture_${picture}`}>
+        <img src={`/images/pages/about/${picture}.png`} className="h-[45vh]" />
+        <button
+          className="absolute bottom-2 right-2 hover:text-primary-element"
+          onClick={() => this.onZoomToggle(picture)}
+        >
+          <FaIcon icon="magnifying-glass-plus" />
+        </button>
+      </div>
+    );
+  };
+
+  onZoomToggle = (picture) => {
+    this.setState({
+      isPictureZoomed: !this.state.isPictureZoomed,
+      zoomedPicture: !this.state.isPictureZoomed ? picture : "",
+      autoplayCarrousel: this.state.isPictureZoomed, // Stop autoplay while user has the odal opened
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      isPictureZoomed: false,
+      zoomedPicture: "",
+      autoplayCarrousel: true,
+    });
+  };
 
   render() {
     return (
@@ -54,32 +92,34 @@ class About extends React.Component {
               mantenimiento. Nuestro taller está diseñado para brindar
               eficiencia y comodidad a nuestros clientes.
             </p>
-            <div className="w-full h-[35vh]">
+            <div className="w-full h-[45vh]">
               <HorizontalScrollContainer
                 itemsPerSlide={1}
                 navButtonsAlwaysVisible={true}
-                autoPlay={true}
+                autoPlay={this.state.autoplayCarrousel}
                 interval="3000"
               >
-                <img
-                  src="/images/pages/about/picture_1.png"
-                  className="h-[35vh]"
-                />
-                <img
-                  src="/images/pages/about/picture_2.png"
-                  className="h-[35vh]"
-                />
-                <img
-                  src="/images/pages/about/picture_3.png"
-                  className="h-[35vh]"
-                />
-                <img
-                  src="/images/pages/about/picture_4.png"
-                  className="h-[35vh]"
-                />
+                {[
+                  this.getPicture("picture_1"),
+                  this.getPicture("picture_2"),
+                  this.getPicture("picture_3"),
+                  this.getPicture("picture_4"),
+                ]}
               </HorizontalScrollContainer>
             </div>
           </div>
+          <BasicModal
+            isOpen={this.state.isPictureZoomed}
+            showCloseButton={true}
+            onClose={this.closeModal}
+          >
+            <div className="w-full flex justify-center">
+              <img
+                src={`/images/pages/about/${this.state.zoomedPicture}.png`}
+                className="h-[80vh]"
+              />
+            </div>
+          </BasicModal>
         </section>
         <section className="my-5 w-full py-3">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
