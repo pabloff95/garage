@@ -126,6 +126,10 @@ body {
   border-color: var(--neutral-color-primary);
 }
 
+.border-b-primary-element {
+  border-bottom-color: var(--primary-element);
+}
+
 .focus\:border-b-primary-element:focus {
   border-color: var(--primary-element);
 }

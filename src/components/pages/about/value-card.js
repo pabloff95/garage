@@ -22,7 +22,7 @@ class ValueCard extends React.Component {
 
     return (
       <div
-        className={`${styles} flex flex-col justify-evenly items-center border shadow-neutral-color-gray p-4 rounded-lg`}
+        className={`${styles} flex flex-col justify-evenly items-center border shadow-neutral-color-gray p-4 rounded-lg border-b-4 border-b-primary-element`}
       >
         <section className="relative flex justify-center h-1/2 w-full">
           <div
@@ -34,9 +34,7 @@ class ValueCard extends React.Component {
           </div>
         </section>
         <section className="flex flex-col px-3">
-          <span className="text-center text-lg font-bold">
-            {title.toUpperCase()}
-          </span>
+          <span className="text-center text-lg font-bold">{title}</span>
           <span className="mt-2 text-sm text-justify text-gray-800">
             {description}
           </span>
