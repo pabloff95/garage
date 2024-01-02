@@ -48,6 +48,7 @@ class HorizontalScrollContainer extends React.Component {
     return (
       <Carousel
         animation="fade"
+        fullHeightHover={false}
         autoPlay={autoPlay}
         interval={interval}
         navButtonsAlwaysVisible={navButtonsAlwaysVisible}
@@ -56,6 +57,22 @@ class HorizontalScrollContainer extends React.Component {
         }}
         className="!overflow-visible h-auto pt-2 pb-10"
         onChange={onSlideChange}
+        navButtonsProps={{
+          style: {
+            backgroundColor: "var(--neutral-color-primary)",
+          },
+          className: "hover:carousel-nav-button",
+        }}
+        indicatorIconButtonProps={{
+          style: {
+            color: "var(--neutral-color-primary)",
+          },
+        }}
+        activeIndicatorIconButtonProps={{
+          style: {
+            color: "var(--primary-element)",
+          },
+        }}
       >
         {this.state.carrouselItems.map((slide, slideIndex) => (
           <Grid

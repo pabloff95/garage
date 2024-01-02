@@ -140,3 +140,9 @@ body {
   transition: all ease 0.5s;
   transform-origin: center;
 }
+
+.hover\:carousel-nav-button:hover {
+  background-color: var(--primary-element) !important;
+  color: var(--neutral-color-primary);
+  opacity: 1 !important;
+}

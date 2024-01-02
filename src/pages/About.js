@@ -13,13 +13,17 @@ class About extends React.Component {
       zoomedPicture: "",
       autoplayCarrousel: true,
       navigationButtons: [],
+      carouselWidth: 0,
     };
   }
 
   getPicture = (picture) => {
     return (
-      <div className="relative" key={`picture_${picture}`}>
-        <img src={`/images/pages/about/${picture}.png`} className="h-[45vh]" />
+      <div className="relative min-w-max" key={`picture_${picture}`}>
+        <img
+          src={`/images/pages/about/${picture}.png`}
+          className="h-[45vh] w-max-w-[100%] min-w-fit carousel_img"
+        />
         <button
           className="absolute bottom-2 right-2 hover:text-primary-element"
           onClick={() => this.onZoomToggle(picture)}
@@ -28,6 +32,23 @@ class About extends React.Component {
         </button>
       </div>
     );
+  };
+
+  updateCarouselWidth = () => {
+    const pictures = Array.from(document.querySelectorAll(".carousel_img"));
+
+    const activePicture = pictures.find((img) => img?.offsetWidth !== 0); // Only displayed picture has width assigned
+
+    if (
+      !activePicture?.offsetWidth ||
+      activePicture?.offsetWidth === this.state.carouselWidth
+    ) {
+      return;
+    }
+
+    this.setState({
+      carouselWidth: activePicture?.offsetWidth ?? 0,
+    });
   };
 
   onZoomToggle = (picture) => {
@@ -66,6 +87,8 @@ class About extends React.Component {
   };
 
   componentDidUpdate = () => {
+    this.updateCarouselWidth();
+
     for (const navigationButton of this.getCarrouselNavigationButtons()) {
       if (!this.state.navigationButtons.includes(navigationButton)) {
         navigationButton.remove();
@@ -83,7 +106,7 @@ class About extends React.Component {
         </section>
         <section className="my-5 w-full py-3">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Nuestra Historia</h2>
+            <h2 className="text-2xl font-semibold">Historia</h2>
             <p>
               Desde nuestra fundación en el año 2000, nuestro taller de
               reparación de automóviles ha ofrecido soluciones confiables para
@@ -113,19 +136,20 @@ class About extends React.Component {
         </section>
         <section className="my-5 w-full py-3">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Nuestras Instalaciones</h2>
+            <h2 className="text-2xl font-semibold">Instalaciones</h2>
             <p>
               Contamos con instalaciones modernas y totalmente equipadas para
               realizar una amplia variedad de servicios de reparación y
               mantenimiento. Nuestro taller está diseñado para brindar
               eficiencia y comodidad a nuestros clientes.
             </p>
-            <div className="w-full h-[45vh]">
+            <div className="w-full h-[45vh] mb-4 mx-auto flex justify-center">
               <HorizontalScrollContainer
                 itemsPerSlide={1}
                 navButtonsAlwaysVisible={true}
                 autoPlay={this.state.autoplayCarrousel}
                 interval="3000"
+                className={`w-[${this.state.carouselWidth}px]`}
               >
                 {[
                   this.getPicture("picture_1"),
