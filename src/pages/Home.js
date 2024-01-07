@@ -207,6 +207,7 @@ class Home extends React.Component {
             tooltipMessage="Abrir review en Google"
             hidePagination={true}
             autoPlay={false}
+            renderAsGrid={true}
           >
             {this.getReviewCards()}
           </HorizontalScrollContainer>

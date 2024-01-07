@@ -16,19 +16,17 @@ class HorizontalScrollContainer extends React.Component {
 
   max = parseInt(this.props.itemsPerSlide);
 
-  getItems = () => {
-    const {
-      children,
-      onSlideChange,
-      spacing,
-      tooltipMessage,
-      hidePagination,
-      navButtonsAlwaysVisible,
-      autoPlay,
-      interval,
-    } = this.props;
+  componentWillMount = () => {
+    const { children, renderAsGrid } = this.props;
 
-    // Prepare carrousel (array of arrays)
+    if (!renderAsGrid) {
+      this.setState({
+        carrouselItems: [...children],
+      });
+      return;
+    }
+
+    // Prepare carrousel items (set as array of arrays, for elements using grid in order to display X items per slide)
     let newCarrousel = [];
 
     [...children].forEach((item) => {
@@ -44,6 +42,19 @@ class HorizontalScrollContainer extends React.Component {
     if (newCarrousel.length > 0) {
       this.state.carrouselItems.push(newCarrousel);
     }
+  };
+
+  getItems = () => {
+    const {
+      onSlideChange,
+      spacing,
+      tooltipMessage,
+      hidePagination,
+      navButtonsAlwaysVisible,
+      autoPlay,
+      interval,
+      renderAsGrid,
+    } = this.props;
 
     return (
       <Carousel
@@ -74,28 +85,30 @@ class HorizontalScrollContainer extends React.Component {
           },
         }}
       >
-        {this.state.carrouselItems.map((slide, slideIndex) => (
-          <Grid
-            container
-            spacing={spacing ?? 0}
-            className="w-full flex flex-row justify-center"
-            key={slideIndex}
-          >
-            {slide.map((item, index) => (
+        {renderAsGrid
+          ? this.state.carrouselItems.map((slide, slideIndex) => (
               <Grid
-                item
-                xs={12 / this.max}
-                key={index}
-                className="flex justify-center"
-                data-tooltip-id={`scroll-item-card-tooltip-${slideIndex}`}
-                data-tooltip-content={tooltipMessage}
+                container
+                spacing={spacing ?? 0}
+                className="w-full flex flex-row justify-center"
+                key={slideIndex}
               >
-                {item}
-                <Tooltip id={`scroll-item-card-tooltip-${slideIndex}`} />
+                {slide.map((item, index) => (
+                  <Grid
+                    item
+                    xs={12 / this.max}
+                    key={index}
+                    className="flex justify-center"
+                    data-tooltip-id={`scroll-item-card-tooltip-${slideIndex}`}
+                    data-tooltip-content={tooltipMessage}
+                  >
+                    {item}
+                    <Tooltip id={`scroll-item-card-tooltip-${slideIndex}`} />
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
-        ))}
+            ))
+          : this.state.carrouselItems}
       </Carousel>
     );
   };

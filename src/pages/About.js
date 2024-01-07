@@ -19,19 +19,21 @@ class About extends React.Component {
   getPicture = (picture) => {
     return (
       <div
-        className="relative min-w-max h-[50vh] flex justify-end"
+        className="min-w-max h-[50vh] flex justify-center"
         key={`picture_${picture}`}
       >
-        <img
-          src={`/images/pages/about/${picture}.png`}
-          className="w-[50vw] h-full carousel-img"
-        />
-        <button
-          className="absolute bottom-2 right-2 hover:text-primary-element"
-          onClick={() => this.onZoomToggle(picture)}
-        >
-          <FaIcon icon="magnifying-glass-plus" />
-        </button>
+        <div className="relative">
+          <img
+            src={`/images/pages/about/${picture}.png`}
+            className="w-[50vw] h-full carousel-img"
+          />
+          <button
+            className="absolute bottom-2 right-2 hover:text-primary-element"
+            onClick={() => this.onZoomToggle(picture)}
+          >
+            <FaIcon icon="magnifying-glass-plus" />
+          </button>
+        </div>
       </div>
     );
   };
@@ -96,12 +98,6 @@ class About extends React.Component {
 
   componentDidUpdate = () => {
     this.updateCarouselWidth();
-
-    for (const navigationButton of this.getCarrouselNavigationButtons()) {
-      if (!this.state.navigationButtons.includes(navigationButton)) {
-        navigationButton.remove();
-      }
-    }
   };
 
   render() {
