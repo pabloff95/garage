@@ -8,9 +8,9 @@ class NavigationButton extends React.Component {
 
   render() {
     return (
-      <div className="navigation-button">
-        <Link to={this.props.href}>{this.props.text.toUpperCase()}</Link>
-      </div>
+      <Link className="navigation-button" to={this.props.href}>
+        {this.props.text.toUpperCase()}
+      </Link>
     );
   }
 }
