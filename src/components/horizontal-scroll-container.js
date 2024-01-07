@@ -101,7 +101,11 @@ class HorizontalScrollContainer extends React.Component {
   };
 
   render() {
-    return <div className={this.props.className}>{this.getItems()}</div>;
+    return (
+      <div className={this.props.className} id="horizontal-scroll-container">
+        {this.getItems()}
+      </div>
+    );
   }
 }
 

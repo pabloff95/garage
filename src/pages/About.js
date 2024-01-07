@@ -13,16 +13,18 @@ class About extends React.Component {
       zoomedPicture: "",
       autoplayCarrousel: true,
       navigationButtons: [],
-      carouselWidth: 0,
     };
   }
 
   getPicture = (picture) => {
     return (
-      <div className="relative min-w-max" key={`picture_${picture}`}>
+      <div
+        className="relative min-w-max h-[50vh] flex justify-end"
+        key={`picture_${picture}`}
+      >
         <img
           src={`/images/pages/about/${picture}.png`}
-          className="h-[45vh] w-max-w-[100%] min-w-fit carousel_img"
+          className="w-[50vw] h-full carousel-img"
         />
         <button
           className="absolute bottom-2 right-2 hover:text-primary-element"
@@ -35,27 +37,33 @@ class About extends React.Component {
   };
 
   updateCarouselWidth = () => {
-    const pictures = Array.from(document.querySelectorAll(".carousel_img"));
+    const pictures = Array.from(document.querySelectorAll(".carousel-img"));
+    const horizontalScrollContainer = document.getElementById(
+      "horizontal-scroll-container"
+    );
 
-    const activePicture = pictures.find((img) => img?.offsetWidth !== 0); // Only displayed picture has width assigned
+    const activePicture = pictures.find((img) => img?.offsetWidth !== 0); // Only displayed picture has width (> 0)
 
     if (
-      !activePicture?.offsetWidth ||
-      activePicture?.offsetWidth === this.state.carouselWidth
+      !activePicture ||
+      !horizontalScrollContainer ||
+      activePicture?.offsetWidth === horizontalScrollContainer?.style?.width
     ) {
       return;
     }
 
-    this.setState({
-      carouselWidth: activePicture?.offsetWidth ?? 0,
-    });
+    const pictureWidth = activePicture?.offsetWidth ?? 0;
+
+    horizontalScrollContainer.style.width = `${
+      pictureWidth + pictureWidth / 5 // Add some extra space to place navigation buttons outside of the picture
+    }px`;
   };
 
   onZoomToggle = (picture) => {
     this.setState({
       isPictureZoomed: !this.state.isPictureZoomed,
       zoomedPicture: !this.state.isPictureZoomed ? picture : "",
-      autoplayCarrousel: this.state.isPictureZoomed, // Stop autoplay while user has the odal opened
+      autoplayCarrousel: this.state.isPictureZoomed, // Stop autoplay while user has the modal open
     });
   };
 
@@ -143,13 +151,12 @@ class About extends React.Component {
               mantenimiento. Nuestro taller está diseñado para brindar
               eficiencia y comodidad a nuestros clientes.
             </p>
-            <div className="w-full h-[45vh] mb-4 mx-auto flex justify-center">
+            <div className="w-full h-fit flex justify-center">
               <HorizontalScrollContainer
                 itemsPerSlide={1}
                 navButtonsAlwaysVisible={true}
                 autoPlay={this.state.autoplayCarrousel}
                 interval="3000"
-                className={`w-[${this.state.carouselWidth}px]`}
               >
                 {[
                   this.getPicture("picture_1"),
