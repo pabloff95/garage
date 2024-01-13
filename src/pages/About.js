@@ -3,6 +3,7 @@ import ValueCard from "../components/pages/about/value-card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
 import FaIcon from "../components/basic-elements/fa-icon";
 import BasicModal from "../components/basic-elements/basic-modal";
+import CompanyChrono from "../components/pages/about/company-chrono";
 
 class About extends React.Component {
   constructor(props) {
@@ -112,13 +113,13 @@ class About extends React.Component {
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Historia</h2>
             <p>
-              Desde nuestra fundación en el año 2000, nuestro taller de
-              reparación de automóviles ha ofrecido soluciones confiables para
-              las necesidades de nuestros clientes. A lo largo de los años,
-              hemos construido una sólida reputación basada en la excelencia y
-              el compromiso. Desde nuestros humildes comienzos hasta
-              convertirnos en el referente local que somos hoy, cada año ha sido
-              un capítulo en nuestra historia de crecimiento y dedicación.
+              Desde nuestra fundación nuestro taller ha ofrecido soluciones
+              confiables para las necesidades de nuestros clientes. A lo largo
+              de los años, hemos construido una sólida reputación basada en la
+              excelencia y el compromiso. Desde nuestros humildes comienzos
+              hasta convertirnos en el referente local que somos hoy, cada año
+              ha sido un capítulo en nuestra historia de crecimiento y
+              dedicación.
             </p>
             <p>
               Nos enorgullece destacar que, desde el primer día, nuestra misión
@@ -136,9 +137,12 @@ class About extends React.Component {
               construyendo relaciones sólidas con nuestros clientes a lo largo
               de los años.
             </p>
+            <div className="mt-8">
+              <CompanyChrono />
+            </div>
           </div>
         </section>
-        <section className="my-5 w-full py-3">
+        <section className="mb-5 w-full py-3">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Instalaciones</h2>
             <p>
