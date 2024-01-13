@@ -16,11 +16,20 @@ class HorizontalScrollContainer extends React.Component {
 
   max = parseInt(this.props.itemsPerSlide);
 
-  getItems = () => {
-    // Prepare carrousel (array of arrays)
+  componentWillMount = () => {
+    const { children, renderAsGrid } = this.props;
+
+    if (!renderAsGrid) {
+      this.setState({
+        carrouselItems: [...children],
+      });
+      return;
+    }
+
+    // Prepare carrousel items (set as array of arrays, for elements using grid in order to display X items per slide)
     let newCarrousel = [];
 
-    [...this.props.children].forEach((item) => {
+    [...children].forEach((item) => {
       newCarrousel.push(item);
 
       if (newCarrousel.length === this.max) {
@@ -33,44 +42,83 @@ class HorizontalScrollContainer extends React.Component {
     if (newCarrousel.length > 0) {
       this.state.carrouselItems.push(newCarrousel);
     }
+  };
+
+  getItems = () => {
+    const {
+      onSlideChange,
+      spacing,
+      tooltipMessage,
+      hidePagination,
+      navButtonsAlwaysVisible,
+      autoPlay,
+      interval,
+      renderAsGrid,
+    } = this.props;
 
     return (
       <Carousel
         animation="fade"
-        autoPlay={false}
-        interval="5000"
-        indicatorContainerProps={{ style: { display: "none" } }} // Hide navigation legend
+        fullHeightHover={false}
+        autoPlay={autoPlay}
+        interval={interval}
+        navButtonsAlwaysVisible={navButtonsAlwaysVisible}
+        indicatorContainerProps={{
+          style: { display: hidePagination ? "none" : "" }, // Hide navigation pagination element
+        }}
         className="!overflow-visible h-auto pt-2 pb-10"
-        onChange={this.props.onSlideChange}
+        onChange={onSlideChange}
+        navButtonsProps={{
+          style: {
+            backgroundColor: "var(--neutral-color-primary)",
+          },
+          className: "hover:carousel-nav-button",
+        }}
+        indicatorIconButtonProps={{
+          style: {
+            color: "var(--neutral-color-primary)",
+          },
+        }}
+        activeIndicatorIconButtonProps={{
+          style: {
+            color: "var(--primary-element)",
+          },
+        }}
       >
-        {this.state.carrouselItems.map((slide, slideIndex) => (
-          <Grid
-            container
-            spacing={this.props.spacing ?? 0}
-            className="w-full flex flex-row justify-center"
-            key={slideIndex}
-          >
-            {slide.map((item, index) => (
+        {renderAsGrid
+          ? this.state.carrouselItems.map((slide, slideIndex) => (
               <Grid
-                item
-                xs={12 / this.max}
-                key={index}
-                className="flex justify-center"
-                data-tooltip-id={`scroll-item-card-tooltip-${slideIndex}`}
-                data-tooltip-content={this.props.tooltipMessage}
+                container
+                spacing={spacing ?? 0}
+                className="w-full flex flex-row justify-center"
+                key={slideIndex}
               >
-                {item}
-                <Tooltip id={`scroll-item-card-tooltip-${slideIndex}`} />
+                {slide.map((item, index) => (
+                  <Grid
+                    item
+                    xs={12 / this.max}
+                    key={index}
+                    className="flex justify-center"
+                    data-tooltip-id={`scroll-item-card-tooltip-${slideIndex}`}
+                    data-tooltip-content={tooltipMessage}
+                  >
+                    {item}
+                    <Tooltip id={`scroll-item-card-tooltip-${slideIndex}`} />
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
-        ))}
+            ))
+          : this.state.carrouselItems}
       </Carousel>
     );
   };
 
   render() {
-    return <div className={this.props.className}>{this.getItems()}</div>;
+    return (
+      <div className={this.props.className} id="horizontal-scroll-container">
+        {this.getItems()}
+      </div>
+    );
   }
 }
 

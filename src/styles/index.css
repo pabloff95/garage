@@ -8,6 +8,7 @@
 @import url("./components/basic-elements/basic-modal.css");
 @import url("./components/navigation-button.css");
 @import url("./components/basic-elements/button.css");
+@import url("./pages/about/company-chrono.css");
 
 :root {
   /* Main Color palette*/
@@ -45,6 +46,10 @@ body {
 }
 
 /* ---- Variable colors ---- */
+.bg-primary-element {
+  background-color: var(--primary-element);
+}
+
 .bg-highlighted-element {
   background-color: var(--highlighted-element);
 }
@@ -122,6 +127,10 @@ body {
   border-color: var(--neutral-color-primary);
 }
 
+.border-b-primary-element {
+  border-bottom-color: var(--primary-element);
+}
+
 .focus\:border-b-primary-element:focus {
   border-color: var(--primary-element);
 }
@@ -131,4 +140,10 @@ body {
   transform: scale(1.25);  
   transition: all ease 0.5s;
   transform-origin: center;
+}
+
+.hover\:carousel-nav-button:hover {
+  background-color: var(--primary-element) !important;
+  color: var(--neutral-color-primary);
+  opacity: 1 !important;
 }

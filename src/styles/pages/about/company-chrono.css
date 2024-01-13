@@ -1,0 +1,29 @@
+.chrono-main-container > * div[role="button"], 
+.chrono-main-container > * .ldTzpA{
+    /* Dissable mouse hover in time line bar elements */
+    cursor: auto !important;
+}
+
+section.timeline-card-content {
+    /* Overwritte property that changes the card shadow (boder effect) properties */
+    filter: drop-shadow(0 0 2px var(--neutral-color-primary)) !important;
+}
+
+.chrono-custom-card {
+    color: var(--neutral-color-primary);
+}
+
+.chrono-card-title {
+    font-weight: 750;
+    font-size: 1.1rem;
+}
+
+.chrono-card-subtitle {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.chrono-card-text {
+    font-weight: 400;
+    font-size: .9rem;
+}

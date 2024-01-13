@@ -205,6 +205,9 @@ class Home extends React.Component {
             className="w-full py-5 my-5 horizontal-scroll-container"
             onSlideChange={() => this.updateReviewCardHeight(0)}
             tooltipMessage="Abrir review en Google"
+            hidePagination={true}
+            autoPlay={false}
+            renderAsGrid={true}
           >
             {this.getReviewCards()}
           </HorizontalScrollContainer>
