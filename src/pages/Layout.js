@@ -16,7 +16,7 @@ class Layout extends React.Component {
         <Outlet />
         <Footer />
         <Notification />
-        {/* Notification component must only being added once, to prevent duplicates */}
+        {/* Notification component must only be added once, to prevent duplicates */}
       </div>
     );
   }
