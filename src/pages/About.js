@@ -27,6 +27,7 @@ class About extends React.Component {
           <img
             src={`/images/pages/about/${picture}.png`}
             className="w-[50vw] h-full carousel-img"
+            alt="Foto de las instalaciones de nuestro taller"
           />
           <button
             className="absolute bottom-2 right-2 hover:text-primary-element"
@@ -176,6 +177,7 @@ class About extends React.Component {
               <img
                 src={`/images/pages/about/${this.state.zoomedPicture}.png`}
                 className="h-[80vh]"
+                alt="Foto de las instalaciones de nuestro taller"
               />
             </div>
           </BasicModal>

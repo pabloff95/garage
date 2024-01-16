@@ -46,7 +46,7 @@ class CompanyChrono extends React.Component {
           disableClickOnCircle={true}
           disableInteraction={true}
           disableTimelinePoint={false}
-          cardHeight={"fit"}
+          cardHeight={50}
           theme={{
             primary: "var(--primary-element)",
             secondary: "var(--primary-element)",
