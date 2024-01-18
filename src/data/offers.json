@@ -1,0 +1,9 @@
+[
+    {
+        "title": "Cambio de neumáticos",
+        "description": "El cambio de neumaticos de todo tipo de vehículos",
+        "originalPrice": 200,
+        "currentPrice": 150,
+        "imgPath": "/images/pages/sales/picture_1.png"
+    }
+]

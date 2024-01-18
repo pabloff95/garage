@@ -127,6 +127,10 @@ body {
   border-color: var(--neutral-color-primary);
 }
 
+.border-primary-element {
+  border-color: var(--primary-element);
+}
+
 .border-b-primary-element {
   border-bottom-color: var(--primary-element);
 }
