@@ -87,6 +87,10 @@ body {
   border: 3px var(--neutral-color-contrast) solid;
 }
 
+.border-neutral-color {
+  border: 3px var(--neutral-color-primary) solid;
+}
+
 .border-neutral-color-primary {
   border: 3px var(--neutral-color-primary) solid;
 }
