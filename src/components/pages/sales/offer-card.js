@@ -1,5 +1,5 @@
 import React from "react";
-import FaIcon from "../../basic-elements/fa-icon";
+import { Link } from "react-router-dom";
 
 class OfferCard extends React.Component {
   constructor(props) {
@@ -27,39 +27,38 @@ class OfferCard extends React.Component {
 
     return (
       <div className="min-w-[30%]">
-        <div className="font-bold text-xl py-1">
-          <div className="relative h-fit flex flex-row w-full justify-center items-end mb-2">
-            <span>¡Solo quedan </span>
-            <span className="relative flex justify-center w-[3rem]">
-              <FaIcon icon="calendar" className="absolute h-full" />
-              <span className="text-white !z-50 mt-[1rem]">{daysLeft}</span>
-            </span>
-            <span> días!</span>
+        <div className="w-full shadow-neutral-color-gray">
+          <div className="w-full h-full flex flex-row gap-2 border rounded p-4">
+            <section className="w-[40vw flex flex-col gap-2">
+              <div className="p-2 relative h-full">
+                {this.getReducedPrice() && (
+                  <div className="top-6 right-0 mr-2 absolute bg-red-500 text-white font-bold text-xl px-2 py-1 rounded-l-md">
+                    {this.getReducedPrice()}
+                  </div>
+                )}
+                <img src={imgPath} className="w-full h-full" />
+              </div>
+            </section>
+            <section className="w-[60vw] flex flex-col gap-4 justify-center">
+              <div className="h-fit flex flex-col gap-4">
+                <p className="text-3xl font-bold">{title}</p>
+                <p>{description}</p>
+              </div>
+              <div className="text-center my-8">
+                <p className="text-lg text-gray-400">antes {originalPrice}€</p>
+                <p className="text-8xl font-bold">{currentPrice}€</p>
+              </div>
+              <Link
+                className="mx-auto w-fit bg-red-500 text-neutral-color-contrast hover:bg-red-400 hover:scale-90 transition-all duration-200 py-3 px-8 rounded-sm font-bold tracking-wider"
+                to="/contact"
+              >
+                CONTACTANOS
+              </Link>
+              <span className="text-center mt-4 font-bold text-red-500">
+                ¡Solo quedan {daysLeft} días!
+              </span>
+            </section>
           </div>
-        </div>
-        <div className="w-fit shadow-neutral-color-gray">
-          <main className="flex flex-col gap-2 items-center border rounded border-primary-element p-4">
-            <section className="h-[40vh] w-fit relative">
-              {this.getReducedPrice() && (
-                <div className="top-4 right-0 absolute bg-red-500 text-white font-bold text-xl px-2 py-1 rounded-l-md">
-                  {this.getReducedPrice()}
-                </div>
-              )}
-              <img src={imgPath} className="h-full" />
-            </section>
-            <section>
-              <span className="text-3xl font-bold">{title}</span>
-            </section>
-            <section>
-              <span>{description}</span>
-            </section>
-          </main>
-          <footer>
-            <span className="flex flex-col text-center bg-primary-element py-2">
-              <span className="text-4xl  font-bold">{currentPrice}€</span>
-              <span className="line-through mr-1">{originalPrice}€</span>
-            </span>
-          </footer>
         </div>
       </div>
     );
