@@ -4,10 +4,6 @@ import ContactCard from "../components/pages/contact/contact-card";
 import ContactForm from "../components/pages/contact/contact-form";
 
 class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="mt-[5vh]">

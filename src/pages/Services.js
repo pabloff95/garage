@@ -2,10 +2,6 @@ import React from "react";
 import ServiceCard from "../components/service-card";
 
 class Services extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="mt-[5vh]">

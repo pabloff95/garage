@@ -2,10 +2,6 @@ import React from "react";
 import FaIcon from "../components/basic-elements/fa-icon";
 
 class NotFound extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="h-[90vh]">
