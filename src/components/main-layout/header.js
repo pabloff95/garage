@@ -4,10 +4,6 @@ import Logo from "../basic-elements/logo";
 import FaIcon from "../basic-elements/fa-icon";
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <header className="layout-header">

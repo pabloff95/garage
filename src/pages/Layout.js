@@ -5,10 +5,6 @@ import Footer from "../components/main-layout/footer";
 import Notification from "../components/notification";
 
 class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="flex flex-col h-full w-full">
