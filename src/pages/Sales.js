@@ -22,10 +22,14 @@ class Sales extends React.Component {
       return daysLeft > 0;
     });
 
-    return validOffers.map((offer) => ({
+    const validOffersData = validOffers.map((offer) => ({
       ...offer,
       daysLeft: this.getDaysLeft(offer.endDate),
     }));
+
+    validOffersData.sort((a, b) => a.daysLeft - b.daysLeft); // Display offers from less days to more days
+
+    return validOffersData;
   };
 
   render() {
