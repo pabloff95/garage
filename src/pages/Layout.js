@@ -11,9 +11,11 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div className="h-full w-full">
+      <div className="flex flex-col h-full w-full">
         <Header />
-        <Outlet />
+        <div className="grow">
+          <Outlet />
+        </div>
         <Footer />
         <Notification />
         {/* Notification component must only be added once, to prevent duplicates */}
