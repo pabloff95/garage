@@ -7,6 +7,7 @@ import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Sales from "../pages/Sales";
+import displaySalesSection from "../utilis/display-sales-section";
 
 class App extends React.Component {
   componentDidMount = () => {
@@ -37,7 +38,9 @@ class App extends React.Component {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="services" element={<Services />} />
-            <Route path="sales" element={<Sales />} />
+            {displaySalesSection() && (
+              <Route path="sales" element={<Sales />} />
+            )}
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Route>
