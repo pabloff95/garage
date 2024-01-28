@@ -55,7 +55,9 @@ class OfferCard extends React.Component {
                 CONTACTANOS
               </Link>
               <span className="text-center mt-4 font-bold text-red-500">
-                ¡Solo quedan {daysLeft} días!
+                {daysLeft === 0 && "¡Hoy es el último día!"}
+                {daysLeft === 1 && `¡Solo queda ${daysLeft} día!`}
+                {daysLeft > 1 && `¡Solo quedan ${daysLeft} días!`}
               </span>
             </section>
           </div>

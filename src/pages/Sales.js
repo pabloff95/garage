@@ -14,13 +14,40 @@ class Sales extends React.Component {
     return daysLeft;
   };
 
+  isOfferInValidDateRange = (offer) => {
+    const { startDate, endDate } = offer;
+
+    const daysLeft = this.getDaysLeft(endDate);
+
+    if (daysLeft < 0) {
+      // Offer already expired
+      return false;
+    }
+
+    const startDateMoment = moment(
+      `${startDate}/${moment().year()}`,
+      "DD/MM/YYYY"
+    );
+    const currentDateMoment = moment();
+
+    const differenceToStart = startDateMoment.diff(
+      currentDateMoment,
+      "minutes"
+    );
+
+    if (differenceToStart > 0) {
+      // Offer has not yet started
+      return false;
+    }
+
+    return true;
+  };
+
   getValidOffers = () => {
     // Get valid offers (date is in the valid range when compared to the current date)
-    const validOffers = offers.default.filter((offer) => {
-      const daysLeft = this.getDaysLeft(offer.endDate);
-
-      return daysLeft > 0;
-    });
+    const validOffers = offers.default.filter((offer) =>
+      this.isOfferInValidDateRange(offer)
+    );
 
     const validOffersData = validOffers.map((offer) => ({
       ...offer,
