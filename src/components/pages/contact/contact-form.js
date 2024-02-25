@@ -207,7 +207,7 @@ export default class ContactForm extends React.Component {
                 onFocus={() => this.onFocusElement("telephone")}
                 onBlur={() => this.onBlur()}
                 pattern="[0-9]{9}"
-                maxLength={10}
+                maxLength={9}
               ></input>
             </div>
             <div className="h-14 flex items-end">
