@@ -2,7 +2,7 @@ import React from "react";
 import { Tooltip } from "react-tooltip";
 import {
   showSuccessNotification,
-  showLoadingNotification,
+  showLoadingNotificationForPromise,
 } from "../../notification";
 import { showErrorNotification } from "../../notification";
 
@@ -94,8 +94,6 @@ export default class ContactForm extends React.Component {
   onSendEmail = async (event) => {
     event.preventDefault();
 
-    const fakeLoadingTime = 1500;
-
     // Check that one of the two contact fields (telephone / email) are filled
     const telephoneField = document.querySelector("#telephone");
     const emailField = document.querySelector("#email");
@@ -116,11 +114,6 @@ export default class ContactForm extends React.Component {
       isSubmitButtonDisabled: true,
     });
 
-    showLoadingNotification(
-      "Tu correo electrónico está siendo enviado",
-      fakeLoadingTime
-    );
-
     const data = {
       telephone: telephoneField?.value ?? "",
       email: emailField?.value ?? "",
@@ -129,20 +122,29 @@ export default class ContactForm extends React.Component {
       name: document.querySelector("#name")?.value ?? "",
     };
 
-    const emailResponse = await this.sendEmail(data);
+    const emailPromise = this.sendEmail(data);
 
-    // On send form mock loading time to send the email, in order to display correct messages and to prevent massive number of messages from being sent through it
-    setTimeout(() => {
-      if (emailResponse) {
-        showSuccessNotification(
-          "El correo electrónico fue enviado correctamente"
-        );
-      }
+    showLoadingNotificationForPromise(
+      "Tu correo electrónico está siendo enviado",
+      emailPromise
+    );
 
-      this.setState({
-        isSubmitButtonDisabled: false,
-      });
-    }, fakeLoadingTime);
+    const response = await emailPromise;
+
+    if (response) {
+      showSuccessNotification(
+        "El correo electrónico fue enviado correctamente"
+      );
+    }
+
+    // Temporally disable button, to prevent resending the same email again
+    setTimeout(
+      () =>
+        this.setState({
+          isSubmitButtonDisabled: false,
+        }),
+      2000
+    );
   };
 
   render() {
