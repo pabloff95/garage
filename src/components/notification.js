@@ -47,6 +47,29 @@ export const showLoadingNotification = (message, duration = 0) => {
   });
 };
 
+export const showLoadingNotificationForPromise = (loadingMessage, promise) => {
+  toast.promise(
+    promise,
+    {
+      loading: loadingMessage,
+    },
+    // Hide success and error alerts, they are directly handled in the code because the data validation
+    // in the backend could also return error messages, but the success notification would still be displayed
+    {
+      success: {
+        style: {
+          display: "none",
+        },
+      },
+      error: {
+        style: {
+          display: "none",
+        },
+      },
+    }
+  );
+};
+
 export const showErrorNotification = (message, duration = 0) => {
   toast.error(message, {
     duration: duration

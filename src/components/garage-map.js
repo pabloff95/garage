@@ -6,6 +6,8 @@ import { useMemo } from "react";
 function GarageMap({ mapClasses, zoom, showLink }) {
   const location = { lat: 43.39694868089392, lng: -3.8364687827239283 }; // Garage localization
 
+  //TODO: https://cloud.google.com/blog/products/maps-platform/google-maps-platform-best-practices-restricting-api-keys
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });

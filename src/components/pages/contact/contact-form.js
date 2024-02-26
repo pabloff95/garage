@@ -2,9 +2,8 @@ import React from "react";
 import { Tooltip } from "react-tooltip";
 import {
   showSuccessNotification,
-  showLoadingNotification,
+  showLoadingNotificationForPromise,
 } from "../../notification";
-import emailjs from "@emailjs/browser";
 import { showErrorNotification } from "../../notification";
 
 export default class ContactForm extends React.Component {
@@ -66,7 +65,33 @@ export default class ContactForm extends React.Component {
     return 1;
   };
 
-  onSendEmail = (event) => {
+  sendEmail = async (emailData) => {
+    const options = {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(emailData),
+    };
+
+    const response = await fetch("http://localhost:5000/contact_email", options)
+      .then((response) => response.json())
+      .then((data) => data);
+
+    if (!response || !response.success) {
+      const errorMessage = `El correo no pudo ser enviado. ${
+        response.message ? "Motivo: " + response.message : ""
+      } `;
+      showErrorNotification(errorMessage, 5000);
+      return false;
+    }
+
+    return response;
+  };
+
+  onSendEmail = async (event) => {
     event.preventDefault();
 
     // Check that one of the two contact fields (telephone / email) are filled
@@ -89,30 +114,37 @@ export default class ContactForm extends React.Component {
       isSubmitButtonDisabled: true,
     });
 
-    // Send email
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAIL_SERVICE_ID,
-      process.env.REACT_APP_EMAIL_TEMPLATE_ID,
-      event.target,
-      process.env.REACT_APP_EMAIL_PUBLIC_KEY
-    );
+    const data = {
+      telephone: telephoneField?.value ?? "",
+      email: emailField?.value ?? "",
+      message: document.querySelector("#message")?.value ?? "",
+      subject: document.querySelector("#reason")?.value ?? "",
+      name: document.querySelector("#name")?.value ?? "",
+    };
 
-    // On send form mock loading time to send the email, in order to display correct messages and to prevent massive number of messages from being sent through it
-    const fakeLoadingTime = 1500;
+    const emailPromise = this.sendEmail(data);
 
-    showLoadingNotification(
+    showLoadingNotificationForPromise(
       "Tu correo electrónico está siendo enviado",
-      fakeLoadingTime
+      emailPromise
     );
 
-    setTimeout(() => {
+    const response = await emailPromise;
+
+    if (response) {
       showSuccessNotification(
         "El correo electrónico fue enviado correctamente"
       );
-      this.setState({
-        isSubmitButtonDisabled: false,
-      });
-    }, fakeLoadingTime);
+    }
+
+    // Temporally disable button, to prevent resending the same email again
+    setTimeout(
+      () =>
+        this.setState({
+          isSubmitButtonDisabled: false,
+        }),
+      2000
+    );
   };
 
   render() {
@@ -177,7 +209,7 @@ export default class ContactForm extends React.Component {
                 onFocus={() => this.onFocusElement("telephone")}
                 onBlur={() => this.onBlur()}
                 pattern="[0-9]{9}"
-                maxLength={10}
+                maxLength={9}
               ></input>
             </div>
             <div className="h-14 flex items-end">
