@@ -1,8 +1,8 @@
 import React from "react";
 import NavigationButton from "../navigation-button";
-import Logo from "../basic-elements/logo";
 import FaIcon from "../basic-elements/fa-icon";
 import displaySalesSection from "../../utilis/display-sales-section";
+import { Link } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
@@ -10,8 +10,10 @@ class Header extends React.Component {
 
     return (
       <header className="layout-header">
-        <div className="ml-5">
-          <Logo />
+        <div className="flex justify-center items-center cursor-pointer">
+          <Link to="/" className="logo-container">
+            <img src="/images/other/logo.png" alt="Logo tallers motec" />
+          </Link>
         </div>
         <div className="flex flex-row gap-2">
           <NavigationButton text="Inicio" href="/" />
