@@ -27,7 +27,7 @@ class ContactCard extends React.Component {
     const containerClassList =
       "flex flex-col gap-2 items-center border shadow-neutral-color-gray p-4 rounded-lg min-w-[15vw]";
     const containerHoverClassList =
-      "hover:shadow-primary-element hover:border-primary-element hover:cursor-pointer";
+      "hover:shadow-element-gained-focus hover:border-element-gained-focus hover:cursor-pointer";
 
     // Define card content elements
     const contactCardContent = (

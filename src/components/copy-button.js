@@ -29,7 +29,7 @@ class CopyButton extends React.Component {
 
     return (
       <div
-        className="hover:text-primary-element hover:cursor-pointer"
+        className="hover:text-element-gained-focus hover:cursor-pointer"
         onClick={(e) => {
           e.preventDefault(); // Prevent triggering other elements placed behind
           this.copyToClipboard();

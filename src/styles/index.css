@@ -17,6 +17,7 @@
   --page-bg-color: #fbf8f8;
   --primary-element: #FF3E21;
   --secondary-element: #C8381E;
+  --element-gained-focus: #FF5100;
   --link-color: #139df2;
   --confirmation-green-color: #49F054;
 
@@ -97,20 +98,20 @@ body {
   box-shadow: 0px 0px 10px var(--neutral-color-gray);
 }
 
-.shadow-primary-element {
-  box-shadow: 0px 0px 10px var(--primary-element);
+.shadow-element-gained-focus {
+  box-shadow: 0px 0px 10px var(--element-gained-focus);
 }
 
-.hover\:border-primary-element:hover {
-  border-color: var(--primary-element);
+.hover\:border-element-gained-focus:hover {
+  border-color: var(--element-gained-focus);
 }
 
 .hover\:text-neutral-primary:hover {
   color: var(--neutral-color-primary);
 }
 
-.hover\:text-primary-element:hover {
-  color: var(--primary-element);
+.hover\:text-element-gained-focus:hover {
+  color: var(--element-gained-focus);
 }
 
 .hover\:bg-primary-element:hover {
@@ -121,16 +122,12 @@ body {
   box-shadow: 0px 1px 10px var(--secondary-element);
 }
 
-.hover\:shadow-primary-element:hover {
-  box-shadow: 0px 0px 10px var(--primary-element);
+.hover\:shadow-element-gained-focus:hover {
+  box-shadow: 0px 0px 10px var(--element-gained-focus);
 }
 
 .border-b-neutral-color-primary {
   border-color: var(--neutral-color-primary);
-}
-
-.border-primary-element {
-  border-color: var(--primary-element);
 }
 
 .border-b-primary-element {
@@ -138,7 +135,7 @@ body {
 }
 
 .focus\:border-b-primary-element:focus {
-  border-color: var(--primary-element);
+  border-color: var(--element-gained-focus);
 }
 
 .hover\:picture:hover{
@@ -150,6 +147,9 @@ body {
 
 .hover\:carousel-nav-button:hover {
   background-color: var(--primary-element) !important;
-  color: var(--neutral-color-primary);
   opacity: 1 !important;
+}
+
+.active\:scale-90:active {
+  scale: 0.90
 }

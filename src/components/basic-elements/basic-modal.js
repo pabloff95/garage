@@ -25,7 +25,7 @@ export default class BasicModal extends React.Component {
               <div
                 role="button"
                 onClick={this.props.onClose}
-                className="hover:text-primary-element"
+                className="hover:text-element-gained-focus"
               >
                 <FaIcon icon="times" />
               </div>

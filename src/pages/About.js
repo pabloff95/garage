@@ -30,7 +30,7 @@ class About extends React.Component {
             alt="Foto de las instalaciones de nuestro taller"
           />
           <button
-            className="absolute bottom-2 right-2 hover:text-primary-element"
+            className="absolute bottom-2 right-2 hover:text-element-gained-focus"
             onClick={() => this.onZoomToggle(picture)}
           >
             <FaIcon icon="magnifying-glass-plus" />
