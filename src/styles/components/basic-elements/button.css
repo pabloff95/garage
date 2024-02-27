@@ -11,7 +11,7 @@
     background-color: var(--primary-element) !important;
     color: var(--neutral-color-primary);
     scale: 0.9;
-    box-shadow: 0px 1px 10px var(--tertiary-element);
+    box-shadow: 0px 1px 10px var(--secondary-element);
   }
   
   .button:active {

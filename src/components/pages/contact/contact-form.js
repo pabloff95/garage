@@ -296,7 +296,7 @@ export default class ContactForm extends React.Component {
               className={`${
                 this.state.isSubmitButtonDisabled
                   ? "cursor-not-allowed"
-                  : "hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-tertiary-element hover:cursor-pointer"
+                  : "hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-secondary-element hover:cursor-pointer"
               } border-neutral-color-primary transition-all duration-200 w-fit py-3 px-12 rounded font-bold tracking-wider`}
               data-tooltip-id="submit-form-tooltip"
               data-tooltip-content="Enviar correo electrónico"

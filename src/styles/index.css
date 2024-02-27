@@ -15,10 +15,8 @@
   --neutral-color-contrast: #f2f2f2;
   --neutral-color-gray: #bfbfbf;
   --page-bg-color: #fbf8f8;
-  --primary-element: #f2a922;
-  --secondary-element: #d98825;
-  --tertiary-element: #a67458;
-  --highlighted-element: #fde047;
+  --primary-element: #FF3E21;
+  --secondary-element: #C8381E;
   --link-color: #139df2;
   --confirmation-green-color: #49F054;
 
@@ -52,11 +50,6 @@ body {
 
 .bg-neutral-color-primary {
   background-color: var(--neutral-color-primary);
-}
-
-
-.bg-highlighted-element {
-  background-color: var(--highlighted-element);
 }
 
 .bg-page-bg-color {
@@ -124,8 +117,8 @@ body {
   background-color: var(--primary-element);
 }
 
-.hover\:text-shadow-tertiary-element:hover {
-  box-shadow: 0px 1px 10px var(--tertiary-element);
+.hover\:text-shadow-secondary-element:hover {
+  box-shadow: 0px 1px 10px var(--secondary-element);
 }
 
 .hover\:shadow-primary-element:hover {

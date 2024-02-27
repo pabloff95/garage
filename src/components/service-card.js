@@ -92,7 +92,7 @@ class ServiceCard extends React.Component {
             </section>
             <section className="w-full flex justify-center my-2">
               <Link
-                className="text-sm border border-b-neutral-color-primary hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-tertiary-element transition-all duration-200 w-fit p-1.5 rounded font-bold tracking-wider"
+                className="text-sm border border-b-neutral-color-primary hover:border-primary-element hover:text-primary-element hover:scale-95 hover:text-shadow-secondary-element transition-all duration-200 w-fit p-1.5 rounded font-bold tracking-wider"
                 to="/contact"
               >
                 CONTACTANOS
