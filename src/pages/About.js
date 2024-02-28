@@ -4,6 +4,7 @@ import HorizontalScrollContainer from "../components/horizontal-scroll-container
 import FaIcon from "../components/basic-elements/fa-icon";
 import BasicModal from "../components/basic-elements/basic-modal";
 import CompanyChrono from "../components/pages/about/company-chrono";
+import Brands from "../components/pages/about/brands";
 
 class About extends React.Component {
   constructor(props) {
@@ -181,6 +182,17 @@ class About extends React.Component {
               />
             </div>
           </BasicModal>
+        </section>
+        <section className="my-5 w-full py-3">
+          <div className="w-80% mx-[10%] flex flex-col gap-2">
+            <h2 className="text-2xl font-semibold">Nuestras marcas</h2>
+            <p>
+              En Talleres Motec trabajamos con una amplia gama de marcas
+              reconocidas y colaboramos con fabricantes líderes en la industria.
+              Explore aquí las principales marcas con las que trabajamos:
+            </p>
+            <Brands></Brands>
+          </div>
         </section>
         <section className="my-5 w-full py-3">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
