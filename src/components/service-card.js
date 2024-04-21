@@ -37,9 +37,7 @@ class ServiceCard extends React.Component {
   getInformationSection = () => {
     return (
       <section
-        className={`w-5/6 flex ${
-          this.props.isEven ? "justify-start" : "justify-center"
-        } items-center`}
+        className="w-5/6 flex justify-center items-center"
         key={`${this.uniqueId}-information`}
       >
         <div className="flex flex-col gap-2 w-11/12">
@@ -53,15 +51,6 @@ class ServiceCard extends React.Component {
         </div>
       </section>
     );
-  };
-
-  getServiceCardSections = () => {
-    // Alternate order on each row
-    if (this.props.isEven) {
-      return [this.getImageSection(), this.getInformationSection()];
-    }
-
-    return [this.getInformationSection(), this.getImageSection()];
   };
 
   openModal = () => {
@@ -78,8 +67,8 @@ class ServiceCard extends React.Component {
 
   render() {
     return (
-      <div className="border shadow-neutral-color-gray p-4 rounded-lg flex flex-row">
-        {this.getServiceCardSections()}
+      <div className="border shadow-neutral-color-gray p-4 rounded-lg flex flex-col sm:flex-row">
+        {[this.getInformationSection(), this.getImageSection()]}
         <BasicModal
           isOpen={this.state.isModalOpen}
           onClose={this.closeModal}

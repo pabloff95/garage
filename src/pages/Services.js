@@ -25,7 +25,6 @@ class Services extends React.Component {
             <ServiceCard
               title="Mecánica"
               text="Ofrecemos servicios de mecánica para mantener tu vehículo en óptimas condiciones. Desde afinaciones hasta reparaciones de motor, nuestro equipo altamente capacitado resuelve cualquier problema con eficiencia y precisión."
-              isEven={false}
               img={{
                 src: "/images/pages/services/car.png",
                 alt: "Imagen de un coche tradicional",
@@ -62,7 +61,6 @@ class Services extends React.Component {
             <ServiceCard
               title="Cambio de aceite"
               text="Nuestro servicio de cambio de aceite, rápido y eficiente, utiliza productos de alta calidad. No solo reemplazamos el aceite, sino que también verificamos y, si es necesario, reemplazamos el filtro, asegurando un motor saludable."
-              isEven={true}
               img={{
                 src: "/images/pages/services/oil.png",
                 alt: "Imagen de un bidón de aceite",
@@ -97,7 +95,6 @@ class Services extends React.Component {
             <ServiceCard
               title="Servicio de neumáticos"
               text="Proporcionamos un servicio integral de neumáticos, desde la elección adecuada hasta instalaciones, rotaciones y reparaciones. Con asesoramiento profesional y opciones para todos los presupuestos, mantenemos tus neumáticos en las mejores condiciones."
-              isEven={false}
               img={{
                 src: "/images/pages/services/wheel.png",
                 alt: "Imagen del neumático de un coche",
@@ -132,7 +129,6 @@ class Services extends React.Component {
             <ServiceCard
               title="Mantenimiento"
               text="Nuestro servicio de mantenimiento preventivo, con inspecciones exhaustivas y ajustes, preserva la confiabilidad a lo largo del tiempo. Utilizamos herramientas avanzadas y seguimos protocolos rigurosos para garantizar la integridad y el rendimiento continuo de tu vehículo."
-              isEven={true}
               img={{
                 src: "/images/pages/services/gear_tool.png",
                 alt: "Imagen de herramientas",
