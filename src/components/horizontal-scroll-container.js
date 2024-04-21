@@ -14,7 +14,7 @@ class HorizontalScrollContainer extends React.Component {
     };
   }
 
-  max = parseInt(this.props.itemsPerSlide);
+  max = parseInt(this.props.itemsPerSlide ?? 1);
 
   componentWillMount = () => {
     const { children, renderAsGrid } = this.props;

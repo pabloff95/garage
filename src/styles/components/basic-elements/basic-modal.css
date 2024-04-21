@@ -24,3 +24,10 @@
     flex-direction: column;
     gap: 1.5vh;
 }
+
+@media (max-width: 500px) {
+    .modal-box { 
+        height: 90vh;
+        width: 100vw;
+    }
+}

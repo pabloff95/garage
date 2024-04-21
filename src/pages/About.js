@@ -15,13 +15,14 @@ class About extends React.Component {
       zoomedPicture: "",
       autoplayCarrousel: true,
       navigationButtons: [],
+      displayCarousel: true,
     };
   }
 
   getPicture = (picture) => {
     return (
       <div
-        className="min-w-max h-[50vh] flex justify-center"
+        className="min-w-max h-[30vh] sm:h-[50vh] flex justify-center"
         key={`picture_${picture}`}
       >
         <div className="relative">
@@ -39,29 +40,6 @@ class About extends React.Component {
         </div>
       </div>
     );
-  };
-
-  updateCarouselWidth = () => {
-    const pictures = Array.from(document.querySelectorAll(".carousel-img"));
-    const horizontalScrollContainer = document.getElementById(
-      "horizontal-scroll-container"
-    );
-
-    const activePicture = pictures.find((img) => img?.offsetWidth !== 0); // Only displayed picture has width (> 0)
-
-    if (
-      !activePicture ||
-      !horizontalScrollContainer ||
-      activePicture?.offsetWidth === horizontalScrollContainer?.style?.width
-    ) {
-      return;
-    }
-
-    const pictureWidth = activePicture?.offsetWidth ?? 0;
-
-    horizontalScrollContainer.style.width = `${
-      pictureWidth + pictureWidth / 5 // Add some extra space to place navigation buttons outside of the picture
-    }px`;
   };
 
   onZoomToggle = (picture) => {
@@ -97,21 +75,74 @@ class About extends React.Component {
     this.setState({
       navigationButtons: this.getCarrouselNavigationButtons(),
     });
+
+    window.addEventListener("resize", this.resizeCarousel);
   };
 
-  componentDidUpdate = () => {
-    this.updateCarouselWidth();
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resizeCarousel);
+  }
+
+  resizeCarousel = () => {
+    // On window resize, the carousel height is not updated correctly, see: https://github.com/Learus/react-material-ui-carousel/issues/189. Therefore, it has to be adapted manually.
+    // Therefore, a work around is implemented in order to force the re-render of the component.
+
+    this.setState({
+      displayCarousel: false,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        displayCarousel: true,
+      });
+    }, 500);
   };
+
+  valueCardsInfo = [
+    {
+      title: "Calidad y excelencia",
+      description:
+        "Nos esforzamos por ofrecer servicios de reparación de la más alta calidad, utilizando tecnología avanzada y técnicas probadas.",
+      icon: "ranking-star",
+      id: "info_card_1",
+    },
+    {
+      title: "Honestidad y transparencia",
+      description:
+        "Creemos en la honestidad en cada interacción. No hay sorpresas desagradables; solo transparencia y confianza",
+      icon: "handshake",
+      id: "info_card_2",
+    },
+    {
+      title: "Trabajo en equipo",
+      description:
+        "Nuestro equipo está formado por profesionales apasionados que trabajan juntos para garantizar el mejor servicio posible.",
+      icon: "people-group",
+      id: "info_card_3",
+    },
+    {
+      title: "Atención personalizada",
+      description:
+        "Valoramos a cada cliente y nos esforzamos por brindar una atención personalizada para satisfacer sus necesidades individuales.",
+      icon: "id-badge",
+      id: "info_card_4",
+    },
+  ];
+
+  pictures = [
+    this.getPicture("picture_1"),
+    this.getPicture("picture_2"),
+    this.getPicture("picture_3"),
+    this.getPicture("picture_4"),
+  ];
 
   render() {
     return (
       <div className="mt-[5vh]">
-        <section className="my-5 py-3 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
-            Sobre nosotros
-          </h1>
+        <section className="py-3 sm:py-5 w-full">
+          <h1 className="w-80% mx-[10%] font-bold text-3xl">Sobre nosotros</h1>
         </section>
-        <section className="my-5 w-full py-3">
+        <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Historia</h2>
             <p>
@@ -144,7 +175,7 @@ class About extends React.Component {
             </div>
           </div>
         </section>
-        <section className="mb-5 w-full py-3">
+        <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Instalaciones</h2>
             <p>
@@ -154,19 +185,16 @@ class About extends React.Component {
               eficiencia y comodidad a nuestros clientes.
             </p>
             <div className="w-full h-fit flex justify-center">
-              <HorizontalScrollContainer
-                itemsPerSlide={1}
-                navButtonsAlwaysVisible={true}
-                autoPlay={this.state.autoplayCarrousel}
-                interval="3000"
-              >
-                {[
-                  this.getPicture("picture_1"),
-                  this.getPicture("picture_2"),
-                  this.getPicture("picture_3"),
-                  this.getPicture("picture_4"),
-                ]}
-              </HorizontalScrollContainer>
+              {this.state.displayCarousel && (
+                <HorizontalScrollContainer
+                  navButtonsAlwaysVisible={true}
+                  autoPlay={this.state.autoplayCarrousel}
+                  interval="3000"
+                  className="w-full h-[35vh] sm:h-[55vh] "
+                >
+                  {this.pictures}
+                </HorizontalScrollContainer>
+              )}
             </div>
           </div>
           <BasicModal
@@ -183,7 +211,7 @@ class About extends React.Component {
             </div>
           </BasicModal>
         </section>
-        <section className="my-5 w-full py-3">
+        <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Nuestras marcas</h2>
             <p>
@@ -191,37 +219,22 @@ class About extends React.Component {
               reconocidas y colaboramos con fabricantes líderes en la industria.
               Explore aquí las principales marcas con las que trabajamos:
             </p>
-            <Brands></Brands>
+            <Brands />
           </div>
         </section>
-        <section className="my-5 w-full py-3">
+        <section className="py-1 sm:py-3 w-full mb-12">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <h2 className="text-2xl font-semibold">Nuestros Valores</h2>
-            <div className="mt-2 w-full flex flex-row justify-between">
-              <ValueCard
-                styles="w-[22%] h-[35vh]"
-                title="Calidad y excelencia"
-                description="Nos esforzamos por ofrecer servicios de reparación de la más alta calidad, utilizando tecnología avanzada y técnicas probadas."
-                icon="ranking-star"
-              />
-              <ValueCard
-                styles="w-[22%] h-[35vh]"
-                title="Honestidad y transparencia"
-                description="Creemos en la honestidad en cada interacción. No hay sorpresas desagradables; solo transparencia y confianza"
-                icon="handshake"
-              />
-              <ValueCard
-                styles="w-[22%] h-[35vh]"
-                title="Trabajo en equipo"
-                description="Nuestro equipo está formado por profesionales apasionados que trabajan juntos para garantizar el mejor servicio posible."
-                icon="people-group"
-              />
-              <ValueCard
-                styles="w-[22%] h-[35vh]"
-                title="Atención personalizada"
-                description="Valoramos a cada cliente y nos esforzamos por brindar una atención personalizada para satisfacer sus necesidades individuales."
-                icon="id-badge"
-              />
+            <div className="mt-2 w-full flex flex-row flex-wrap justify-evenly gap-10">
+              {this.valueCardsInfo.map(({ title, description, icon, id }) => (
+                <ValueCard
+                  styles="min-w-[200px] w-[22%] h-[35vh]"
+                  title={title}
+                  description={description}
+                  icon={icon}
+                  key={id}
+                />
+              ))}
             </div>
           </div>
         </section>
