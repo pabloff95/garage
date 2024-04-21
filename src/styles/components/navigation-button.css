@@ -1,9 +1,8 @@
 .navigation-button {
-  padding: 0.5rem;
   border-radius: 0.25rem;
-  letter-spacing: 1.5px;
   transition: all ease 0.5s;
   font-weight: bold;
+  width: max-content;
 }
 
 .navigation-button:hover {
