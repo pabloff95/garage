@@ -5,12 +5,12 @@ class Services extends React.Component {
   render() {
     return (
       <div className="mt-[5vh]">
-        <section className="my-5 py-3 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
+        <section className="py-3 sm:py-5 w-full">
+          <h1 className="w-80% mx-[10%] font-bold text-3xl">
             Nuestros servicios
           </h1>
         </section>
-        <section className="my-5 w-full">
+        <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%]">
             <p>
               Descubre nuestros servicios especializados, nuestro equipo
@@ -20,7 +20,7 @@ class Services extends React.Component {
             </p>
           </div>
         </section>
-        <section className="my-10 w-full">
+        <section className="py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-6">
             <ServiceCard
               title="Mecánica"

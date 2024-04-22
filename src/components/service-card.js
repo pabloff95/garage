@@ -17,11 +17,11 @@ class ServiceCard extends React.Component {
   getImageSection = () => {
     return (
       <section
-        className="w-1/6 flex justify-center items-center"
+        className="min-w-[200px] w-full md:w-[20%] flex justify-center items-center"
         key={`${this.uniqueId}-img`}
       >
         <div
-          className="flex justify-center w-5/6 overflow-hidden rounded"
+          className="w-4/6 md:w-full lg:w-5/6 flex justify-center h-auto overflow-hidden rounded"
           onClick={() => this.openModal()}
         >
           <img
@@ -37,14 +37,16 @@ class ServiceCard extends React.Component {
   getInformationSection = () => {
     return (
       <section
-        className="w-5/6 flex justify-center items-center"
+        className="w-full md:w-[80%] flex justify-center items-center md:py-4"
         key={`${this.uniqueId}-information`}
       >
-        <div className="flex flex-col gap-2 w-11/12">
-          <h2 className="font-bold text-2xl">{this.props.title}</h2>
+        <div className="flex flex-col gap-4 md:gap-2 w-11/12 justify-evenly h-full lg:h-4/6">
+          <h2 className="text-center md:text-left font-bold text-2xl mt-6 md:mt-0">
+            {this.props.title}
+          </h2>
           <p>{this.props.text}</p>
           <Button
-            styles="w-fit mt-4"
+            styles="mb-4 md:mb-0 w-full md:w-fit px-8"
             text="Leer más"
             onClick={() => this.openModal()}
           ></Button>
@@ -67,7 +69,7 @@ class ServiceCard extends React.Component {
 
   render() {
     return (
-      <div className="border shadow-neutral-color-gray p-4 rounded-lg flex flex-col sm:flex-row">
+      <div className="mx-auto w-5/6 md:w-full min-w-[250px] border shadow-neutral-color-gray p-4 rounded-lg flex flex-col-reverse md:flex-row">
         {[this.getInformationSection(), this.getImageSection()]}
         <BasicModal
           isOpen={this.state.isModalOpen}
