@@ -25,7 +25,7 @@ class ContactCard extends React.Component {
   render() {
     // Define container tailwind classes
     const containerClassList =
-      "flex flex-col gap-2 items-center border shadow-neutral-color-gray p-4 rounded-lg min-w-[15vw]";
+      "min-w-[200px] w-1/4 flex flex-col gap-2 items-center border shadow-neutral-color-gray p-4 rounded-lg";
     const containerHoverClassList =
       "hover:shadow-element-gained-focus hover:border-element-gained-focus hover:cursor-pointer";
 
