@@ -37,10 +37,22 @@ class Header extends React.Component {
 
   render() {
     const hasCompanyValidOffers = displaySalesSection();
+    // Set different breakpoints for the responsive design, depening on whether the "offers" section is visible or not
+    const navButtonsFont = hasCompanyValidOffers
+      ? "text-[10px] min-[370px]:text-xs min-[830px]:text-lg lg:text-xl"
+      : "text-xs sm:text-base md:text-lg lg:text-xl";
+    const logoDisplay = hasCompanyValidOffers
+      ? "min-[450px]:flex"
+      : "min-[370px]:flex";
+    const buttonsAlign = hasCompanyValidOffers
+      ? "w-full justify-evenly sm:w-fit min-[450px]:justify-start"
+      : "";
 
     return (
       <header className="layout-header">
-        <div className="hidden min-[370px]:flex justify-center items-center cursor-pointer p-0.5">
+        <div
+          className={`hidden ${logoDisplay} justify-center items-center cursor-pointer p-0.5`}
+        >
           <Link
             to="/"
             className="h-5/6 md:h-full w-auto flex justify-center self-center"
@@ -48,14 +60,36 @@ class Header extends React.Component {
             <img src={this.state.imgSrc} alt="Logo tallers motec" />
           </Link>
         </div>
-        <div className="header-buttons flex flex-row items-center">
-          <NavigationButton text="Inicio" href="/" />
-          <NavigationButton text="Sobre Motec" href="about" />
-          <NavigationButton text="Servicios" href="services" />
+        <div
+          className={`header-buttons flex flex-row items-center ${buttonsAlign}`}
+        >
+          <NavigationButton
+            text="Inicio"
+            href="/"
+            extraClasses={navButtonsFont}
+          />
+          <NavigationButton
+            text="Sobre Motec"
+            href="about"
+            extraClasses={navButtonsFont}
+          />
+          <NavigationButton
+            text="Servicios"
+            href="services"
+            extraClasses={navButtonsFont}
+          />
           {hasCompanyValidOffers && (
-            <NavigationButton text="Ofertas" href="sales" />
+            <NavigationButton
+              text="Ofertas"
+              href="sales"
+              extraClasses={navButtonsFont}
+            />
           )}
-          <NavigationButton text="Contacto" href="contact" />
+          <NavigationButton
+            text="Contacto"
+            href="contact"
+            extraClasses={navButtonsFont}
+          />
         </div>
         <div className="hidden mr-5 sm:flex flex-row gap-2 justify-center items-center font-semibold text-xs lg:text-base">
           <FaIcon icon="phone"></FaIcon>
