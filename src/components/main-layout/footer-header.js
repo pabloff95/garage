@@ -2,10 +2,6 @@ import React from "react";
 import FaIcon from "../basic-elements/fa-icon";
 
 class FooterHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="flex flex-row gap-2 items-center">
