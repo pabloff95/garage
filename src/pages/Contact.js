@@ -38,11 +38,11 @@ class Contact extends React.Component {
             />
           </div>
         </section>
-        <section className="py-1 sm:py-3 w-full">
+        <section className="py-3 w-full">
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
             Formulario de contacto
           </h1>
-          <p className="w-80% mx-[10%] text-lg mb-3">
+          <p className="w-80% mx-[10%] mb-3">
             A través del siguiente formulario, también puedes ponerte en
             contacto con nosotros:
           </p>
@@ -52,13 +52,13 @@ class Contact extends React.Component {
           <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
             ¡Ven a conocernos!
           </h1>
-          <p className="w-80% mx-[10%] text-lg my-3">
+          <p className="w-80% mx-[10%] my-3">
             Nos ubicamos en el parque empresarial de Morero, parcela 2-11 nave
             nº2, Guarnizo el Astillero (Santander):
           </p>
-          <div className="w-full text-center mt-10">
+          <div className="px-4 sm:px-0 w-full text-center mt-10">
             <GarageMap
-              mapClasses="w-2/3 h-[40rem] m-auto"
+              mapClasses="w-full sm:w-2/3 h-[40rem] m-auto"
               zoom="13"
               showLink={true}
             />
