@@ -2,10 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class OfferCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   getReducedPrice = () => {
     // Show reduced price as percentage
     const { originalPrice, currentPrice } = this.props;
@@ -41,7 +37,11 @@ class OfferCard extends React.Component {
                     {this.getReducedPrice()}
                   </div>
                 )}
-                <img src={imgPath} className="w-full h-full" />
+                <img
+                  src={imgPath}
+                  className="w-full h-full"
+                  alt={`Oferta actual en nuestro taller en "${title}", por ${currentPrice}€!`}
+                />
               </div>
             </section>
             <section className="m-auto lg:m-0 w-full sm:w-11/12 lg:w-[60vw] flex flex-col gap-2 sm:gap-4 justify-center p-2">
