@@ -62,16 +62,16 @@ class Sales extends React.Component {
   render() {
     return (
       <div className="mt-[5vh]">
-        <section className="my-5 py-3 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl mt-3">Ofertas</h1>
+        <section className="py-3 sm:py-5 w-full">
+          <h1 className="w-80% mx-[10%] font-bold text-3xl">Ofertas</h1>
         </section>
-        <section className="mb-5 py-3 w-full">
-          <p className="w-80% mx-[10%] text-lg">
-            Disfruta de nuestras mejores ofertas por tiempo limitado:
-          </p>
+        <section className="py-1 sm:py-3 w-full">
+          <div className="w-80% mx-[10%] flex flex-col gap-2">
+            <p>Disfruta de nuestras mejores ofertas por tiempo limitado:</p>
+          </div>
         </section>
-        <section className="my-5 w-full py-3">
-          <div className="w-80% mx-[10%] flex flex-row flex-wrap justify-center gap-6 items-center">
+        <section className="py-1 sm:py-3 w-full">
+          <div className="w-80% mx-[10%] flex flex-row flex-wrap justify-center gap-6 items-center mt-2 mb-8">
             {this.getValidOffers().map((offer, index) => {
               const {
                 title,
