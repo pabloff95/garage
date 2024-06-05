@@ -57,7 +57,7 @@ class OfferCard extends React.Component {
               </div>
               <Link
                 className="mx-auto w-fit bg-red-500 text-neutral-color-contrast hover:scale-90 active:scale-90 transition-all duration-200 py-3 px-12 lg:px-8 rounded-sm font-bold tracking-wider"
-                to="/contact"
+                to="/contacto"
               >
                 CONTACTANOS
               </Link>

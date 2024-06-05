@@ -41,12 +41,12 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
+            <Route path="sobre-nosotros" element={<About />} />
+            <Route path="servicios" element={<Services />} />
             {displaySalesSection() && (
-              <Route path="sales" element={<Sales />} />
+              <Route path="ofertas" element={<Sales />} />
             )}
-            <Route path="contact" element={<Contact />} />
+            <Route path="contacto" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

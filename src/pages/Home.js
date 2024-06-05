@@ -127,7 +127,7 @@ class Home extends React.Component {
               <div className="text-center sm:text-left">
                 <Link
                   className="text-neutral-color-contrast border-neutral-color-contrast hover:border-element-gained-focus hover:text-element-gained-focus hover:scale-95 hover:text-shadow-secondary-element transition-all duration-200 w-fit p-3 rounded font-bold tracking-wider"
-                  to="/contact"
+                  to="/contacto"
                   data-tooltip-content="Abrir página de contacto"
                   data-tooltip-id="to-contact-link-tooltip"
                   data-tooltip-place="bottom"

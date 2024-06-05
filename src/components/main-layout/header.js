@@ -70,24 +70,24 @@ class Header extends React.Component {
           />
           <NavigationButton
             text="Sobre Motec"
-            href="about"
+            href="sobre-nosotros"
             extraClasses={navButtonsFont}
           />
           <NavigationButton
             text="Servicios"
-            href="services"
+            href="servicios"
             extraClasses={navButtonsFont}
           />
           {hasCompanyValidOffers && (
             <NavigationButton
               text="Ofertas"
-              href="sales"
+              href="ofertas"
               extraClasses={navButtonsFont}
             />
           )}
           <NavigationButton
             text="Contacto"
-            href="contact"
+            href="contacto"
             extraClasses={navButtonsFont}
           />
         </div>
