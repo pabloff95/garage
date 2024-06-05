@@ -13,7 +13,12 @@ class App extends React.Component {
   componentDidMount = () => {
     // Prevent "ResizeObserver loop limit exceeded" error from trigger. Read issue here: https://github.com/mui/material-ui/issues/36909. Error raised by value-card component
     window.addEventListener("error", (e) => {
-      if (e.message === "ResizeObserver loop limit exceeded") {
+      const errorsToIgnore = [
+        "ResizeObserver loop completed with undelivered notifications.",
+        "ResizeObserver loop limit exceeded",
+      ];
+
+      if (errorsToIgnore.includes(e.message)) {
         const resizeObserverErrDiv = document.getElementById(
           "webpack-dev-server-client-overlay-div"
         );

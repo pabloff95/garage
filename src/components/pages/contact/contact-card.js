@@ -25,20 +25,20 @@ class ContactCard extends React.Component {
   render() {
     // Define container tailwind classes
     const containerClassList =
-      "flex flex-col gap-2 items-center border shadow-neutral-color-gray p-4 rounded-lg min-w-[15vw]";
+      "min-w-[170px] sm:min-w-[200px] w-1/4 flex flex-col gap-2 items-center border shadow-neutral-color-gray p-2 sm:p-4 rounded-lg";
     const containerHoverClassList =
       "hover:shadow-element-gained-focus hover:border-element-gained-focus hover:cursor-pointer";
 
     // Define card content elements
     const contactCardContent = (
       <>
-        <div className="p-4 h-[5.5rem]">
+        <div className="p-4 h-[4.5rem] sm:h-[5.5rem]">
           <FaIcon icon={this.props.icon} className="h-full" />
         </div>
-        <p className="text-md font-semibold text-link-color tracking-wider">
+        <p className="text-sm sm:text-md font-semibold text-link-color tracking-wider">
           {this.props.message.toUpperCase()}
         </p>
-        <span className="text-xl flex flex-row gap-2">
+        <span className="text-md sm:text-xl flex flex-row gap-2">
           {this.props.contactDetails && (
             <span>{this.props.contactDetails}</span>
           )}

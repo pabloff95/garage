@@ -2,14 +2,37 @@
   font-size: 0.8rem;
 
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 0.5rem 0;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 3vh;
+  text-align: center;
 
   background-color: var(--layout-bg-color);
   color: var(--layout-text-color);
 }
+
+.layout-footer section{
+ align-items: center;
+}
+
 footer .footer-title {
   font-weight: bold;
   font-size: 0.85rem;
+}
+
+@media (min-width: 640px) { /*Tailwind sm responsive size*/
+  .layout-footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2vh 0;
+    text-align: start;
+    gap: 0;
+    align-items: start;
+  }
+ 
+  .layout-footer section{
+    align-items: start;
+   }
+   
 }

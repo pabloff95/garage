@@ -150,7 +150,7 @@ export default class ContactForm extends React.Component {
   render() {
     return (
       <div
-        className={`w-80% mx-[10%] flex flex-col justify-center py-8 px-6 rounded-lg mt-6 ${
+        className={`w-80% mx-[10%] flex flex-col justify-center py-4 sm:py-8 px-4 sm:px-6 rounded-lg mt-6 ${
           this.state.focusedElement !== ""
             ? "shadow-element-gained-focus"
             : "shadow-neutral-color-gray"
@@ -160,8 +160,8 @@ export default class ContactForm extends React.Component {
           className="flex flex-col gap-0.5"
           onSubmit={(e) => this.onSendEmail(e)}
         >
-          <section className="flex flex-row gap-4 w-full">
-            <div className="w-1/2">
+          <section className="flex flex-row sm:gap-4 w-full">
+            <div className="w-full sm:w-1/2">
               <div className="h-6">
                 <label
                   htmlFor="name"
@@ -184,10 +184,10 @@ export default class ContactForm extends React.Component {
               ></input>
             </div>
             <div></div>
-            <div className="w-1/2"></div>
+            <div className="hidden sm:block sm:w-1/2"></div>
           </section>
-          <section className="flex flex-row gap-4 w-full">
-            <div className="w-1/2">
+          <section className="flex flex-col sm:flex-row sm:gap-4 w-full">
+            <div className="w-full sm:w-1/2">
               <div className="h-6">
                 <label
                   htmlFor="telephone"
@@ -195,14 +195,14 @@ export default class ContactForm extends React.Component {
                     this.labelClasses
                   }`}
                 >
-                  Teléfono
+                  Teléfono **
                 </label>
               </div>
               <input
                 type="tel"
                 id="telephone"
                 name="telephone"
-                placeholder={this.getPlaceHolder("telephone", "Teléfono")}
+                placeholder={this.getPlaceHolder("telephone", "Teléfono **")}
                 className={`w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
                   this.state.isContactMissing ? "!border-red-500" : ""
                 } `}
@@ -211,11 +211,14 @@ export default class ContactForm extends React.Component {
                 pattern="[0-9]{9}"
                 maxLength={9}
               ></input>
+              <small className="text-gray-400 sm:hidden">
+                ** Al menos uno de los campos debe ser completado
+              </small>
             </div>
-            <div className="h-14 flex items-end">
+            <div className="hidden sm:flex sm:h-14 items-end">
               <p className="h-fit">O</p>
             </div>
-            <div className="w-1/2">
+            <div className="w-full sm:w-1/2">
               <div className="h-6">
                 <label
                   htmlFor="email"
@@ -230,15 +233,24 @@ export default class ContactForm extends React.Component {
                 type="email"
                 id="email"
                 name="email_from"
-                placeholder={this.getPlaceHolder("email", "Correo electrónico")}
+                placeholder={this.getPlaceHolder(
+                  "email",
+                  "Correo electrónico **"
+                )}
                 className={`w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
                   this.state.isContactMissing ? "!border-red-500" : ""
                 }`}
                 onFocus={() => this.onFocusElement("email")}
                 onBlur={() => this.onBlur()}
               ></input>
+              <small className="text-gray-400 sm:hidden">
+                ** Al menos uno de los campos debe ser completado
+              </small>
             </div>
           </section>
+          <small className="hidden text-gray-400 sm:block sm:w-full">
+            ** Al menos uno de los campos debe ser completado
+          </small>
           {this.state.isContactMissing && (
             <div>
               <p className="text-red-500">
@@ -289,7 +301,7 @@ export default class ContactForm extends React.Component {
               required
             ></textarea>
           </section>
-          <section className="mx-auto mt-2">
+          <section className="mx-auto mt-4">
             <input
               type="submit"
               value="ENVIAR"
@@ -297,7 +309,7 @@ export default class ContactForm extends React.Component {
                 this.state.isSubmitButtonDisabled
                   ? "cursor-not-allowed"
                   : "hover:border-element-gained-focus hover:text-element-gained-focus hover:scale-95 hover:text-shadow-secondary-element hover:cursor-pointer"
-              } border-neutral-color-primary transition-all duration-200 w-fit py-3 px-12 rounded font-bold tracking-wider`}
+              } border-neutral-color-primary transition-all duration-200 w-fit py-2 sm:py-3 px-6 sm:px-12 rounded font-bold tracking-wider`}
               data-tooltip-id="submit-form-tooltip"
               data-tooltip-content="Enviar correo electrónico"
               disabled={this.state.isSubmitButtonDisabled}
