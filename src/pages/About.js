@@ -228,7 +228,6 @@ class About extends React.Component {
             <div className="mt-2 w-full flex flex-row flex-wrap justify-evenly gap-10">
               {this.valueCardsInfo.map(({ title, description, icon, id }) => (
                 <ValueCard
-                  styles="min-w-[200px] w-[22%] h-[35vh]"
                   title={title}
                   description={description}
                   icon={icon}

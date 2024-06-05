@@ -27,3 +27,7 @@ section.timeline-card-content {
     font-weight: 400;
     font-size: .9rem;
 }
+
+.timeline-item-title {
+    overflow: visible !important;
+}

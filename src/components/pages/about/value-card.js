@@ -14,13 +14,15 @@ class ValueCard extends React.Component {
   };
 
   render() {
-    const { styles, title, description, icon } = this.props;
+    const { title, description, icon } = this.props;
 
     return (
       <div
-        className={`${styles} flex flex-col justify-evenly items-center border shadow-neutral-color-gray p-4 rounded-lg border-b-4 border-b-primary-element`}
+        className={`min-w-[200px] min-[400px]:w-[22%] h-[${
+          window.innerHeight > 750 ? "35" : 45 // Fit content in small devices
+        }vh] flex flex-col justify-evenly items-center border shadow-neutral-color-gray p-4 rounded-lg border-b-4 border-b-primary-element overflow-y-hidden`}
       >
-        <section className="relative flex justify-center h-1/2 w-full">
+        <section className="relative flex justify-center min-h-[75px] md:min-h-[100px] h-1/3 sm:h-1/2 max-h-[15vw] w-full">
           <div
             id={`${icon}-circle`}
             className="absolute h-full bg-primary-element rounded-full z-0 opacity-80"
@@ -29,7 +31,7 @@ class ValueCard extends React.Component {
             <FaIcon className="h-full" icon={icon} />
           </div>
         </section>
-        <section className="flex flex-col px-3">
+        <section className="flex flex-col pt-3 pb-5">
           <span className="text-center text-lg font-bold">{title}</span>
           <span className="mt-2 text-sm text-justify text-gray-800">
             {description}
