@@ -42,6 +42,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--neutral-color-primary);
+  scrollbar-color: var(--secondary-element) var(--neutral-color-primary);
+}
+
+::-moz-selection { /* Code for Firefox */
+  color:  var(--element-gained-focus);
+  background: var(--neutral-color-primary);
+}
+
+::selection {
+  color: var(--element-gained-focus);
+  background: var(--neutral-color-primary);
 }
 
 /* ---- Variable colors ---- */

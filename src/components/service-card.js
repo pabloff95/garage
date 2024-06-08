@@ -46,9 +46,10 @@ class ServiceCard extends React.Component {
           </h2>
           <p>{this.props.text}</p>
           <Button
-            styles="mb-4 md:mb-0 w-full md:w-fit px-8"
+            styles="mb-4 md:mb-0 w-full md:w-fit px-6"
             text="Leer más"
             onClick={() => this.openModal()}
+            icon="magnifying-glass-plus"
           ></Button>
         </div>
       </section>
