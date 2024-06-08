@@ -65,10 +65,6 @@ iconList.push(faFacebook);
 library.add(...iconList);
 
 class FaIcon extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <FontAwesomeIcon
