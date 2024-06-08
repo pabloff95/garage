@@ -153,3 +153,21 @@ body {
 .active\:scale-90:active {
   scale: 0.90
 }
+
+.picture-shadow {
+  filter: drop-shadow(
+    0 0 10px rgba(0,0,0, 0.8)
+  )
+}
+
+.picture-shadow-light {
+  filter: drop-shadow(
+    0 0 10px rgba(0,0,0, 0.3)
+  )
+}
+
+.picture-shadow-light-sm {
+  filter: drop-shadow(
+    0 0 2px rgba(0,0,0, 0.3)
+  )
+}

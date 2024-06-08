@@ -25,7 +25,7 @@ class ServiceCard extends React.Component {
           onClick={() => this.openModal()}
         >
           <img
-            className="w-full hover:picture"
+            className="w-full hover:picture picture-shadow-light-sm"
             src={this.props.img?.src}
             alt={this.props.img?.alt}
           />
@@ -40,7 +40,7 @@ class ServiceCard extends React.Component {
         className="w-full md:w-[80%] flex justify-center items-center md:py-4"
         key={`${this.uniqueId}-information`}
       >
-        <div className="flex flex-col gap-4 md:gap-2 w-11/12 justify-evenly h-full lg:h-4/6">
+        <div className="flex flex-col gap-4 md:gap-2 w-11/12 justify-evenly h-full">
           <h2 className="text-center md:text-left font-bold text-2xl mt-6 md:mt-0">
             {this.props.title}
           </h2>

@@ -36,7 +36,7 @@ class Brands extends React.Component {
 
       return (
         <img
-          className="min-h-[2.5rem] max-h-[8vh] w-auto"
+          className="min-h-[2.5rem] max-h-[8vh] w-auto picture-shadow-light"
           src={path}
           alt={alt}
           key={`brand-${index}`}
