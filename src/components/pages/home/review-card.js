@@ -134,7 +134,7 @@ class ReviewCard extends React.Component {
 
     return (
       <div
-        className="flex flex-col gap-3 w-10/12 min-w-[20rem] p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400 h-fit"
+        className="animate-on-scroll flex flex-col gap-3 w-10/12 min-w-[20rem] p-5 shadow-lg hover:shadow-xl cursor-pointer rounded shadow-neutral-400 hover:shadow-neutral-400 h-fit"
         onClick={this.openReview}
         ref={this.element}
       >

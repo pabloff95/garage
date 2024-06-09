@@ -182,3 +182,23 @@ body {
     0 0 2px rgba(0,0,0, 0.3)
   )
 }
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+.animate-on-scroll {
+  view-timeline-name: --revealing-image;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --revealing-image;
+  animation-range: entry 5% cover 15%;
+}

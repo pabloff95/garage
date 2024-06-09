@@ -19,7 +19,7 @@ function GarageMap({ mapClasses, zoom, showLink }) {
       {!isLoaded ? (
         <></>
       ) : (
-        <div>
+        <div className="animate-on-scroll">
           <GoogleMap
             mapContainerClassName={mapClasses}
             center={center}

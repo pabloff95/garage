@@ -27,7 +27,7 @@ class OfferCard extends React.Component {
         : `¡Solo queda ${daysLeft} día${daysLeft === 1 ? "" : "s"}!`;
 
     return (
-      <div className="min-w-[300px]">
+      <div className="animate-on-scroll min-w-[300px]">
         <div className="w-full shadow-neutral-color-gray">
           <div className="w-full h-full flex flex-col lg:flex-row gap-2 border rounded p-4">
             <section className="m-auto lg:m-0 w-full sm:w-11/12 lg:w-auto flex flex-col gap-2 p-2">

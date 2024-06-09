@@ -70,7 +70,7 @@ class ServiceCard extends React.Component {
 
   render() {
     return (
-      <div className="mx-auto w-5/6 md:w-full min-w-[250px] border shadow-neutral-color-gray p-4 rounded-lg flex flex-col-reverse md:flex-row">
+      <div className="animate-on-scroll mx-auto w-5/6 md:w-full min-w-[250px] border shadow-neutral-color-gray p-4 rounded-lg flex flex-col-reverse md:flex-row">
         {[this.getInformationSection(), this.getImageSection()]}
         <BasicModal
           isOpen={this.state.isModalOpen}
