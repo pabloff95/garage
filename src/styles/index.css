@@ -183,6 +183,7 @@ body {
   )
 }
 
+/* ------------------------------ ANIMATIONS -------------------- */
 @keyframes show {
   from {
     opacity: 0;
@@ -201,4 +202,48 @@ body {
   animation-fill-mode: both;
   animation-timeline: --revealing-image;
   animation-range: entry 5% cover 15%;
+}
+
+.main-button {
+  font-size: 22px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 8px;
+}
+
+.hover\:main-button:hover {
+  background-color: var(--neutral-color-primary);
+}
+
+.hover\:main-button:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(52,0,0,1), var(--primary-element), rgb(185, 68, 0), #ff5c19, var(--primary-element),
+    rgba(52,0,0,1), var(--primary-element),rgb(185, 68, 0), #ff5c19, var(--primary-element)
+  );
+  background-size: 800%;
+  border-radius: 10px;
+  filter: blur(12px);
+  animation: glowing 20s ease infinite;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
