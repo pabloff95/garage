@@ -141,7 +141,7 @@ class Home extends React.Component {
           </div>
         </section>
         <section className="pb-3 sm:pb-5 w-full">
-          <div className="p-3 w-full px-[5%] lg:px-[15%] py-5 bg-[#e2e2e2a4] flex flex-col">
+          <div className="p-3 w-full px-[5%] lg:px-[15%] my-16 flex flex-col">
             <div className="w-full h-full flex flex-row flex-wrap justify-between">
               <ServiceIcon icon="car" iconText="Mecánica" />
               <ServiceIcon icon="oil-can" iconText="Aceite" />
@@ -151,7 +151,6 @@ class Home extends React.Component {
               <ServiceIcon icon="plus" iconText="Y mas!" />
             </div>
           </div>
-          <div className="p-3 w-full h-4 bg-gradient-to-b from-[#e2e2e2a4] to-[#fbf8f8]"></div>
         </section>
         <section className="pb-3 sm:pb-5 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
