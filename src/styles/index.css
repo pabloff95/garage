@@ -7,6 +7,7 @@
 @import url("./components/basic-elements/basic-modal.css");
 @import url("./components/navigation-button.css");
 @import url("./components/basic-elements/button.css");
+@import url("./components/basic-elements/title.css");
 @import url("./pages/about/company-chrono.css");
 
 :root {

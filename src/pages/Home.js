@@ -5,7 +5,7 @@ import HorizontalScrollContainer from "../components/horizontal-scroll-container
 import * as reviews from "../data/reviews.json";
 import { Link } from "react-router-dom";
 import GarageMap from "../components/garage-map";
-import { Tooltip } from "react-tooltip";
+import Title from "../components/basic-elements/title";
 
 class Home extends React.Component {
   constructor(props) {
@@ -154,7 +154,7 @@ class Home extends React.Component {
         </section>
         <section className="pb-3 sm:pb-5 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Nuestros servicios</h2>
+            <Title text="Nuestros Servicios"></Title>
             <p>
               En nuestro taller ofrecemos una amplia gama de servicios, desde
               cambios de aceite y frenos hasta reparaciones de motor y
@@ -171,9 +171,7 @@ class Home extends React.Component {
         </section>
         <section className="pb-3 sm:pb-5 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">
-              Encuentranos en Astillero (Santander)
-            </h2>
+            <Title text="Encuentranos en Astillero (Santander)"></Title>
             <p>
               ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de
               Morero, parcela 2-11 nave nº2, Guarnizo el Astillero:
@@ -189,9 +187,7 @@ class Home extends React.Component {
         </section>
         <section className="pb-3 sm:pb-5 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">
-              La opinion de nuestros clientes
-            </h2>
+            <Title text="La opinion de nuestros clientes"></Title>
             <p>
               Tu satisfacción es nuestra prioridad. En talleres Motec nos
               enorgullecemos de ofrecer servicios de alta calidad a precios

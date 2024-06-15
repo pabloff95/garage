@@ -2,15 +2,14 @@ import React from "react";
 import GarageMap from "../components/garage-map";
 import ContactCard from "../components/pages/contact/contact-card";
 import ContactForm from "../components/pages/contact/contact-form";
+import Title from "../components/basic-elements/title";
 
 class Contact extends React.Component {
   render() {
     return (
       <div className="mt-[5vh]">
         <section className="py-3 sm:py-5 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl">
-            Ponte en contacto con nosotros
-          </h1>
+          <Title text="Métodos de contacto"></Title>
         </section>
         <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-4 md:gap-0 md:flex-row items-center md:items-stretch md:justify-evenly flex-wrap">
@@ -39,9 +38,7 @@ class Contact extends React.Component {
           </div>
         </section>
         <section className="py-3 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
-            Formulario de contacto
-          </h1>
+          <Title text="Formulario"></Title>
           <p className="w-80% mx-[10%] mb-3">
             A través del siguiente formulario, también puedes ponerte en
             contacto con nosotros:
@@ -49,9 +46,7 @@ class Contact extends React.Component {
           <ContactForm />
         </section>
         <section className="py-1 sm:py-3 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl my-3">
-            ¡Ven a conocernos!
-          </h1>
+          <Title text="¡Ven a conocernos!"></Title>
           <p className="w-80% mx-[10%] my-3">
             Nos ubicamos en el parque empresarial de Morero, parcela 2-11 nave
             nº2, Guarnizo el Astillero (Santander):

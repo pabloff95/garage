@@ -5,6 +5,7 @@ import FaIcon from "../components/basic-elements/fa-icon";
 import BasicModal from "../components/basic-elements/basic-modal";
 import CompanyChrono from "../components/pages/about/company-chrono";
 import Brands from "../components/pages/about/brands";
+import Title from "../components/basic-elements/title";
 
 class About extends React.Component {
   constructor(props) {
@@ -140,11 +141,8 @@ class About extends React.Component {
     return (
       <div className="mt-[5vh]">
         <section className="py-3 sm:py-5 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl">Sobre nosotros</h1>
-        </section>
-        <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Historia</h2>
+            <Title text="Nuestra Historia"></Title>
             <p>
               Desde nuestra fundación nuestro taller ha ofrecido soluciones
               confiables para las necesidades de nuestros clientes. A lo largo
@@ -177,7 +175,7 @@ class About extends React.Component {
         </section>
         <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Instalaciones</h2>
+            <Title text="Instalaciones"></Title>
             <p>
               Contamos con instalaciones modernas y totalmente equipadas para
               realizar una amplia variedad de servicios de reparación y
@@ -213,7 +211,7 @@ class About extends React.Component {
         </section>
         <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Nuestras marcas</h2>
+            <Title text="Nuestras marcas"></Title>
             <p>
               En Talleres Motec trabajamos con una amplia gama de marcas
               reconocidas y colaboramos con fabricantes líderes en la industria.
@@ -224,7 +222,7 @@ class About extends React.Component {
         </section>
         <section className="py-1 sm:py-3 w-full mb-12">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Nuestros Valores</h2>
+            <Title text="Nuestros Valores"></Title>
             <div className="mt-2 w-full flex flex-row flex-wrap justify-evenly gap-10">
               {this.valueCardsInfo.map(({ title, description, icon, id }) => (
                 <ValueCard

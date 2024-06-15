@@ -1,0 +1,16 @@
+.section-title {
+  font-size:26px; 
+  font-weight:700;  
+  letter-spacing:2px; 
+  padding: 1.5vh 0;
+  color: var(--neutral-color-primary);
+}
+
+/* .section-title:after {
+  background-color: var(--secondary-element);
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin-top: 5px;
+} */

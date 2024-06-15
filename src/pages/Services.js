@@ -1,14 +1,13 @@
 import React from "react";
 import ServiceCard from "../components/service-card";
+import Title from "../components/basic-elements/title";
 
 class Services extends React.Component {
   render() {
     return (
       <div className="mt-[5vh]">
         <section className="py-3 sm:py-5 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl">
-            Nuestros servicios
-          </h1>
+          <Title text="Nuestros servicios"></Title>
         </section>
         <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%]">

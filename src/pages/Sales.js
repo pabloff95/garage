@@ -2,6 +2,7 @@ import React from "react";
 import OfferCard from "../components/pages/sales/offer-card";
 import * as offers from "../data/offers.json";
 import moment from "moment";
+import Title from "../components/basic-elements/title";
 
 class Sales extends React.Component {
   getDaysLeft = (endDate) => {
@@ -63,7 +64,7 @@ class Sales extends React.Component {
     return (
       <div className="mt-[5vh]">
         <section className="py-3 sm:py-5 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl">Ofertas</h1>
+          <Title text="Ofertas"></Title>
         </section>
         <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
