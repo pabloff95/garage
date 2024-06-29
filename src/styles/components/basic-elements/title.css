@@ -6,3 +6,13 @@
   color: var(--neutral-color-primary);
   font-family: 'Frank Ruhl Libre', serif;
 }
+
+/* .section-title:after {
+  background-color: var(--primary-element);
+  content: '';
+  display: block;
+  height: 6px;
+  width: 50%;
+  margin: auto;  
+  border-radius: 2px;
+} */

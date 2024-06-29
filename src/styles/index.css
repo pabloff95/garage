@@ -248,3 +248,12 @@ body {
     background-position: 0 0;
   }
 }
+
+.paragraph {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.15rem; 
+}
+
+.home-section-alternative-background {
+  background-color: #F0F0F0;
+}

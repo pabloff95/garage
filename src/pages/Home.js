@@ -164,10 +164,10 @@ class Home extends React.Component {
             />
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full h-[90vh]">
+        <section className="pb-3 sm:pb-5 w-full flex items-center h-[90vh] home-section-alternative-background">
           <div className="w-80% mx-[10%] h-full flex flex-col gap-12 justify-center">
             <Title text="Cuidamos de tu vehículo"></Title>
-            <p className="text-center">
+            <p className="paragraph text-center">
               En Talleres Motec utilizamos tecnología de vanguardia y piezas de
               alta calidad para garantizar resultados duraderos.
               <br /> Ven a nuestro taller y explora nuestra amplia gama de
@@ -186,26 +186,10 @@ class Home extends React.Component {
             </div>
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <Title text="Encuentranos en Astillero (Santander)"></Title>
-            <p>
-              ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de
-              Morero, parcela 2-11 nave nº2, Guarnizo el Astillero:
-            </p>
-            <div className="w-full">
-              <GarageMap
-                mapClasses="w-full h-96 m-auto"
-                zoom="13"
-                showLink={true}
-              />
-            </div>
-          </div>
-        </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="w-80% mx-[10%] flex flex-col gap-2">
+        <section className="pb-3 sm:pb-5 w-full flex items-center h-[90vh]">
+          <div className="w-80% mx-[10%] flex flex-col gap-2 justify-center">
             <Title text="La opinion de nuestros clientes"></Title>
-            <p>
+            <p className="paragraph text-center">
               Tu satisfacción es nuestra prioridad. En talleres Motec nos
               enorgullecemos de ofrecer servicios de alta calidad a precios
               competitivos. Descubre por qué somos la elección preferida de
@@ -223,6 +207,18 @@ class Home extends React.Component {
             >
               {this.getReviewCards()}
             </HorizontalScrollContainer>
+          </div>
+        </section>
+        <section className="pb-3 sm:pb-5 w-full h-[90vh] flex align-center justify-center home-section-alternative-background">
+          <div className="w-full mx-[10%] flex flex-col gap-2 justify-center">
+            <Title text="Encuentranos en Astillero (Santander)"></Title>
+            <p className="paragraph text-center">
+              ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de
+              Morero, parcela 2-11 nave nº2, Guarnizo el Astillero:
+            </p>
+            <div className="w-full pb-12">
+              <GarageMap mapClasses="h-[60vh]" zoom="13" showLink={true} />
+            </div>
           </div>
         </section>
       </div>

@@ -20,7 +20,7 @@ class ValueCard extends React.Component {
       <div
         className={`animate-on-scroll min-w-[200px] min-[400px]:w-[22%] h-[${
           window.innerHeight > 750 ? "35" : 45 // Fit content in small devices
-        }vh] flex flex-col justify-evenly items-center border shadow-neutral-color-gray p-4 rounded-lg border-b-4 border-b-primary-element overflow-y-hidden`}
+        }vh] flex flex-col justify-evenly items-center border shadow-neutral-color-gray p-4 rounded-lg border-b-4 border-b-primary-element overflow-y-hidden bg-white`}
       >
         <section className="relative flex justify-center min-h-[75px] md:min-h-[100px] h-1/3 sm:h-1/2 max-h-[15vw] w-full">
           <div
