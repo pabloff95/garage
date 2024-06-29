@@ -8,10 +8,8 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="mt-[5vh]">
-        <section className="py-3 sm:py-5 w-full">
+        <section className="py-1 sm:py-3 w-full min-h-[70vh] flex flex-col justify-center">
           <Title text="Métodos de contacto"></Title>
-        </section>
-        <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-4 md:gap-0 md:flex-row items-center md:items-stretch md:justify-evenly flex-wrap">
             <ContactCard
               icon="phone"
@@ -30,22 +28,22 @@ class Contact extends React.Component {
               redirectTooltip="Abrir correo electrónico"
             />
             <ContactCard
-              icon="fa-brands fa-facebook"
+              icon="fa-brands fa-facebook-f"
               message="Hablanos"
               url="https://www.facebook.com/MORERONAVE2"
               redirectTooltip="Abrir página de Facebook"
             />
           </div>
         </section>
-        <section className="py-3 w-full">
-          <Title text="Formulario"></Title>
+        <section className="my-12 sm:my-24 min-h-[90vh] flex flex-col w-full">
+          <Title text="Formulario de contacto"></Title>
           <p className="paragraph w-80% mx-[10%] mb-3">
             A través del siguiente formulario, también puedes ponerte en
             contacto con nosotros:
           </p>
           <ContactForm />
         </section>
-        <section className="py-1 sm:py-3 w-full">
+        <section className="py-1 sm:py-3 min-h-[90vh] w-full">
           <Title text="¡Ven a conocernos!"></Title>
           <p className="paragraph w-80% mx-[10%] my-3">
             Nos ubicamos en el parque empresarial de Morero, parcela 2-11 nave

@@ -5,6 +5,7 @@ import {
   showLoadingNotificationForPromise,
 } from "../../notification";
 import { showErrorNotification } from "../../notification";
+import FaIcon from "../../basic-elements/fa-icon";
 
 export default class ContactForm extends React.Component {
   constructor(props) {
@@ -150,7 +151,7 @@ export default class ContactForm extends React.Component {
   render() {
     return (
       <div
-        className={`w-80% mx-[10%] flex flex-col justify-center py-4 sm:py-8 px-4 sm:px-6 rounded-lg mt-6 ${
+        className={`w-80% mx-[10%] flex flex-col justify-center py-4 sm:py-8 px-4 sm:px-6 rounded-lg mt-6 border-b-4 border-b-primary-element ${
           this.state.focusedElement !== ""
             ? "shadow-element-gained-focus"
             : "shadow-neutral-color-gray"
@@ -160,7 +161,13 @@ export default class ContactForm extends React.Component {
           className="flex flex-col gap-0.5"
           onSubmit={(e) => this.onSendEmail(e)}
         >
-          <section className="flex flex-row sm:gap-4 w-full">
+          <section className="relative flex justify-center h-[6rem] sm:h-[8rem] w-full">
+            <div className="absolute h-full aspect-square bg-primary-element rounded-full z-15 opacity-80"></div>
+            <div className="z-10 flex items-center justify-center">
+              <FaIcon icon="file-signature" className="h-[60%]" />
+            </div>
+          </section>
+          <section className="flex flex-row sm:gap-4 w-full mb-[3.5vh]">
             <div className="w-full sm:w-1/2">
               <div className="h-6">
                 <label
@@ -248,7 +255,7 @@ export default class ContactForm extends React.Component {
               </small>
             </div>
           </section>
-          <small className="hidden text-gray-400 sm:block sm:w-full">
+          <small className="hidden text-gray-400 sm:block sm:w-full mb-[3.5vh]">
             ** Al menos uno de los campos debe ser completado
           </small>
           {this.state.isContactMissing && (
@@ -258,7 +265,7 @@ export default class ContactForm extends React.Component {
               </p>
             </div>
           )}
-          <section className="flex flex-col gap-2">
+          <section className="flex flex-col gap-2 mb-[3.5vh]">
             <div className="h-4">
               <label
                 htmlFor="reason"
@@ -279,7 +286,7 @@ export default class ContactForm extends React.Component {
               className="w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
             ></input>
           </section>
-          <section className="flex flex-col gap-2">
+          <section className="flex flex-col gap-2 mb-[3.5vh]">
             <div className="h-4">
               <label
                 htmlFor="message"
@@ -301,7 +308,7 @@ export default class ContactForm extends React.Component {
               required
             ></textarea>
           </section>
-          <section className="mx-auto mt-4">
+          <section className="mx-auto mt-4 mb-[3.5vh]">
             <input
               type="submit"
               value="ENVIAR"

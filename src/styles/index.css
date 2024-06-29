@@ -85,6 +85,10 @@ body {
   color: var(--link-color);
 }
 
+.color-secondary {
+  color: var(--secondary-element);
+}
+
 .text-shadow-neutral-color-primary {
   text-shadow: 1px 1px 1px var(--neutral-color-primary),
     -1px -1px 1px var(--neutral-color-primary);
