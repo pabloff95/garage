@@ -47,7 +47,7 @@ class OfferCard extends React.Component {
             <section className="m-auto lg:m-0 w-full sm:w-11/12 lg:w-[60vw] flex flex-col gap-2 sm:gap-4 justify-center p-2">
               <div className="h-fit flex flex-col sm:gap-4">
                 <p className="text-3xl font-bold">{title}</p>
-                <p>{description}</p>
+                <p className="paragraph">{description}</p>
               </div>
               <div className="text-center my-2 sm:my-6 lg:my-8">
                 <p className="text-lg text-gray-400">antes {originalPrice}€</p>

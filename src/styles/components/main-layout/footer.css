@@ -10,6 +10,8 @@
 
   background-color: var(--layout-bg-color);
   color: var(--layout-text-color);
+
+  margin-top: 10vh;
 }
 
 .layout-footer section{

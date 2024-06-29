@@ -44,7 +44,7 @@ class ServiceCard extends React.Component {
           <h2 className="text-center md:text-left font-bold text-2xl mt-6 md:mt-0">
             {this.props.title}
           </h2>
-          <p>{this.props.text}</p>
+          <p className="paragraph">{this.props.text}</p>
           <Button
             styles="mb-4 md:mb-0 w-full md:w-fit px-6"
             text="Leer más"

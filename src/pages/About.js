@@ -143,7 +143,7 @@ class About extends React.Component {
         <section className="py-3 sm:py-5 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <Title text="Nuestra Historia"></Title>
-            <p>
+            <p className="paragraph">
               Desde nuestra fundación nuestro taller ha ofrecido soluciones
               confiables para las necesidades de nuestros clientes. A lo largo
               de los años, hemos construido una sólida reputación basada en la
@@ -152,7 +152,7 @@ class About extends React.Component {
               ha sido un capítulo en nuestra historia de crecimiento y
               dedicación.
             </p>
-            <p>
+            <p className="paragraph">
               Nos enorgullece destacar que, desde el primer día, nuestra misión
               ha sido proporcionar servicios de calidad que superen las
               expectativas. Nuestros mecánicos, altamente capacitados y
@@ -161,7 +161,7 @@ class About extends React.Component {
               no solo sobrevivir, sino prosperar en un mundo automotriz en
               constante evolución.
             </p>
-            <p>
+            <p className="paragraph">
               En cada vehículo que ingresa a nuestro taller, vemos una
               oportunidad para demostrar nuestra destreza y amor por la
               industria. Creemos en la transparencia y la honestidad,
@@ -173,10 +173,10 @@ class About extends React.Component {
             </div>
           </div>
         </section>
-        <section className="py-1 sm:py-3 w-full">
+        <section className="py-1 h-[90vh] flex items-center sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <Title text="Instalaciones"></Title>
-            <p>
+            <p className="paragraph">
               Contamos con instalaciones modernas y totalmente equipadas para
               realizar una amplia variedad de servicios de reparación y
               mantenimiento. Nuestro taller está diseñado para brindar
@@ -209,10 +209,10 @@ class About extends React.Component {
             </div>
           </BasicModal>
         </section>
-        <section className="py-1 sm:py-3 w-full">
+        <section className="py-1 my-24 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <Title text="Nuestras marcas"></Title>
-            <p>
+            <p className="paragraph">
               En Talleres Motec trabajamos con una amplia gama de marcas
               reconocidas y colaboramos con fabricantes líderes en la industria.
               Explore aquí las principales marcas con las que trabajamos:

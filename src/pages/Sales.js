@@ -68,7 +68,9 @@ class Sales extends React.Component {
         </section>
         <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <p>Disfruta de nuestras mejores ofertas por tiempo limitado:</p>
+            <p className="paragraph">
+              Disfruta de nuestras mejores ofertas por tiempo limitado:
+            </p>
           </div>
         </section>
         <section className="py-1 sm:py-3 w-full">
