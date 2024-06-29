@@ -1,11 +1,11 @@
 import React from "react";
-import ServiceIcon from "../components/pages/home/service-icon";
 import ReviewCard from "../components/pages/home/review-card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
 import * as reviews from "../data/reviews.json";
 import { Link } from "react-router-dom";
 import GarageMap from "../components/garage-map";
 import Title from "../components/basic-elements/title";
+import ValueCard from "../components/pages/about/value-card";
 
 class Home extends React.Component {
   constructor(props) {
@@ -108,6 +108,30 @@ class Home extends React.Component {
     }
   };
 
+  garageWork = [
+    {
+      title: "Servicio personalizado",
+      description:
+        "Ofrecemos un trato individualizado para cada cliente. Nuestro equipo se dedica a brindar una atención cálida y profesional en cada visita",
+      icon: "street-view",
+      id: "garage_card_1",
+    },
+    {
+      title: "Diagnóstico preciso",
+      description:
+        "Utilizamos tecnología de punta para realizar diagnósticos precisos de tu vehículo, identificando cualquier problema con rapidez y exactitud",
+      icon: "magnifying-glass",
+      id: "garage_card_2",
+    },
+    {
+      title: "Reparaciones de calidad",
+      description:
+        "Nuestros mecánicos se esfuerzan en garantizar la durabilidad y el rendimiento óptimo de cada reparación realizada en nuestro taller",
+      icon: "wrench",
+      id: "garage_card_3",
+    },
+  ];
+
   render() {
     return (
       <div>
@@ -140,33 +164,26 @@ class Home extends React.Component {
             />
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="p-3 w-full px-[5%] lg:px-[15%] my-16 flex flex-col">
-            <div className="w-full h-full flex flex-row flex-wrap justify-between">
-              <ServiceIcon icon="car" iconText="Mecánica" />
-              <ServiceIcon icon="oil-can" iconText="Aceite" />
-              <ServiceIcon icon="circle-dot" iconText="Neumáticos" />
-              <ServiceIcon icon="screwdriver-wrench" iconText="Mantenimiento" />
-              <ServiceIcon icon="arrow-trend-up" iconText="Puesta a punto" />
-              <ServiceIcon icon="plus" iconText="Y mas!" />
-            </div>
-          </div>
-        </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <Title text="Nuestros Servicios"></Title>
-            <p>
-              En nuestro taller ofrecemos una amplia gama de servicios, desde
-              cambios de aceite y frenos hasta reparaciones de motor y
-              transmisión, para asegurarnos de que tu vehículo funcione de
-              manera segura y eficiente en todo momento.
-              <br />
-              <br />
-              Utilizamos tecnología de vanguardia y piezas de alta calidad para
-              garantizar resultados duraderos. Nuestros mecánicos se
-              enorgullecen de mantener tus vehículos en óptimas condiciones y
-              brindar soluciones confiables para todas tus necesidades.
+        <section className="pb-3 sm:pb-5 w-full h-[90vh]">
+          <div className="w-80% mx-[10%] h-full flex flex-col gap-12 justify-center">
+            <Title text="Cuidamos de tu vehículo"></Title>
+            <p className="text-center">
+              En Talleres Motec utilizamos tecnología de vanguardia y piezas de
+              alta calidad para garantizar resultados duraderos.
+              <br /> Ven a nuestro taller y explora nuestra amplia gama de
+              servicios.
             </p>
+            <div className="mt-2 w-full flex flex-row flex-wrap justify-center gap-24">
+              {this.garageWork.map(({ title, description, icon, id }) => (
+                <ValueCard
+                  title={title}
+                  description={description}
+                  icon={icon}
+                  key={id}
+                  iconClasses="h-2/3"
+                />
+              ))}
+            </div>
           </div>
         </section>
         <section className="pb-3 sm:pb-5 w-full">

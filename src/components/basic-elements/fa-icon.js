@@ -22,6 +22,9 @@ import {
   faPlus,
   faCircleDot,
   faSquareXmark,
+  faWrench,
+  faStreetView,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 // import * as Icons from "@fortawesome/free-solid-svg-icons"; See comment bellow
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -45,6 +48,7 @@ const iconList = [
   faPhone,
   faStar,
   faMagnifyingGlassPlus,
+  faMagnifyingGlass,
   faRankingStar,
   faHandshake,
   faPeopleGroup,
@@ -57,6 +61,8 @@ const iconList = [
   faPlus,
   faCircleDot,
   faSquareXmark,
+  faStreetView,
+  faWrench,
 ];
 
 // Brand icons belong to a different module. Add only those used in the app

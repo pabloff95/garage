@@ -14,7 +14,7 @@ class ValueCard extends React.Component {
   };
 
   render() {
-    const { title, description, icon } = this.props;
+    const { title, description, icon, iconClasses } = this.props;
 
     return (
       <div
@@ -27,8 +27,8 @@ class ValueCard extends React.Component {
             id={`${icon}-circle`}
             className="absolute h-full bg-primary-element rounded-full z-0 opacity-80"
           ></div>
-          <div className="z-10">
-            <FaIcon className="h-full" icon={icon} />
+          <div className="z-10 flex items-center justify-center">
+            <FaIcon className={iconClasses ?? "h-full"} icon={icon} />
           </div>
         </section>
         <section className="flex flex-col pt-3 pb-5">
