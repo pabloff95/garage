@@ -20,7 +20,7 @@ class Services extends React.Component {
           </div>
         </section>
         <section className="py-3 w-full">
-          <div className="w-80% mx-[10%] flex flex-col gap-6">
+          <div className="w-80% mx-[10%] flex flex-col gap-6 sm:gap-12">
             <ServiceCard
               title="Mecánica"
               text="Ofrecemos servicios de mecánica para mantener tu vehículo en óptimas condiciones. Desde afinaciones hasta reparaciones de motor, nuestro equipo altamente capacitado resuelve cualquier problema con eficiencia y precisión."

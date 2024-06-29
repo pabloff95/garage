@@ -140,7 +140,7 @@ class About extends React.Component {
   render() {
     return (
       <div className="mt-[5vh]">
-        <section className="py-3 sm:py-5 w-full">
+        <section className="py-3 sm:py-5 w-full bg-alternate">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <Title text="Nuestra Historia"></Title>
             <p className="paragraph">
@@ -209,7 +209,7 @@ class About extends React.Component {
             </div>
           </BasicModal>
         </section>
-        <section className="py-1 my-24 sm:py-3 w-full">
+        <section className="py-1 my-24 sm:py-3 min-h-[70vh] w-full bg-alternate flex justify-center items-center">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <Title text="Nuestras marcas"></Title>
             <p className="paragraph">

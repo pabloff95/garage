@@ -186,7 +186,7 @@ class Home extends React.Component {
             </div>
           </div>
         </section>
-        <section className="py-10 w-full flex items-center min-h-[90vh] home-section-alternative-background">
+        <section className="py-10 w-full flex items-center min-h-[90vh] bg-alternate">
           <div className="w-80% mx-[10%] flex flex-col gap-2 justify-center">
             <Title text="La opinion de nuestros clientes"></Title>
             <p className="paragraph text-center">

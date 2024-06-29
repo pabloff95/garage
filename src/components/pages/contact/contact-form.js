@@ -151,7 +151,7 @@ export default class ContactForm extends React.Component {
   render() {
     return (
       <div
-        className={`w-80% mx-[10%] flex flex-col justify-center py-4 sm:py-8 px-4 sm:px-6 rounded-lg mt-6 border-b-4 border-b-primary-element ${
+        className={`w-80% mx-[10%] flex flex-col justify-center py-4 sm:py-8 px-4 sm:px-6 rounded-lg mt-6 border-b-4 border-b-primary-element bg-white ${
           this.state.focusedElement !== ""
             ? "shadow-element-gained-focus"
             : "shadow-neutral-color-gray"
@@ -184,7 +184,7 @@ export default class ContactForm extends React.Component {
                 id="name"
                 name="name"
                 placeholder={this.getPlaceHolder("name", "Nombre *")}
-                className="w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
+                className="w-full bg-white outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
                 onFocus={() => this.onFocusElement("name")}
                 onBlur={() => this.onBlur()}
                 required
@@ -210,7 +210,7 @@ export default class ContactForm extends React.Component {
                 id="telephone"
                 name="telephone"
                 placeholder={this.getPlaceHolder("telephone", "Teléfono **")}
-                className={`w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
+                className={`w-full bg-white outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
                   this.state.isContactMissing ? "!border-red-500" : ""
                 } `}
                 onFocus={() => this.onFocusElement("telephone")}
@@ -244,7 +244,7 @@ export default class ContactForm extends React.Component {
                   "email",
                   "Correo electrónico **"
                 )}
-                className={`w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
+                className={`w-full bg-white outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t ${
                   this.state.isContactMissing ? "!border-red-500" : ""
                 }`}
                 onFocus={() => this.onFocusElement("email")}
@@ -283,7 +283,7 @@ export default class ContactForm extends React.Component {
               placeholder={this.getPlaceHolder("reason", "Asunto")}
               onFocus={() => this.onFocusElement("reason")}
               onBlur={() => this.onBlur()}
-              className="w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
+              className="w-full bg-white outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t"
             ></input>
           </section>
           <section className="flex flex-col gap-2 mb-[3.5vh]">
@@ -301,7 +301,7 @@ export default class ContactForm extends React.Component {
               id="message"
               name="message_text"
               placeholder={this.getPlaceHolder("message", "Mensaje *")}
-              className={`${this.getTextAreaHeight()} w-full bg-page-bg-color outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t`}
+              className={`${this.getTextAreaHeight()} w-full bg-white outline-none border-b-2 border-b-neutral-color-primary focus:border-b-primary-element p-1 rounded-t`}
               onFocus={() => this.onFocusElement("message")}
               onBlur={() => this.onBlur()}
               rows={this.getTextAreaRows()}

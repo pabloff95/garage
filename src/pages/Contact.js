@@ -35,7 +35,7 @@ class Contact extends React.Component {
             />
           </div>
         </section>
-        <section className="my-12 sm:my-24 min-h-[90vh] flex flex-col w-full">
+        <section className="py-12 sm:py-24 min-h-[90vh] flex flex-col w-full bg-alternate">
           <Title text="Formulario de contacto"></Title>
           <p className="paragraph w-80% mx-[10%] mb-3">
             A través del siguiente formulario, también puedes ponerte en
