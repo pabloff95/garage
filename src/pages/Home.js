@@ -164,7 +164,7 @@ class Home extends React.Component {
             />
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full flex items-center h-[90vh]">
+        <section className="py-10 w-full flex items-center min-h-[90vh]">
           <div className="w-80% mx-[10%] h-full flex flex-col gap-12 justify-center">
             <Title text="Cuidamos de tu vehículo"></Title>
             <p className="paragraph text-center">
@@ -173,7 +173,7 @@ class Home extends React.Component {
               <br /> Ven a nuestro taller y explora nuestra amplia gama de
               servicios.
             </p>
-            <div className="mt-2 w-full flex flex-row flex-wrap justify-center gap-24">
+            <div className="mt-2 w-full flex flex-row flex-wrap justify-center gap-6 sm:gap-24">
               {this.garageWork.map(({ title, description, icon, id }) => (
                 <ValueCard
                   title={title}
@@ -186,7 +186,7 @@ class Home extends React.Component {
             </div>
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full flex items-center h-[90vh] home-section-alternative-background">
+        <section className="py-10 w-full flex items-center min-h-[90vh] home-section-alternative-background">
           <div className="w-80% mx-[10%] flex flex-col gap-2 justify-center">
             <Title text="La opinion de nuestros clientes"></Title>
             <p className="paragraph text-center">
@@ -209,7 +209,7 @@ class Home extends React.Component {
             </HorizontalScrollContainer>
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full h-[90vh] flex align-center justify-center">
+        <section className="py-10 w-full min-h-[90vh] flex align-center justify-center">
           <div className="w-full mx-[10%] flex flex-col gap-2 justify-center">
             <Title text="Encuentranos en Astillero (Santander)"></Title>
             <p className="paragraph text-center">
