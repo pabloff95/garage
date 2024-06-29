@@ -7,6 +7,7 @@
 @import url("./components/basic-elements/basic-modal.css");
 @import url("./components/navigation-button.css");
 @import url("./components/basic-elements/button.css");
+@import url("./components/basic-elements/title.css");
 @import url("./pages/about/company-chrono.css");
 
 :root {
@@ -42,6 +43,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--neutral-color-primary);
+  scrollbar-color: var(--secondary-element) var(--neutral-color-primary);
+}
+
+::-moz-selection { /* Code for Firefox */
+  color:  var(--element-gained-focus);
+  background: var(--neutral-color-primary);
+}
+
+::selection {
+  color: var(--element-gained-focus);
+  background: var(--neutral-color-primary);
 }
 
 /* ---- Variable colors ---- */
@@ -152,4 +164,96 @@ body {
 
 .active\:scale-90:active {
   scale: 0.90
+}
+
+.picture-shadow {
+  filter: drop-shadow(
+    0 0 10px rgba(0,0,0, 0.8)
+  )
+}
+
+.picture-shadow-light {
+  filter: drop-shadow(
+    0 0 10px rgba(0,0,0, 0.3)
+  )
+}
+
+.picture-shadow-light-sm {
+  filter: drop-shadow(
+    0 0 2px rgba(0,0,0, 0.3)
+  )
+}
+
+/* ------------------------------ ANIMATIONS -------------------- */
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+.animate-on-scroll {
+  view-timeline-name: --revealing-image;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --revealing-image;
+  animation-range: entry 5% cover 15%;
+}
+
+.main-button {
+  font-size: 22px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 8px;
+}
+
+.hover\:main-button:hover {
+  background-color: var(--neutral-color-primary);
+}
+
+.hover\:main-button:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(52,0,0,1), var(--primary-element), rgb(185, 68, 0), #ff5c19, var(--primary-element),
+    rgba(52,0,0,1), var(--primary-element),rgb(185, 68, 0), #ff5c19, var(--primary-element)
+  );
+  background-size: 800%;
+  border-radius: 10px;
+  filter: blur(12px);
+  animation: glowing 20s ease infinite;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.paragraph {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.15rem; 
+}
+
+.home-section-alternative-background {
+  background-color: #F0F0F0;
 }

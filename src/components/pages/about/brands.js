@@ -36,7 +36,7 @@ class Brands extends React.Component {
 
       return (
         <img
-          className="min-h-[2.5rem] max-h-[8vh] w-auto"
+          className="animate-on-scroll min-h-[2.5rem] max-h-[8vh] w-auto picture-shadow-light"
           src={path}
           alt={alt}
           key={`brand-${index}`}

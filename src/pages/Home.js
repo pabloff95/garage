@@ -1,11 +1,11 @@
 import React from "react";
-import ServiceIcon from "../components/pages/home/service-icon";
 import ReviewCard from "../components/pages/home/review-card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
 import * as reviews from "../data/reviews.json";
 import { Link } from "react-router-dom";
 import GarageMap from "../components/garage-map";
-import { Tooltip } from "react-tooltip";
+import Title from "../components/basic-elements/title";
+import ValueCard from "../components/pages/about/value-card";
 
 class Home extends React.Component {
   constructor(props) {
@@ -108,6 +108,30 @@ class Home extends React.Component {
     }
   };
 
+  garageWork = [
+    {
+      title: "Servicio personalizado",
+      description:
+        "Ofrecemos un trato individualizado para cada cliente. Nuestro equipo se dedica a brindar una atención cálida y profesional en cada visita",
+      icon: "street-view",
+      id: "garage_card_1",
+    },
+    {
+      title: "Diagnóstico preciso",
+      description:
+        "Utilizamos tecnología de punta para realizar diagnósticos precisos de tu vehículo, identificando cualquier problema con rapidez y exactitud",
+      icon: "magnifying-glass",
+      id: "garage_card_2",
+    },
+    {
+      title: "Reparaciones de calidad",
+      description:
+        "Nuestros mecánicos se esfuerzan en garantizar la durabilidad y el rendimiento óptimo de cada reparación realizada en nuestro taller",
+      icon: "wrench",
+      id: "garage_card_3",
+    },
+  ];
+
   render() {
     return (
       <div>
@@ -126,14 +150,10 @@ class Home extends React.Component {
               <div className="h-1 w-full bg-[#f2f2f2] mt-2 mb-14 rounded"></div>
               <div className="text-center sm:text-left">
                 <Link
-                  className="text-neutral-color-contrast border-neutral-color-contrast hover:border-element-gained-focus hover:text-element-gained-focus hover:scale-95 hover:text-shadow-secondary-element transition-all duration-200 w-fit p-3 rounded font-bold tracking-wider"
+                  className="text-neutral-color-contrast border-neutral-color-contrast hover:border-element-gained-focus hover:text-element-gained-focus w-fit p-3 rounded font-bold tracking-wider main-button hover:main-button"
                   to="/contacto"
-                  data-tooltip-content="Abrir página de contacto"
-                  data-tooltip-id="to-contact-link-tooltip"
-                  data-tooltip-place="bottom"
                 >
                   CONTACTANOS
-                  <Tooltip id="to-contact-link-tooltip" />
                 </Link>
               </div>
             </div>
@@ -144,60 +164,32 @@ class Home extends React.Component {
             />
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="p-3 w-full px-[5%] lg:px-[15%] py-5 bg-[#e2e2e2a4] flex flex-col">
-            <div className="w-full h-full flex flex-row flex-wrap justify-between">
-              <ServiceIcon icon="car" iconText="Mecánica" />
-              <ServiceIcon icon="oil-can" iconText="Aceite" />
-              <ServiceIcon icon="circle-dot" iconText="Neumáticos" />
-              <ServiceIcon icon="screwdriver-wrench" iconText="Mantenimiento" />
-              <ServiceIcon icon="arrow-trend-up" iconText="Puesta a punto" />
-              <ServiceIcon icon="plus" iconText="Y mas!" />
-            </div>
-          </div>
-          <div className="p-3 w-full h-4 bg-gradient-to-b from-[#e2e2e2a4] to-[#fbf8f8]"></div>
-        </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">Nuestros servicios</h2>
-            <p>
-              En nuestro taller ofrecemos una amplia gama de servicios, desde
-              cambios de aceite y frenos hasta reparaciones de motor y
-              transmisión, para asegurarnos de que tu vehículo funcione de
-              manera segura y eficiente en todo momento.
-              <br />
-              <br />
-              Utilizamos tecnología de vanguardia y piezas de alta calidad para
-              garantizar resultados duraderos. Nuestros mecánicos se
-              enorgullecen de mantener tus vehículos en óptimas condiciones y
-              brindar soluciones confiables para todas tus necesidades.
+        <section className="py-10 w-full flex items-center min-h-[90vh]">
+          <div className="w-80% mx-[10%] h-full flex flex-col gap-12 justify-center">
+            <Title text="Cuidamos de tu vehículo"></Title>
+            <p className="paragraph text-center">
+              En Talleres Motec utilizamos tecnología de vanguardia y piezas de
+              alta calidad para garantizar resultados duraderos.
+              <br /> Ven a nuestro taller y explora nuestra amplia gama de
+              servicios.
             </p>
-          </div>
-        </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">
-              Encuentranos en Astillero (Santander)
-            </h2>
-            <p>
-              ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de
-              Morero, parcela 2-11 nave nº2, Guarnizo el Astillero:
-            </p>
-            <div className="w-full">
-              <GarageMap
-                mapClasses="w-full h-96 m-auto"
-                zoom="13"
-                showLink={true}
-              />
+            <div className="mt-2 w-full flex flex-row flex-wrap justify-center gap-6 sm:gap-24">
+              {this.garageWork.map(({ title, description, icon, id }) => (
+                <ValueCard
+                  title={title}
+                  description={description}
+                  icon={icon}
+                  key={id}
+                  iconClasses="h-2/3"
+                />
+              ))}
             </div>
           </div>
         </section>
-        <section className="pb-3 sm:pb-5 w-full">
-          <div className="w-80% mx-[10%] flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold">
-              La opinion de nuestros clientes
-            </h2>
-            <p>
+        <section className="py-10 w-full flex items-center min-h-[90vh] home-section-alternative-background">
+          <div className="w-80% mx-[10%] flex flex-col gap-2 justify-center">
+            <Title text="La opinion de nuestros clientes"></Title>
+            <p className="paragraph text-center">
               Tu satisfacción es nuestra prioridad. En talleres Motec nos
               enorgullecemos de ofrecer servicios de alta calidad a precios
               competitivos. Descubre por qué somos la elección preferida de
@@ -215,6 +207,18 @@ class Home extends React.Component {
             >
               {this.getReviewCards()}
             </HorizontalScrollContainer>
+          </div>
+        </section>
+        <section className="py-10 w-full min-h-[90vh] flex align-center justify-center">
+          <div className="w-full mx-[10%] flex flex-col gap-2 justify-center">
+            <Title text="Encuentranos en Astillero (Santander)"></Title>
+            <p className="paragraph text-center">
+              ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de
+              Morero, parcela 2-11 nave nº2, Guarnizo el Astillero:
+            </p>
+            <div className="w-full pb-12">
+              <GarageMap mapClasses="h-[60vh]" zoom="13" showLink={true} />
+            </div>
           </div>
         </section>
       </div>

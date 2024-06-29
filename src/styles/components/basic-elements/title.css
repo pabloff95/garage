@@ -1,0 +1,18 @@
+.section-title {
+  font-size:40px; 
+  font-weight:700;  
+  letter-spacing:2px; 
+  padding: 1.5vh 2vw;
+  color: var(--neutral-color-primary);
+  font-family: 'Frank Ruhl Libre', serif;
+}
+
+/* .section-title:after {
+  background-color: var(--primary-element);
+  content: '';
+  display: block;
+  height: 6px;
+  width: 50%;
+  margin: auto;  
+  border-radius: 2px;
+} */

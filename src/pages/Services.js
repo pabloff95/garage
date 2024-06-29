@@ -1,18 +1,17 @@
 import React from "react";
 import ServiceCard from "../components/service-card";
+import Title from "../components/basic-elements/title";
 
 class Services extends React.Component {
   render() {
     return (
       <div className="mt-[5vh]">
         <section className="py-3 sm:py-5 w-full">
-          <h1 className="w-80% mx-[10%] font-bold text-3xl">
-            Nuestros servicios
-          </h1>
+          <Title text="Nuestros servicios"></Title>
         </section>
         <section className="py-1 sm:py-3 w-full">
           <div className="w-80% mx-[10%]">
-            <p>
+            <p className="paragraph">
               Descubre nuestros servicios especializados, nuestro equipo
               altamente capacitado se esfuerza por brindar soluciones eficientes
               y cuidados de calidad. Explora las opciones a continuación para
@@ -30,7 +29,7 @@ class Services extends React.Component {
                 alt: "Imagen de un coche tradicional",
               }}
             >
-              <p>
+              <p className="paragraph">
                 En nuestra sección de mecánica, nos especializamos en
                 proporcionar soluciones eficientes y confiables para el
                 mantenimiento de tu vehículo. Contamos con un equipo de
@@ -39,7 +38,7 @@ class Services extends React.Component {
                 afectar el rendimiento de tu automóvil.
               </p>
 
-              <p>
+              <p className="paragraph">
                 Desde simples afinaciones hasta reparaciones complejas de motor
                 y servicios de transmisión, nuestro taller mecánico ofrece una
                 amplia gama de servicios. Utilizamos tecnología de vanguardia y
@@ -49,7 +48,7 @@ class Services extends React.Component {
                 industria para mantener la integridad de tu vehículo.
               </p>
 
-              <p>
+              <p className="paragraph">
                 En nuestro taller, nos enorgullece la transparencia y la
                 atención personalizada. Nuestro compromiso es brindar un
                 servicio de mecánica automotriz excepcional, asegurando que tu
@@ -66,7 +65,7 @@ class Services extends React.Component {
                 alt: "Imagen de un bidón de aceite",
               }}
             >
-              <p>
+              <p className="paragraph">
                 Nuestro servicio de cambio de aceite es esencial para el
                 mantenimiento preventivo de tu vehículo, asegurando un
                 rendimiento óptimo y una vida útil prolongada del motor. En
@@ -74,7 +73,7 @@ class Services extends React.Component {
                 de aceite para preservar la salud de tu motor y garantizar un
                 funcionamiento suave.
               </p>
-              <p>
+              <p className="paragraph">
                 Nuestros profesionales altamente capacitados llevarán a cabo el
                 cambio de aceite de manera rápida y eficiente, utilizando
                 productos de la más alta calidad. No solo nos encargamos de
@@ -83,7 +82,7 @@ class Services extends React.Component {
                 pureza del lubricante y garantizar una lubricación efectiva de
                 las piezas del motor.
               </p>
-              <p>
+              <p className="paragraph">
                 Nos enorgullece la atención meticulosa a los detalles. Ya sea
                 que tu vehículo requiera aceites convencionales o sintéticos,
                 puedes confiar en nosotros para realizar el cambio de aceite de
@@ -100,7 +99,7 @@ class Services extends React.Component {
                 alt: "Imagen del neumático de un coche",
               }}
             >
-              <p>
+              <p className="paragraph">
                 En nuestro taller, ofrecemos un servicio integral de neumáticos
                 diseñado para garantizar la seguridad y el rendimiento óptimo de
                 tu vehículo. Sabemos que los neumáticos son un componente
@@ -108,7 +107,7 @@ class Services extends React.Component {
                 proporcionar soluciones expertas y eficientes para tus
                 necesidades de neumáticos.
               </p>
-              <p>
+              <p className="paragraph">
                 Nuestros profesionales altamente capacitados pueden asesorarte
                 sobre la elección de neumáticos adecuada para tu vehículo y
                 estilo de conducción. Ofrecemos servicios que van desde la
@@ -117,7 +116,7 @@ class Services extends React.Component {
                 precisas para asegurar que tus neumáticos estén en las mejores
                 condiciones posibles.
               </p>
-              <p>
+              <p className="paragraph">
                 En Talleres Motec, nos enorgullece la calidad de nuestro
                 servicio de neumáticos. Trabajamos con marcas reconocidas y
                 ofrecemos opciones para todos los presupuestos. Si necesitas
@@ -134,21 +133,21 @@ class Services extends React.Component {
                 alt: "Imagen de herramientas",
               }}
             >
-              <p>
+              <p className="paragraph">
                 Nuestro servicio de mantenimiento está diseñado para preservar
                 la confiabilidad y eficiencia de tu vehículo a lo largo del
                 tiempo. Reconocemos la importancia del mantenimiento preventivo
                 para evitar problemas costosos y garantizar un rendimiento
                 constante.
               </p>
-              <p>
+              <p className="paragraph">
                 Nuestros expertos en mantenimiento llevan a cabo inspecciones
                 exhaustivas de tu automóvil, abordando aspectos como cambios de
                 fluidos, revisión de frenos, sistema de dirección y más.
                 Realizamos ajustes y reemplazamos piezas desgastadas para
                 prevenir averías y maximizar la vida útil de tu vehículo.
               </p>
-              <p>
+              <p className="paragraph">
                 En nuestro taller nos destacamos por nuestra atención meticulosa
                 a cada detalle durante el servicio de mantenimiento. Utilizamos
                 herramientas avanzadas y seguimos los protocolos recomendados
