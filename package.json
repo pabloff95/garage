@@ -2,7 +2,7 @@
   "name": "garage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pabloff95.github.io",
+  "homepage": "https://pabloff95.github.io/garage",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
