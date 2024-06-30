@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import GarageMap from "../components/garage-map";
 import Title from "../components/basic-elements/title";
 import Card from "../components/pages/about/card";
+import StepCard from "../components/pages/home/step-card";
 
 class Home extends React.Component {
   constructor(props) {
@@ -132,6 +133,14 @@ class Home extends React.Component {
     },
   ];
 
+  getStepsFlexBox() {
+    const parentContainerWidth = Math.ceil(window.innerWidth * 0.8); // 80% because the parent container uses w-[80%]
+
+    return Math.ceil(parentContainerWidth / 3 > 250) // 250 because that's the step-carf min-width
+      ? "flex-row justify-between"
+      : "flex-col items-center";
+  }
+
   render() {
     return (
       <div>
@@ -164,7 +173,61 @@ class Home extends React.Component {
             />
           </div>
         </section>
+        <section className="py-10 w-full flex items-center min-h-[80vh] justify-center bg-alternate">
+          <div className="w-80% mx-[10%] h-full flex flex-col gap-12 justify-center">
+            <Title text="¿Necesitas ayuda con tu vehículo?"></Title>
+            <div className={`w-full flex ${this.getStepsFlexBox()}`}>
+              <StepCard title="Contáctanos" step="1">
+                <p>
+                  Ponte en contacto con nostros por teléfono, correo electrónico
+                  o a través de nuestro formulario de contacto.
+                </p>
+              </StepCard>
+              <StepCard title="Acuerda una cita" step="2">
+                <p>
+                  Nuestro equipo evaluará tu situación y te ofrecerá una cita lo
+                  antes posible.
+                </p>
+              </StepCard>
+              <StepCard title="Ven al taller" step="3">
+                <p>
+                  Ven a nuestro taller en Guarnizo, abierto de 8:00 a 13:00 y
+                  15:00 a 18:00 de lunes a jueves y de 8:00 a 14:00 los viernes.
+                </p>
+              </StepCard>
+            </div>
+            <a
+              href="contacto"
+              className="button w-fit mx-auto py-2 px-4 text-xl"
+            >
+              Ponerme en contacto
+            </a>
+          </div>
+        </section>
         <section className="py-10 w-full flex items-center min-h-[90vh]">
+          <div className="w-80% mx-[10%] flex flex-col gap-2 justify-center">
+            <Title text="La opinion de nuestros clientes"></Title>
+            <p className="paragraph text-center">
+              Tu satisfacción es nuestra prioridad. En talleres Motec nos
+              enorgullecemos de ofrecer servicios de alta calidad a precios
+              competitivos. Descubre por qué somos la elección preferida de
+              nuestros clientes cuando se trata de cuidar sus vehículos:
+            </p>
+            <HorizontalScrollContainer
+              key={this.state.itemsPerSlide}
+              itemsPerSlide={this.state.itemsPerSlide}
+              className="w-full py-5 my-5 horizontal-scroll-container"
+              onSlideChange={() => this.updateReviewCardHeight(0)}
+              tooltipMessage="Abrir review en Google"
+              hidePagination={false}
+              autoPlay={false}
+              renderAsGrid={true}
+            >
+              {this.getReviewCards()}
+            </HorizontalScrollContainer>
+          </div>
+        </section>
+        <section className="py-10 w-full flex items-center min-h-[90vh] bg-alternate">
           <div className="w-80% mx-[10%] h-full flex flex-col gap-12 justify-center">
             <Title text="Cuidamos de tu vehículo"></Title>
             <p className="paragraph text-center">
@@ -189,29 +252,6 @@ class Home extends React.Component {
                 Descrubrir más
               </a>
             </div>
-          </div>
-        </section>
-        <section className="py-10 w-full flex items-center min-h-[90vh] bg-alternate">
-          <div className="w-80% mx-[10%] flex flex-col gap-2 justify-center">
-            <Title text="La opinion de nuestros clientes"></Title>
-            <p className="paragraph text-center">
-              Tu satisfacción es nuestra prioridad. En talleres Motec nos
-              enorgullecemos de ofrecer servicios de alta calidad a precios
-              competitivos. Descubre por qué somos la elección preferida de
-              nuestros clientes cuando se trata de cuidar sus vehículos:
-            </p>
-            <HorizontalScrollContainer
-              key={this.state.itemsPerSlide}
-              itemsPerSlide={this.state.itemsPerSlide}
-              className="w-full py-5 my-5 horizontal-scroll-container"
-              onSlideChange={() => this.updateReviewCardHeight(0)}
-              tooltipMessage="Abrir review en Google"
-              hidePagination={false}
-              autoPlay={false}
-              renderAsGrid={true}
-            >
-              {this.getReviewCards()}
-            </HorizontalScrollContainer>
           </div>
         </section>
         <section className="py-10 w-full min-h-[90vh] flex align-center justify-center">
