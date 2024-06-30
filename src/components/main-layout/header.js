@@ -11,8 +11,8 @@ class Header extends React.Component {
     this.state = {
       imgSrc:
         window.innerWidth < 700
-          ? "/images/other/logo_small.png"
-          : "/images/other/logo.png",
+          ? "garage/images/other/logo_small.png"
+          : "garage/images/other/logo.png",
     };
 
     this.handleResize = this.handleResize.bind(this);
@@ -30,8 +30,8 @@ class Header extends React.Component {
     this.setState({
       imgSrc:
         window.innerWidth < 700
-          ? "/images/other/logo_small.png"
-          : "/images/other/logo.png",
+          ? "garage/images/other/logo_small.png"
+          : "garage/images/other/logo.png",
     });
   }
 

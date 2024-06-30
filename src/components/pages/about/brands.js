@@ -23,7 +23,7 @@ class Brands extends React.Component {
       .join(" ");
 
     return {
-      path: `/images/brands/${brandName}.png`,
+      path: `garage/images/brands/${brandName}.png`,
       alt: `Logo de ${formattedName}`,
     };
   };

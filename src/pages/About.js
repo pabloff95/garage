@@ -28,7 +28,7 @@ class About extends React.Component {
       >
         <div className="relative">
           <img
-            src={`/images/pages/about/${picture}.png`}
+            src={`garage/images/pages/about/${picture}.png`}
             className="animate-on-scroll w-[50vw] h-full carousel-img picture-shadow"
             alt="Foto de las instalaciones de nuestro taller"
           />
@@ -202,7 +202,7 @@ class About extends React.Component {
           >
             <div className="w-full flex justify-center">
               <img
-                src={`/images/pages/about/${this.state.zoomedPicture}.png`}
+                src={`garage/images/pages/about/${this.state.zoomedPicture}.png`}
                 className="h-[80vh]"
                 alt="Foto de las instalaciones de nuestro taller"
               />

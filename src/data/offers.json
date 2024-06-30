@@ -4,7 +4,7 @@
         "description": "¡Renueva tus viajes con nuestro servicio de cambio de neumáticos! En nuestro taller garantizamos un servicio eficiente y de calidad para asegurar que tus neumáticos estén en las mejores condiciones. ¡Confía en nosotros para mantener tus ruedas en perfecto estado y disfruta de la carretera con tranquilidad!",
         "originalPrice": 200,
         "currentPrice": 150,
-        "imgPath": "/images/pages/sales/picture_1.png",
+        "imgPath": "garage/images/pages/sales/picture_1.png",
         "startDate": "28/01",
         "endDate": "27/12"
     }

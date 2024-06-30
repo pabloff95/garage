@@ -168,7 +168,7 @@ class Home extends React.Component {
             </div>
             <img
               className="w-full min-h-[60vh] lg:min-h-fit grayscale opacity-90"
-              src="/images/pages/home/home-header.jpg"
+              src="garage/images/pages/home/home-header.jpg"
               alt="Instalaciones de talleres Motec"
             />
           </div>
