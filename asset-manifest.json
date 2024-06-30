@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/garage/static/css/main.d93c2051.css",
+    "main.js": "/garage/static/js/main.7363e4ea.js",
+    "static/media/audi.png": "/garage/static/media/audi.8cb33d41cd32c71cdaac.png",
+    "static/media/ford.png": "/garage/static/media/ford.99f7c5ae2a4325130e36.png",
+    "static/media/neumaticos_michelin.png": "/garage/static/media/neumaticos_michelin.e4a823fd3fd354c4a451.png",
+    "static/media/volkswagen.png": "/garage/static/media/volkswagen.e877acc6ad20a2aaed9a.png",
+    "static/media/mercedes.png": "/garage/static/media/mercedes.5314e82b8455b1854fdc.png",
+    "static/media/castrol.png": "/garage/static/media/castrol.629694cdef1f29f58a4e.png",
+    "static/media/seat.png": "/garage/static/media/seat.f977758e270b3b36398e.png",
+    "index.html": "/garage/index.html",
+    "main.d93c2051.css.map": "/garage/static/css/main.d93c2051.css.map",
+    "main.7363e4ea.js.map": "/garage/static/js/main.7363e4ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d93c2051.css",
+    "static/js/main.7363e4ea.js"
+  ]
+}
