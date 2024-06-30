@@ -5,6 +5,7 @@
     font-weight: 575;
     background-color: var(--secondary-element) !important;
     color: var(--neutral-color-contrast);
+    cursor: pointer;
   }
   
   .button:hover {

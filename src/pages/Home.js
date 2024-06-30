@@ -5,7 +5,7 @@ import * as reviews from "../data/reviews.json";
 import { Link } from "react-router-dom";
 import GarageMap from "../components/garage-map";
 import Title from "../components/basic-elements/title";
-import ValueCard from "../components/pages/about/value-card";
+import Card from "../components/pages/about/card";
 
 class Home extends React.Component {
   constructor(props) {
@@ -175,7 +175,7 @@ class Home extends React.Component {
             </p>
             <div className="mt-2 w-full flex flex-row flex-wrap justify-center gap-6 sm:gap-24">
               {this.garageWork.map(({ title, description, icon, id }) => (
-                <ValueCard
+                <Card
                   title={title}
                   description={description}
                   icon={icon}
@@ -183,6 +183,11 @@ class Home extends React.Component {
                   iconClasses="h-2/3"
                 />
               ))}
+            </div>
+            <div className="w-full flex justify-center my-8">
+              <a href="sobre-nosotros" className="button py-2 px-4 text-xl">
+                Descrubrir más
+              </a>
             </div>
           </div>
         </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import ValueCard from "../components/pages/about/value-card";
+import Card from "../components/pages/about/card";
 import HorizontalScrollContainer from "../components/horizontal-scroll-container";
 import FaIcon from "../components/basic-elements/fa-icon";
 import BasicModal from "../components/basic-elements/basic-modal";
@@ -225,7 +225,7 @@ class About extends React.Component {
             <Title text="Nuestros Valores"></Title>
             <div className="mt-2 w-full flex flex-row flex-wrap justify-evenly gap-10">
               {this.valueCardsInfo.map(({ title, description, icon, id }) => (
-                <ValueCard
+                <Card
                   title={title}
                   description={description}
                   icon={icon}

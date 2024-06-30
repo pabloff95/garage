@@ -1,7 +1,7 @@
 import React from "react";
 import FaIcon from "../../basic-elements/fa-icon";
 
-class ValueCard extends React.Component {
+class Card extends React.Component {
   componentDidMount = () => {
     // Set circle width equal to height. Update it everytime that the element resizes. Using ResizeObserver can cause the loop limit times to be exceeded, due to some issue with the % height. See comment in app.js
     const circleElement = document.getElementById(`${this.props.icon}-circle`);
@@ -42,4 +42,4 @@ class ValueCard extends React.Component {
   }
 }
 
-export default ValueCard;
+export default Card;
