@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://pabloff95.github.io/garage/static/css/main.d93c2051.css",
-    "main.js": "https://pabloff95.github.io/garage/static/js/main.1e3f9eeb.js",
+    "main.js": "https://pabloff95.github.io/garage/static/js/main.adc1c305.js",
     "static/media/audi.png": "https://pabloff95.github.io/garage/static/media/audi.8cb33d41cd32c71cdaac.png",
     "static/media/ford.png": "https://pabloff95.github.io/garage/static/media/ford.99f7c5ae2a4325130e36.png",
     "static/media/neumaticos_michelin.png": "https://pabloff95.github.io/garage/static/media/neumaticos_michelin.e4a823fd3fd354c4a451.png",
@@ -11,10 +11,10 @@
     "static/media/seat.png": "https://pabloff95.github.io/garage/static/media/seat.f977758e270b3b36398e.png",
     "index.html": "https://pabloff95.github.io/garage/index.html",
     "main.d93c2051.css.map": "https://pabloff95.github.io/garage/static/css/main.d93c2051.css.map",
-    "main.1e3f9eeb.js.map": "https://pabloff95.github.io/garage/static/js/main.1e3f9eeb.js.map"
+    "main.adc1c305.js.map": "https://pabloff95.github.io/garage/static/js/main.adc1c305.js.map"
   },
   "entrypoints": [
     "static/css/main.d93c2051.css",
-    "static/js/main.1e3f9eeb.js"
+    "static/js/main.adc1c305.js"
   ]
 }
