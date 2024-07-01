@@ -37,7 +37,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <HashRouter>
+      <HashRouter onUpdate={() => window.scrollTo(0, 0)}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

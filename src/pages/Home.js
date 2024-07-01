@@ -141,6 +141,16 @@ class Home extends React.Component {
       : "flex-col items-center";
   }
 
+  cardWidth = 350;
+
+  getCardsFlexBox() {
+    const parentContainerWidth = Math.ceil(window.innerWidth * 0.8); // 80% because the parent container uses w-[80%]
+
+    return Math.ceil(parentContainerWidth / 3 > this.cardWidth)
+      ? "flex-row justify-evenly gap-6 sm:gap-24"
+      : "flex-col items-center gap-4 sm:gap-12";
+  }
+
   render() {
     return (
       <div>
@@ -236,7 +246,7 @@ class Home extends React.Component {
               <br /> Ven a nuestro taller y explora nuestra amplia gama de
               servicios.
             </p>
-            <div className="mt-2 w-full flex flex-row flex-wrap justify-center gap-6 sm:gap-24">
+            <div className={`mt-2 w-full flex ${this.getCardsFlexBox()}`}>
               {this.garageWork.map(({ title, description, icon, id }) => (
                 <Card
                   title={title}
@@ -244,6 +254,7 @@ class Home extends React.Component {
                   icon={icon}
                   key={id}
                   iconClasses="h-2/3"
+                  cardWidth={this.cardWidth}
                 />
               ))}
             </div>

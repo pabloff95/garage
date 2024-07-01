@@ -139,7 +139,8 @@ class About extends React.Component {
 
   render() {
     return (
-      <div className="mt-[5vh]">
+      <div>
+        <div className="h-[5vh] bg-alternate"></div>
         <section className="pt-[5vh] py-3 sm:py-5 w-full bg-alternate">
           <div className="w-80% mx-[10%] flex flex-col gap-2">
             <Title text="Nuestra Historia"></Title>
