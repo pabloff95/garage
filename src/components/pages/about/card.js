@@ -14,15 +14,15 @@ class Card extends React.Component {
   };
 
   render() {
-    const { title, description, icon, iconClasses } = this.props;
+    const { title, description, icon, iconClasses, cardWidth } = this.props;
 
     return (
       <div
-        className={`animate-on-scroll min-w-[200px] min-[400px]:w-[22%] h-[${
-          window.innerHeight > 750 ? "35" : "45" // Fit content in small devices
-        }vh] flex flex-col justify-evenly items-center border shadow-neutral-color-gray p-4 rounded-lg border-b-4 border-b-primary-element overflow-y-hidden bg-white`}
+        className={`animate-on-scroll min-w-[${
+          cardWidth ?? "200"
+        }px] min-[525px]:w-[22%] h-auto flex flex-col items-center border shadow-neutral-color-gray p-4 rounded-lg border-b-4 border-b-primary-element bg-white`}
       >
-        <section className="relative flex justify-center min-h-[75px] md:min-h-[100px] h-1/3 sm:h-1/2 max-h-[15vw] w-full">
+        <section className="relative flex justify-center min-h-[75px] md:min-h-[100px] max-h-[15vw] w-full">
           <div
             id={`${icon}-circle`}
             className="absolute h-full bg-primary-element rounded-full z-0 opacity-80"
@@ -31,9 +31,9 @@ class Card extends React.Component {
             <FaIcon className={iconClasses ?? "h-full"} icon={icon} />
           </div>
         </section>
-        <section className="flex flex-col pt-3 pb-5">
+        <section className="flex flex-col grow pt-3 pb-5">
           <span className="text-center text-lg font-bold">{title}</span>
-          <span className="mt-2 text-sm text-justify text-gray-800">
+          <span className="mt-2 text-md text-justify text-gray-800">
             {description}
           </span>
         </section>
