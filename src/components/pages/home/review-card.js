@@ -144,7 +144,7 @@ class ReviewCard extends React.Component {
           </div>
           <img
             className="w-8 h-8"
-            src="garage/images/pages/home/google-logo.webp"
+            src="images/pages/home/google-logo.webp"
             alt="Logo de Google"
           />
         </div>

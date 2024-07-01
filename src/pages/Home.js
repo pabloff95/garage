@@ -168,7 +168,7 @@ class Home extends React.Component {
             </div>
             <img
               className="w-full min-h-[60vh] lg:min-h-fit grayscale opacity-90"
-              src="garage/images/pages/home/home-header.jpg"
+              src="images/pages/home/home-header.jpg"
               alt="Instalaciones de talleres Motec"
             />
           </div>
@@ -197,7 +197,7 @@ class Home extends React.Component {
               </StepCard>
             </div>
             <a
-              href="contacto"
+              href="#/contacto"
               className="button w-fit mx-auto py-2 px-4 text-xl"
             >
               Ponerme en contacto
@@ -248,7 +248,7 @@ class Home extends React.Component {
               ))}
             </div>
             <div className="w-full flex justify-center my-8">
-              <a href="sobre-nosotros" className="button py-2 px-4 text-xl">
+              <a href="#/sobre-nosotros" className="button py-2 px-4 text-xl">
                 Descrubrir más
               </a>
             </div>

@@ -2,7 +2,6 @@
   "name": "garage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pabloff95.github.io/garage",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
@@ -27,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://pabloff95.github.io/garage react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "python server/server.py",

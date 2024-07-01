@@ -3,6 +3,12 @@ import FaIcon from "../components/basic-elements/fa-icon";
 
 class NotFound extends React.Component {
   render() {
+    const location = window?.location;
+    const urlsToRedirect = ["/garage/", "/garage"];
+    if (urlsToRedirect.includes(location?.pathname)) {
+      window.location = `${location?.origin}`;
+    }
+
     return (
       <div className="h-[90vh]">
         <div className="h-full flex flex-col justify-center items-center gap-4">

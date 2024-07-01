@@ -4,10 +4,6 @@ import Box from "@mui/material/Box";
 import FaIcon from "./fa-icon";
 
 export default class BasicModal extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render = () => {
     return (
       <Modal
