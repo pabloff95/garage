@@ -8,16 +8,6 @@ import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Sales from "../pages/Sales";
 import displaySalesSection from "../utilis/display-sales-section";
-import { useLayoutEffect } from "react";
-
-const Wrapper = ({ children }) => {
-  // This wrapper component is only used here, in order to scroll to the top of the pages after redirecting to them
-  const location = useLocation();
-  useLayoutEffect(() => {
-    document.documentElement.scrollTo(0, 0);
-  }, [location.pathname]);
-  return children;
-};
 
 class App extends React.Component {
   componentDidMount = () => {
@@ -48,20 +38,18 @@ class App extends React.Component {
   render() {
     return (
       <HashRouter>
-        <Wrapper>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="sobre-nosotros" element={<About />} />
-              <Route path="servicios" element={<Services />} />
-              {displaySalesSection() && (
-                <Route path="ofertas" element={<Sales />} />
-              )}
-              <Route path="contacto" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </Wrapper>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="sobre-nosotros" element={<About />} />
+            <Route path="servicios" element={<Services />} />
+            {displaySalesSection() && (
+              <Route path="ofertas" element={<Sales />} />
+            )}
+            <Route path="contacto" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
       </HashRouter>
     );
   }

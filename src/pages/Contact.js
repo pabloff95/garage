@@ -5,6 +5,10 @@ import ContactForm from "../components/pages/contact/contact-form";
 import Title from "../components/basic-elements/title";
 
 class Contact extends React.Component {
+  componentDidMount = () => {
+    document.querySelector("#root").scrollTo(0, 0);
+  };
+
   render() {
     return (
       <div className="mt-[5vh]">
