@@ -6,7 +6,7 @@ import Title from "../components/basic-elements/title";
 
 class Contact extends React.Component {
   componentDidMount = () => {
-    document.querySelector("#root").scrollTo(0, 0);
+    document.querySelector("#root").scrollTo(0, 0); // Scroll to top of the page on load
   };
 
   render() {

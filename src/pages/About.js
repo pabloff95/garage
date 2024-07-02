@@ -73,6 +73,8 @@ class About extends React.Component {
   };
 
   componentDidMount = () => {
+    document.querySelector("#root").scrollTo(0, 0); // Scroll to top of the page on load
+
     this.setState({
       navigationButtons: this.getCarrouselNavigationButtons(),
     });
