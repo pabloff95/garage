@@ -9,12 +9,22 @@ class Contact extends React.Component {
     document.querySelector("#root").scrollTo(0, 0); // Scroll to top of the page on load
   };
 
+  getConcactCardsFlexBox() {
+    const parentContainerWidth = Math.ceil(window.innerWidth * 0.8); // 80% because the parent container uses w-[80%]
+
+    return Math.ceil(parentContainerWidth / 3 > 250)
+      ? "flex-row justify-evenly gap-6 sm:gap-24"
+      : "flex-col items-center align-center gap-12";
+  }
+
   render() {
     return (
       <div className="mt-[5vh]">
         <section className="py-1 sm:py-3 w-full min-h-[70vh] flex flex-col justify-center">
           <Title text="Métodos de contacto"></Title>
-          <div className="w-80% mx-[10%] flex flex-col gap-4 md:gap-0 md:flex-row items-center md:items-stretch md:justify-evenly flex-wrap">
+          <div
+            className={`w-[80%] mx-[10%] flex ${this.getConcactCardsFlexBox()} py-12`}
+          >
             <ContactCard
               icon="phone"
               message="Llamanos"
