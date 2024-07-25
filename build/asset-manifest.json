@@ -1,20 +1,18 @@
 {
   "files": {
-    "main.css": "https://pabloff95.github.io/garage/static/css/main.aeaa5552.css",
-    "main.js": "https://pabloff95.github.io/garage/static/js/main.1aa389e1.js",
-    "static/media/audi.png": "https://pabloff95.github.io/garage/static/media/audi.8cb33d41cd32c71cdaac.png",
-    "static/media/ford.png": "https://pabloff95.github.io/garage/static/media/ford.99f7c5ae2a4325130e36.png",
+    "main.css": "https://pabloff95.github.io/garage/static/css/main.f6c40b78.css",
+    "main.js": "https://pabloff95.github.io/garage/static/js/main.94389759.js",
     "static/media/neumaticos_michelin.png": "https://pabloff95.github.io/garage/static/media/neumaticos_michelin.e4a823fd3fd354c4a451.png",
-    "static/media/volkswagen.png": "https://pabloff95.github.io/garage/static/media/volkswagen.e877acc6ad20a2aaed9a.png",
-    "static/media/mercedes.png": "https://pabloff95.github.io/garage/static/media/mercedes.5314e82b8455b1854fdc.png",
+    "static/media/zf.png": "https://pabloff95.github.io/garage/static/media/zf.62ee4a7e6cdb7f1e36c2.png",
+    "static/media/autel.png": "https://pabloff95.github.io/garage/static/media/autel.d3f8d61b950f29751a9b.png",
     "static/media/castrol.png": "https://pabloff95.github.io/garage/static/media/castrol.629694cdef1f29f58a4e.png",
-    "static/media/seat.png": "https://pabloff95.github.io/garage/static/media/seat.f977758e270b3b36398e.png",
+    "static/media/arabi.png": "https://pabloff95.github.io/garage/static/media/arabi.1c3bd601deddfcb2ab88.png",
     "index.html": "https://pabloff95.github.io/garage/index.html",
-    "main.aeaa5552.css.map": "https://pabloff95.github.io/garage/static/css/main.aeaa5552.css.map",
-    "main.1aa389e1.js.map": "https://pabloff95.github.io/garage/static/js/main.1aa389e1.js.map"
+    "main.f6c40b78.css.map": "https://pabloff95.github.io/garage/static/css/main.f6c40b78.css.map",
+    "main.94389759.js.map": "https://pabloff95.github.io/garage/static/js/main.94389759.js.map"
   },
   "entrypoints": [
-    "static/css/main.aeaa5552.css",
-    "static/js/main.1aa389e1.js"
+    "static/css/main.f6c40b78.css",
+    "static/js/main.94389759.js"
   ]
 }
