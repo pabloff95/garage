@@ -267,7 +267,7 @@ class Home extends React.Component {
         </section>
         <section className="py-10 w-full min-h-[90vh] flex align-center justify-center">
           <div className="w-full mx-[10%] flex flex-col gap-2 justify-center">
-            <Title text="Encuentranos en Astillero (Santander)"></Title>
+            <Title text="Encuentranos en Guarnizo"></Title>
             <p className="paragraph text-center">
               ¡Ven a cononcernos! Nos ubicamos en el parque empresarial de
               Morero, parcela 2-11 nave nº2, Guarnizo el Astillero:

@@ -1,11 +1,11 @@
 [
-    {
-        "title": "Cambio de neumáticos",
-        "description": "¡Renueva tus viajes con nuestro servicio de cambio de neumáticos! En nuestro taller garantizamos un servicio eficiente y de calidad para asegurar que tus neumáticos estén en las mejores condiciones. ¡Confía en nosotros para mantener tus ruedas en perfecto estado y disfruta de la carretera con tranquilidad!",
-        "originalPrice": 200,
-        "currentPrice": 150,
-        "imgPath": "images/pages/sales/picture_1.png",
-        "startDate": "28/01",
-        "endDate": "27/12"
-    }
+  {
+    "title": "Cambio de neumáticos",
+    "description": "¡Descuento para mejorar la frenada de tu coche! ¡No comprometas tu seguridad! Mantén tu coche en perfecto estado con nuestro equipo de expertos. Antes de que acabe la oferta el dia 31 de Agosto, ofrecemos un descuento del 50% en el cambio de líquido de frenos mediante nuestra avanzada máquina de purgado ATE al cambiar discos o pastillas de freno, en el caso de que decidas cambiar las dos te haremos el 100%",
+    "originalPrice": 200,
+    "currentPrice": 150,
+    "imgPath": "images/pages/sales/picture_1.png",
+    "startDate": "21/06",
+    "endDate": "31/08"
+  }
 ]

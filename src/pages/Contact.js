@@ -61,7 +61,7 @@ class Contact extends React.Component {
           <Title text="¡Ven a conocernos!"></Title>
           <p className="paragraph w-80% mx-[10%] my-3">
             Nos ubicamos en el parque empresarial de Morero, parcela 2-11 nave
-            nº2, Guarnizo el Astillero (Santander):
+            nº2, Guarnizo el Guarnizo (a 10 minutos de Santander):
           </p>
           <div className="px-4 sm:px-0 w-full text-center mt-10">
             <GarageMap

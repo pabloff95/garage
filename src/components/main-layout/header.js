@@ -69,11 +69,6 @@ class Header extends React.Component {
             extraClasses={navButtonsFont}
           />
           <NavigationButton
-            text="Sobre Motec"
-            href="sobre-nosotros"
-            extraClasses={navButtonsFont}
-          />
-          <NavigationButton
             text="Servicios"
             href="servicios"
             extraClasses={navButtonsFont}
@@ -85,6 +80,11 @@ class Header extends React.Component {
               extraClasses={navButtonsFont}
             />
           )}
+          <NavigationButton
+            text="Sobre Motec"
+            href="sobre-nosotros"
+            extraClasses={navButtonsFont}
+          />
           <NavigationButton
             text="Contacto"
             href="contacto"
