@@ -22,141 +22,53 @@ class Services extends React.Component {
         <section className="py-3 w-full">
           <div className="w-80% mx-[10%] flex flex-col gap-6 sm:gap-12">
             <ServiceCard
-              title="Mecánica"
-              text="Ofrecemos servicios de mecánica para mantener tu vehículo en óptimas condiciones. Desde afinaciones hasta reparaciones de motor, nuestro equipo altamente capacitado resuelve cualquier problema con eficiencia y precisión."
+              title="Servicio de inspección"
+              text="Ofrecemos un servicio completo de revisión del estado del vehículo, tanto si estás considerando comprarlo como venderlo. Realizamos una inspección detallada y te proporcionamos un asesoramiento exhaustivo sobre el estado del coche, ayudándote a tomar decisiones informadas y seguras. Confía en nosotros para garantizar que tu transacción sea transparente y sin sorpresas."
               img={{
                 src: "/images/pages/services/car.png",
-                alt: "Imagen de un coche tradicional",
+                alt: "Imagen del servicio de inspección",
               }}
-            >
-              <p className="paragraph">
-                En nuestra sección de mecánica, nos especializamos en
-                proporcionar soluciones eficientes y confiables para el
-                mantenimiento de tu vehículo. Contamos con un equipo de
-                profesionales altamente capacitados dedicados a realizar
-                diagnósticos precisos y resolver cualquier problema que pueda
-                afectar el rendimiento de tu automóvil.
-              </p>
-
-              <p className="paragraph">
-                Desde simples afinaciones hasta reparaciones complejas de motor
-                y servicios de transmisión, nuestro taller mecánico ofrece una
-                amplia gama de servicios. Utilizamos tecnología de vanguardia y
-                herramientas especializadas para garantizar la calidad en cada
-                intervención. Además, trabajamos exclusivamente con piezas de
-                repuesto originales y seguimos rigurosos estándares de la
-                industria para mantener la integridad de tu vehículo.
-              </p>
-
-              <p className="paragraph">
-                En nuestro taller, nos enorgullece la transparencia y la
-                atención personalizada. Nuestro compromiso es brindar un
-                servicio de mecánica automotriz excepcional, asegurando que tu
-                vehículo reciba el cuidado que merece. Contáctanos hoy para
-                programar una cita y confía en nosotros para mantener tu
-                automóvil en óptimas condiciones.
-              </p>
-            </ServiceCard>
+            ></ServiceCard>
             <ServiceCard
-              title="Cambio de aceite"
-              text="Nuestro servicio de cambio de aceite, rápido y eficiente, utiliza productos de alta calidad. No solo reemplazamos el aceite, sino que también verificamos y, si es necesario, reemplazamos el filtro, asegurando un motor saludable."
+              title="Revision del vehículo"
+              text="Realizamos revisiones completas de cambio de aceite y demás filtros, asegurando el óptimo rendimiento de tu vehículo. Utilizamos el lubricante Castrol, que consideramos uno de los mejores del mercado, junto con las mejores marcas de recambio para garantizar la máxima calidad. Confía en nosotros para mantener tu coche en perfecto estado y prolongar su vida útil."
+              img={{
+                src: "/images/pages/services/car.png",
+                alt: "Imagen de revisión del vehículo",
+              }}
+            ></ServiceCard>
+            <ServiceCard
+              title="Servicio ITV"
+              text="Realizamos todos los pasos necesarios para que pases la ITV sin problemas, revisando a fondo frenos, suspensiones, dirección, neumáticos, luces, emisiones de gases de escape, dirección, posibles holguras de componentes que afecten la seguridad del vehículo, y pérdidas de fluidos por los bajos de la carrocería. Nos aseguramos de que tu vehículo cumpla con todas las normativas vigentes. Además, ofrecemos el servicio de pasar la ITV por ti con un coste adicional."
               img={{
                 src: "/images/pages/services/oil.png",
-                alt: "Imagen de un bidón de aceite",
+                alt: "Imagen de servicios de ITV",
               }}
-            >
-              <p className="paragraph">
-                Nuestro servicio de cambio de aceite es esencial para el
-                mantenimiento preventivo de tu vehículo, asegurando un
-                rendimiento óptimo y una vida útil prolongada del motor. En
-                Talleres Motec, entendemos la importancia de un adecuado cambio
-                de aceite para preservar la salud de tu motor y garantizar un
-                funcionamiento suave.
-              </p>
-              <p className="paragraph">
-                Nuestros profesionales altamente capacitados llevarán a cabo el
-                cambio de aceite de manera rápida y eficiente, utilizando
-                productos de la más alta calidad. No solo nos encargamos de
-                reemplazar el aceite, sino que también verificamos y, si es
-                necesario, reemplazamos el filtro de aceite para mantener la
-                pureza del lubricante y garantizar una lubricación efectiva de
-                las piezas del motor.
-              </p>
-              <p className="paragraph">
-                Nos enorgullece la atención meticulosa a los detalles. Ya sea
-                que tu vehículo requiera aceites convencionales o sintéticos,
-                puedes confiar en nosotros para realizar el cambio de aceite de
-                manera profesional y cuidadosa. Contáctanos hoy para programar
-                tu servicio de cambio de aceite y asegúrate de que tu motor
-                funcione en las mejores condiciones posibles.
-              </p>
-            </ServiceCard>
+            ></ServiceCard>
             <ServiceCard
               title="Servicio de neumáticos"
-              text="Proporcionamos un servicio integral de neumáticos, desde la elección adecuada hasta instalaciones, rotaciones y reparaciones. Con asesoramiento profesional y opciones para todos los presupuestos, mantenemos tus neumáticos en las mejores condiciones."
+              text="Ofrecemos un servicio completo de cambio de neumáticos de todas las medidas, adaptándonos a tus necesidades específicas. Además, equilibramos cada neumático para garantizar una conducción segura y cómoda, y te asesoramos sobre la mejor rueda según tu uso diario. Trabajamos siempre con las principales marcas, asegurando la máxima calidad y rendimiento. Confía en nosotros para mantener tu vehículo en óptimas condiciones."
               img={{
                 src: "/images/pages/services/wheel.png",
                 alt: "Imagen del neumático de un coche",
               }}
-            >
-              <p className="paragraph">
-                En nuestro taller, ofrecemos un servicio integral de neumáticos
-                diseñado para garantizar la seguridad y el rendimiento óptimo de
-                tu vehículo. Sabemos que los neumáticos son un componente
-                crítico para la conducción segura, por lo que nos dedicamos a
-                proporcionar soluciones expertas y eficientes para tus
-                necesidades de neumáticos.
-              </p>
-              <p className="paragraph">
-                Nuestros profesionales altamente capacitados pueden asesorarte
-                sobre la elección de neumáticos adecuada para tu vehículo y
-                estilo de conducción. Ofrecemos servicios que van desde la
-                instalación y rotación de neumáticos hasta reparaciones y
-                alineación de ruedas. Utilizamos equipos modernos y técnicas
-                precisas para asegurar que tus neumáticos estén en las mejores
-                condiciones posibles.
-              </p>
-              <p className="paragraph">
-                En Talleres Motec, nos enorgullece la calidad de nuestro
-                servicio de neumáticos. Trabajamos con marcas reconocidas y
-                ofrecemos opciones para todos los presupuestos. Si necesitas
-                nuevos neumáticos, reparaciones o simplemente un chequeo de
-                rutina, estamos aquí para ayudarte. Contáctanos hoy y deja que
-                nuestros expertos cuiden de tus neumáticos.
-              </p>
-            </ServiceCard>
+            ></ServiceCard>
             <ServiceCard
-              title="Mantenimiento"
-              text="Nuestro servicio de mantenimiento preventivo, con inspecciones exhaustivas y ajustes, preserva la confiabilidad a lo largo del tiempo. Utilizamos herramientas avanzadas y seguimos protocolos rigurosos para garantizar la integridad y el rendimiento continuo de tu vehículo."
+              title="Aire acondicionado"
+              text="Llevamos a cabo el proceso completo de extracción,comprobación de estanqueidad, y sustitución de gas en sistemas de aire acondicionado. Nuestro equipo altamente capacitado garantiza un servicio de calidad utilizando los gases R134a y R1234yf, con la maquinaria necesaria para un trabajo eficiente y respetuoso con el medio ambiente."
               img={{
                 src: "/images/pages/services/gear_tool.png",
-                alt: "Imagen de herramientas",
+                alt: "Imagen de servicio de aire acondicionado",
               }}
-            >
-              <p className="paragraph">
-                Nuestro servicio de mantenimiento está diseñado para preservar
-                la confiabilidad y eficiencia de tu vehículo a lo largo del
-                tiempo. Reconocemos la importancia del mantenimiento preventivo
-                para evitar problemas costosos y garantizar un rendimiento
-                constante.
-              </p>
-              <p className="paragraph">
-                Nuestros expertos en mantenimiento llevan a cabo inspecciones
-                exhaustivas de tu automóvil, abordando aspectos como cambios de
-                fluidos, revisión de frenos, sistema de dirección y más.
-                Realizamos ajustes y reemplazamos piezas desgastadas para
-                prevenir averías y maximizar la vida útil de tu vehículo.
-              </p>
-              <p className="paragraph">
-                En nuestro taller nos destacamos por nuestra atención meticulosa
-                a cada detalle durante el servicio de mantenimiento. Utilizamos
-                herramientas avanzadas y seguimos los protocolos recomendados
-                por los fabricantes para garantizar la integridad de tu
-                vehículo. Programa una cita con nosotros y confía en nuestro
-                equipo para mantener tu automóvil en excelentes condiciones a lo
-                largo del tiempo.
-              </p>
-            </ServiceCard>
+            ></ServiceCard>
+            <ServiceCard
+              title="Servicio de distribución"
+              text="Es fundamental informarse sobre el intervalo de sustitución de la correa de distribución y periféricos como la bomba de agua, rodillos y tensores. Estos componentes son esenciales para el funcionamiento del motor, y su desgaste puede provocar una avería grave, incluyendo la rotura del motor. Mantén tu vehículo en óptimas condiciones y evita costosos problemas realizando un mantenimiento adecuado y a tiempo."
+              img={{
+                src: "/images/pages/services/gear_tool.png",
+                alt: "Imagen de servicio de distribución",
+              }}
+            ></ServiceCard>
           </div>
         </section>
       </div>

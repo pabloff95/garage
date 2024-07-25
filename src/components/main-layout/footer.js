@@ -18,7 +18,7 @@ class Footer extends React.Component {
           <FooterHeader text="Horario" icon="clock" />
           <div>
             <p>Mañanas (Lunes - Jueves): 8:00 - 13:00</p>
-            <p>Tarder (Lunes - Jueves): 15:00 - 18:00</p>
+            <p>Tarde (Lunes - Jueves): 15:00 - 18:30</p>
             <p>Viernes: 8:00 - 14:00</p>
           </div>
         </section>
