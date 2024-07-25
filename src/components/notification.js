@@ -2,10 +2,6 @@ import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 class Notification extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Toaster
